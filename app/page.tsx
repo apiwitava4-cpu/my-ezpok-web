@@ -303,11 +303,11 @@ export default function HomePage() {
                 </p>
                 
                 <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto justify-center">
-                    <a href="https://ezpok168.com/" target="_blank" rel="noreferrer" onClick={(e) => handleLinkClick('Click POK9DENG เล่นเลย', e.currentTarget.href)} className="px-8 py-3.5 bg-gradient-to-r from-ezgold-500 to-ezgold-300 text-black font-bold text-lg rounded-xl shadow-[0_0_20px_rgba(212,175,55,0.5)] hover:scale-105 transition-transform flex items-center justify-center gap-2 no-underline">
-                        เล่นเลย <PlayCircle className="w-5 h-5" />
+                    <a href="https://pok9deng-pokerthai.org/" target="_blank" rel="noreferrer" onClick={(e) => handleLinkClick('Click POK9DENG เล่นเลย', e.currentTarget.href)} className="px-8 py-3.5 bg-gradient-to-r from-ezgold-500 to-ezgold-300 text-black font-bold text-lg rounded-xl shadow-[0_0_20px_rgba(212,175,55,0.5)] hover:scale-105 transition-transform flex items-center justify-center gap-2 no-underline">
+                       สมัครสมาชิก <PlayCircle className="w-5 h-5" />
                     </a>
-                    <a href="https://ezpok168.com/" target="_blank" rel="noreferrer" onClick={(e) => handleLinkClick('Click POK9DENG สมัครสมาชิก', e.currentTarget.href)} className="px-8 py-3.5 bg-black/60 backdrop-blur-sm border-2 border-ezgold-500 text-ezgold-400 font-bold text-lg rounded-xl hover:bg-ezgold-500 hover:text-black transition-colors flex items-center justify-center gap-2 no-underline">
-                        สมัครสมาชิก <UserPlus className="w-5 h-5" />
+                    <a href="https://lin.ee/8bzIg5hL" target="_blank" rel="noreferrer" onClick={(e) => handleLinkClick('Click POK9DENG สมัครสมาชิก', e.currentTarget.href)} className="px-8 py-3.5 bg-black/60 backdrop-blur-sm border-2 border-ezgold-500 text-ezgold-400 font-bold text-lg rounded-xl hover:bg-ezgold-500 hover:text-black transition-colors flex items-center justify-center gap-2 no-underline">
+                        ติดต่อแอดมิน<UserPlus className="w-5 h-5" />
                     </a>
                 </div>
             </div>
@@ -341,18 +341,18 @@ export default function HomePage() {
         </section>
 
         <section className="mb-12 w-full flex flex-col items-center justify-center gap-5">
-          <a href="ใส่ลิ้งพันธมิตร_1_ตรงนี้" target="_blank" rel="noreferrer" className="block w-full max-w-[860px] group no-underline">
+          <a href="https://lin.ee/8bzIg5hL" target="_blank" rel="noreferrer" className="block w-full max-w-[860px] group no-underline">
             <img 
               src="/affiliate-banner1.gif" 
-              alt="แบนเนอร์พันธมิตร วงป๊อกเด้ง 1" 
+              alt="https://lin.ee/kBYIyk1" 
               className="w-full h-auto aspect-[860/124] object-cover rounded-xl border border-gray-700 group-hover:border-ezgold-400 transition-colors shadow-[0_4px_15px_rgba(0,0,0,0.5)]" 
               onError={(e) => { e.currentTarget.style.display='none'; e.currentTarget.parentElement!.innerHTML = '<div class="w-full aspect-[860/124] flex items-center justify-center bg-gray-800/80 text-gray-400 border border-dashed border-gray-500 rounded-xl text-xs md:text-sm">พื้นที่แบนเนอร์พันธมิตร 1 (860 x 124 px)</div>'; }}
             />
           </a>
-          <a href="ใส่ลิ้งพันธมิตร_2_ตรงนี้" target="_blank" rel="noreferrer" className="block w-full max-w-[860px] group no-underline">
+          <a href="https://ezpok.com/" target="_blank" rel="noreferrer" className="block w-full max-w-[860px] group no-underline">
             <img 
               src="/affiliate-banner2.gif" 
-              alt="แบนเนอร์พันธมิตร หวยออนไลน์ 2" 
+              alt="https://ezpok.com/" 
               className="w-full h-auto aspect-[860/124] object-cover rounded-xl border border-gray-700 group-hover:border-ezgold-400 transition-colors shadow-[0_4px_15px_rgba(0,0,0,0.5)]" 
               onError={(e) => { e.currentTarget.style.display='none'; e.currentTarget.parentElement!.innerHTML = '<div class="w-full aspect-[860/124] flex items-center justify-center bg-gray-800/80 text-gray-400 border border-dashed border-gray-500 rounded-xl text-xs md:text-sm">พื้นที่แบนเนอร์พันธมิตร 2 (860 x 124 px)</div>'; }}
             />
