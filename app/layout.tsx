@@ -9,11 +9,14 @@ const prompt = Prompt({
   variable: "--font-prompt",
 });
 
-// --- ตรงนี้คือโค้ด SEO ที่ถูกต้อง ---
+// --- ตรงนี้คือโค้ด SEO และการยืนยัน Google Search Console ---
 export const metadata: Metadata = {
   title: 'วงป๊อกเด้ง | ป๊อกเด้งออนไลน์ 2 ใบเปิด สับไพ่ไลฟ์สดเรียลไทม์ 24 ชม.',
   description: 'สมัครเล่นวงป๊อกเด้ง ป๊อกเด้งออนไลน์ 2 ใบเปิด สับไพ่ไลฟ์สดเรียลไทม์ตลอด 24 ชม. ฝาก-ถอนไม่มีขั้นต่ำ พร้อมระบบตรวจหวยออนไลน์ EZLOTTO ครบวงจร มั่นคง โปร่งใส 100%',
   keywords: 'วงป๊อกเด้ง, ป๊อกเด้งออนไลน์, หวยออนไลน์',
+  verification: {
+    google: '6-Uuwp3vfhuuUIMJS2GatzFHdzyvps9wsfG0mfjMdGc', // <-- เพิ่ม Meta Tag ของ Google ตรงนี้
+  },
 };
 
 export default function RootLayout({

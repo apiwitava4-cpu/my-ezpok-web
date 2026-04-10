@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ezpok168.net/sitemap.xml
