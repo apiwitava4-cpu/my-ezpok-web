@@ -140,30 +140,45 @@ export default function HomePage() {
         onClick={() => setIsSidebarOpen(false)}
       ></div>
 
-      <div className={`fixed top-0 left-0 h-full w-[260px] md:w-[300px] bg-[#fdfdfd] text-[#333] z-[80] transform transition-transform duration-300 flex flex-col ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'} shadow-2xl`}>
-        <div className="flex justify-between items-center p-4 border-b border-gray-200 bg-white">
-           <span className="font-prompt font-bold text-lg text-black">เมนูหลัก</span>
-           <button onClick={() => setIsSidebarOpen(false)} className="p-1 hover:bg-gray-200 rounded-md transition-colors"><X className="text-gray-600 w-5 h-5" /></button>
+      <div className={`fixed top-0 left-0 h-full w-[260px] md:w-[320px] bg-[#fdfdfd] text-[#333] z-[80] transform transition-transform duration-300 flex flex-col ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'} shadow-2xl`}>
+        <div className="flex justify-between items-center p-4 bg-white shadow-sm z-10 border-b border-gray-100">
+           <span className="font-prompt font-bold text-lg text-black flex items-center gap-2">
+             <Menu className="w-5 h-5 text-ezgold-500" /> เมนูหลัก
+           </span>
+           <button onClick={() => setIsSidebarOpen(false)} className="p-1.5 hover:bg-gray-100 rounded-full transition-colors"><X className="text-gray-600 w-5 h-5" /></button>
         </div>
-        <div className="flex-1 overflow-y-auto">
-          {/* แก้ไขเมนู: ลบจุดกลม และเอาเส้นใต้สีน้ำเงินออก */}
-          <ul className="flex flex-col text-[13px] md:text-sm font-prompt font-medium list-none p-0 m-0">
-             <li className="border-b border-gray-100"><a href="#home" onClick={handleNavClick} className="block p-4 hover:bg-gray-100 transition-colors text-gray-800 no-underline">หน้าหลัก</a></li>
-             <li className="border-b border-gray-100"><a href="#promotions" onClick={handleNavClick} className="block p-4 hover:bg-gray-100 transition-colors text-gray-800 no-underline">โปรโมชั่น</a></li>
-             <li className="border-b border-gray-100"><a href="#info-rules" onClick={handleNavClick} className="block p-4 hover:bg-gray-100 transition-colors text-gray-800 no-underline">ฝาก-ถอน / กติกา</a></li>
-             <li className="border-b border-gray-100"><a href="https://ezpok168.com/" target="_blank" rel="noreferrer" onClick={handleNavClick} className="block p-4 hover:bg-gray-100 transition-colors text-red-600 font-bold no-underline">ทางเข้าเล่นเกมส์</a></li>
-             <li className="border-b border-gray-100"><a href="#live-video" onClick={handleNavClick} className="block p-4 hover:bg-gray-100 transition-colors text-gray-800 no-underline">ชมรีวิวไพ่ป๊อกเด้ง/หรือชมไลฟ์สด</a></li>
-             <li className="border-b border-gray-100"><a href="#knowledge-seo" onClick={handleNavClick} className="block p-4 hover:bg-gray-100 transition-colors text-gray-800 no-underline">บทความ ความรู้</a></li>
-             <li className="border-b border-gray-100"><a href="#" className="block p-4 hover:bg-gray-100 transition-colors text-blue-600 no-underline">เข้ากลุ่ม Telegram</a></li>
-             <li className="border-b border-gray-100"><a href="https://lin.ee/kBYIyk1" target="_blank" rel="noreferrer" onClick={handleNavClick} className="block p-4 hover:bg-gray-100 transition-colors text-gray-800 no-underline">ติดต่อเรา</a></li>
-          </ul>
-          <div className="p-5">
-             <a href="https://ezpok168.com/" target="_blank" rel="noreferrer" className="flex items-center justify-center w-full py-2.5 md:py-3 rounded-full border-2 border-gray-400 text-gray-700 font-bold hover:bg-gray-200 transition-colors no-underline">สมัครสมาชิก</a>
-          </div>
+        
+        {/* --- ส่วนเมนูแบบใหม่ (ทำเป็นปุ่มสีสันสวยงาม) --- */}
+        <div className="flex-1 overflow-y-auto p-4 bg-gray-50 space-y-3">
+           <a href="#home" onClick={handleNavClick} className="flex items-center gap-3 p-3.5 bg-white hover:bg-gray-100 rounded-xl shadow-sm border border-gray-200 text-gray-800 font-bold transition-all no-underline">
+             <Home className="w-5 h-5 text-blue-500" /> หน้าหลัก
+           </a>
+           <a href="#promotions" onClick={handleNavClick} className="flex items-center gap-3 p-3.5 bg-white hover:bg-gray-100 rounded-xl shadow-sm border border-gray-200 text-gray-800 font-bold transition-all no-underline">
+             <Gift className="w-5 h-5 text-pink-500" /> โปรโมชั่น
+           </a>
+           <a href="#info-rules" onClick={handleNavClick} className="flex items-center gap-3 p-3.5 bg-white hover:bg-gray-100 rounded-xl shadow-sm border border-gray-200 text-gray-800 font-bold transition-all no-underline">
+             <ScrollText className="w-5 h-5 text-orange-500" /> ฝาก-ถอน / กติกา
+           </a>
+           <a href="https://pok9deng-pokerthai.org/" target="_blank" rel="noreferrer" onClick={handleNavClick} className="flex items-center justify-center gap-2 p-3.5 bg-gradient-to-r from-red-600 to-red-500 hover:from-red-500 hover:to-red-400 rounded-xl shadow-md text-white font-bold transition-all no-underline transform hover:scale-[1.02]">
+             <Gamepad2 className="w-5 h-5" /> ทางเข้าเล่นเกมส์
+           </a>
+           <a href="#live-video" onClick={handleNavClick} className="flex items-center gap-3 p-3.5 bg-white hover:bg-gray-100 rounded-xl shadow-sm border border-gray-200 text-gray-800 font-bold transition-all no-underline">
+             <Video className="w-5 h-5 text-purple-500" /> ชมรีวิวไพ่ป๊อกเด้ง/ไลฟ์สด
+           </a>
+           <a href="#knowledge-seo" onClick={handleNavClick} className="flex items-center gap-3 p-3.5 bg-white hover:bg-gray-100 rounded-xl shadow-sm border border-gray-200 text-gray-800 font-bold transition-all no-underline">
+             <HelpCircle className="w-5 h-5 text-yellow-500" /> บทความ ความรู้
+           </a>
+           <a href="#" className="flex items-center justify-center gap-2 p-3.5 bg-[#0088cc] hover:bg-[#0077b3] rounded-xl shadow-md text-white font-bold transition-all no-underline transform hover:scale-[1.02] mt-4">
+             <Users className="w-5 h-5" /> เข้ากลุ่ม Telegram
+           </a>
+           <a href="https://lin.ee/8bzIg5hL" target="_blank" rel="noreferrer" onClick={handleNavClick} className="flex items-center justify-center gap-2 p-3.5 bg-[#00B900] hover:bg-[#00A000] rounded-xl shadow-md text-white font-bold transition-all no-underline transform hover:scale-[1.02]">
+             <MessageCircle className="w-5 h-5" /> ติดต่อเรา
+           </a>
         </div>
       </div>
 
-      <header className="bg-ezdark/95 backdrop-blur-md sticky top-0 z-40 border-b border-ezgold-500/30 shadow-[0_4px_20px_rgba(0,0,0,0.5)]">
+      {/* เอาเส้นขอบล่าง (border-b) ออก เพื่อความกลมกลืน */}
+      <header className="bg-ezdark/95 backdrop-blur-md sticky top-0 z-40 shadow-md">
         <nav className="max-w-5xl mx-auto px-4 h-14 md:h-16 flex items-center justify-between">
           <div className="flex items-center gap-2 md:gap-3">
             <button onClick={() => setIsSidebarOpen(true)} className="p-1.5 hover:bg-white/10 rounded-md transition-colors mr-1">
@@ -171,13 +186,14 @@ export default function HomePage() {
             </button>
             <span className="font-prompt font-bold text-lg md:text-2xl tracking-tight"><span className="text-white">วง</span><span className="text-ezgold-400">ป๊อกเด้งไทย</span></span>
           </div>
-          <a href="https://lin.ee/kBYIyk1" target="_blank" rel="noreferrer" className="text-[11px] md:text-sm font-medium bg-ezgold-500/10 text-ezgold-400 border border-ezgold-500/50 px-3 py-1.5 rounded-full flex items-center gap-1.5 hover:bg-ezgold-500 hover:text-black transition-all no-underline">
+          <a href="https://lin.ee/8bzIg5hL" target="_blank" rel="noreferrer" className="text-[11px] md:text-sm font-medium bg-ezgold-500/10 text-ezgold-400 border border-ezgold-500/50 px-3 py-1.5 rounded-full flex items-center gap-1.5 hover:bg-ezgold-500 hover:text-black transition-all no-underline">
             <MessageCircle className="w-3.5 h-3.5 md:w-4 md:h-4" /> แอดมิน 24 ชม.
           </a>
         </nav>
       </header>
 
-      <div className="w-full bg-[#13071A] border-b border-gray-800 py-3 md:py-4 px-4 z-30 relative shadow-inner">
+      {/* เอาเส้นขอบล่าง (border-b) ออก เพื่อความกลมกลืน */}
+      <div className="w-full bg-[#13071A] py-3 md:py-4 px-4 z-30 relative">
         <div className="max-w-3xl mx-auto relative group">
             <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                 <Search className="h-5 w-5 text-ezgold-500" />
@@ -204,7 +220,7 @@ export default function HomePage() {
 
         <div className="bg-[#0D0514]/95 backdrop-blur-sm border border-white/50 p-2 md:p-2.5 rounded shadow-[0_0_15px_rgba(0,0,0,0.8)] text-center transform transition-all hover:scale-105 w-[90px] md:w-[110px]">
           <p className="text-[10px] md:text-xs text-white font-bold mb-1.5 font-prompt tracking-wide">ติดต่อแอดมิน 24 ชม.</p>
-          <a href="https://lin.ee/kBYIyk1" target="_blank" rel="noreferrer" onClick={(e) => handleLinkClick('กดเพิ่มเพื่อนไลน์ (ขวาล่าง)', e.currentTarget.href)} className="block hover:opacity-90 transition-opacity bg-[#00B900] rounded p-1 no-underline">
+          <a href="https://lin.ee/8bzIg5hL" target="_blank" rel="noreferrer" onClick={(e) => handleLinkClick('กดเพิ่มเพื่อนไลน์ (ขวาล่าง)', e.currentTarget.href)} className="block hover:opacity-90 transition-opacity bg-[#00B900] rounded p-1 no-underline">
             <img src="https://scdn.line-apps.com/n/line_add_friends/btn/th.png" alt="เพิ่มเพื่อนแอดมิน 24 ชม." className="w-full h-auto mx-auto" loading="lazy" />
           </a>
         </div>
@@ -227,7 +243,8 @@ export default function HomePage() {
 
       <main className="max-w-5xl mx-auto px-4 py-6 md:py-8 relative z-10">
 
-        <section className="w-full relative z-30 flex flex-col items-center bg-black/40 rounded-2xl p-6 md:p-10 mb-8 border border-ezgold-500/20 shadow-lg">
+        {/* ลบกรอบ (border) และพื้นหลังทึบออก เพื่อให้ภาพโลโก้ลอยเนียนๆ กับพื้นหลังดำ */}
+        <section className="w-full relative z-30 flex flex-col items-center bg-transparent pt-4 pb-6 mb-4">
             <img 
                 src="/NEWLOGOBANNER.gif" 
                 alt="วงป๊อกเด้งออนไลน์ 2 ใบเปิด สับไพ่เรียลไทม์ 24 ชม." 
@@ -242,8 +259,9 @@ export default function HomePage() {
             </p>
         </section>
 
+        {/* ปรับขอบของแถบประกาศให้บางลง ไม่ให้เป็นเส้นชัดเกินไป */}
         <section className="mb-10 max-w-4xl mx-auto w-full">
-            <div className="relative border border-ezgold-500/40 rounded-full p-1.5 md:p-2 flex items-center shadow-[0_0_15px_rgba(212,175,55,0.2)] overflow-hidden bg-[url('/marquee-bg.gif')] bg-cover bg-center">
+            <div className="relative border border-ezgold-500/20 rounded-full p-1.5 md:p-2 flex items-center shadow-lg overflow-hidden bg-[url('/marquee-bg.gif')] bg-cover bg-center">
                 <div className="absolute inset-0 bg-black/60"></div>
                 
                 <div className="bg-ezgold-500 text-black font-bold text-[10px] md:text-sm px-3 md:px-4 py-1.5 rounded-full whitespace-nowrap z-10 flex items-center gap-1.5 shadow-md relative">
@@ -264,8 +282,9 @@ export default function HomePage() {
             </div>
         </section>
 
+        {/* เอาเส้นขอบ (border) ของกรอบวิดีโอออก ให้เหลือแค่เงาเบาๆ */}
 		<section className="mb-10 max-w-[800px] mx-auto w-full" id="live-video">
-            <div className="bg-gradient-to-br from-[#2E0249] to-black rounded-2xl p-1 shadow-[0_0_25px_rgba(168,85,247,0.2)] border border-purple-500/30">
+            <div className="bg-gradient-to-br from-[#2E0249] to-black rounded-2xl p-1 shadow-2xl">
                 <div className="bg-black/80 backdrop-blur-md rounded-xl p-3 md:p-5">
                     <div className="flex items-center justify-between mb-4">
                         <div className="flex items-center gap-2">
@@ -276,7 +295,7 @@ export default function HomePage() {
                             <span className="w-2 h-2 rounded-full bg-red-500"></span> LIVE
                         </span>
                     </div>
-                    <div className="w-full aspect-square max-w-[800px] mx-auto bg-black rounded-lg border border-purple-500/20 overflow-hidden relative flex items-center justify-center">
+                    <div className="w-full aspect-square max-w-[800px] mx-auto bg-black rounded-lg border border-purple-500/20 overflow-hidden relative flex items-center justify-center shadow-inner">
                          <video className="w-full h-full object-cover" controls autoPlay loop muted playsInline>
                              <source src="/video.mp4" type="video/mp4" />
                               เบราว์เซอร์ของคุณไม่รองรับวิดีโอ
