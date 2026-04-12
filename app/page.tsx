@@ -140,69 +140,30 @@ export default function HomePage() {
         onClick={() => setIsSidebarOpen(false)}
       ></div>
 
-      <div className={`fixed top-0 left-0 h-full w-[260px] md:w-[320px] bg-[#fdfdfd] text-[#333] z-[80] transform transition-transform duration-300 flex flex-col ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'} shadow-2xl`}>
-        <div className="flex justify-between items-center p-4 bg-white shadow-sm z-10">
-           <span className="font-prompt font-bold text-lg text-black flex items-center gap-2">
-             <Menu className="w-5 h-5 text-ezgold-500" /> เมนูหลัก
-           </span>
-           <button onClick={() => setIsSidebarOpen(false)} className="p-1.5 hover:bg-gray-100 rounded-full transition-colors"><X className="text-gray-600 w-5 h-5" /></button>
+      <div className={`fixed top-0 left-0 h-full w-[260px] md:w-[300px] bg-[#fdfdfd] text-[#333] z-[80] transform transition-transform duration-300 flex flex-col ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'} shadow-2xl`}>
+        <div className="flex justify-between items-center p-4 border-b border-gray-200 bg-white">
+           <span className="font-prompt font-bold text-lg text-black">เมนูหลัก</span>
+           <button onClick={() => setIsSidebarOpen(false)} className="p-1 hover:bg-gray-200 rounded-md transition-colors"><X className="text-gray-600 w-5 h-5" /></button>
         </div>
-        
-        {/* --- ส่วนเมนูแบบใหม่ (ทำเป็นปุ่มๆ) --- */}
-        <div className="flex-1 overflow-y-auto p-4 bg-gray-50">
-          <ul className="flex flex-col text-[13px] md:text-sm font-prompt font-medium list-none p-0 m-0 space-y-2.5">
-             <li>
-               <a href="#home" onClick={handleNavClick} className="flex items-center gap-3 p-3.5 bg-white hover:bg-ezgold-50 rounded-xl shadow-sm border border-gray-200 text-gray-800 transition-all no-underline">
-                 <Home className="w-5 h-5 text-ezgold-500" /> หน้าหลัก
-               </a>
-             </li>
-             <li>
-               <a href="#promotions" onClick={handleNavClick} className="flex items-center gap-3 p-3.5 bg-white hover:bg-ezgold-50 rounded-xl shadow-sm border border-gray-200 text-gray-800 transition-all no-underline">
-                 <Gift className="w-5 h-5 text-ezgold-500" /> โปรโมชั่น
-               </a>
-             </li>
-             <li>
-               <a href="#info-rules" onClick={handleNavClick} className="flex items-center gap-3 p-3.5 bg-white hover:bg-ezgold-50 rounded-xl shadow-sm border border-gray-200 text-gray-800 transition-all no-underline">
-                 <ScrollText className="w-5 h-5 text-ezgold-500" /> ฝาก-ถอน / กติกา
-               </a>
-             </li>
-             <li>
-               <a href="https://ezpok168.com/" target="_blank" rel="noreferrer" onClick={handleNavClick} className="flex items-center gap-3 p-3.5 bg-gradient-to-r from-red-600 to-red-500 hover:from-red-500 hover:to-red-400 rounded-xl shadow-md text-white font-bold transition-all no-underline transform hover:scale-[1.02]">
-                 <Gamepad2 className="w-5 h-5" /> ทางเข้าเล่นเกมส์
-               </a>
-             </li>
-             <li>
-               <a href="#live-video" onClick={handleNavClick} className="flex items-center gap-3 p-3.5 bg-white hover:bg-ezgold-50 rounded-xl shadow-sm border border-gray-200 text-gray-800 transition-all no-underline">
-                 <Video className="w-5 h-5 text-ezgold-500" /> ชมรีวิวไพ่ป๊อกเด้ง/ไลฟ์สด
-               </a>
-             </li>
-             <li>
-               <a href="#knowledge-seo" onClick={handleNavClick} className="flex items-center gap-3 p-3.5 bg-white hover:bg-ezgold-50 rounded-xl shadow-sm border border-gray-200 text-gray-800 transition-all no-underline">
-                 <HelpCircle className="w-5 h-5 text-ezgold-500" /> บทความ ความรู้
-               </a>
-             </li>
-             <li>
-               <a href="#" className="flex items-center gap-3 p-3.5 bg-white hover:bg-blue-50 rounded-xl shadow-sm border border-gray-200 text-blue-600 transition-all no-underline">
-                 <Users className="w-5 h-5 text-blue-500" /> เข้ากลุ่ม Telegram
-               </a>
-             </li>
-             <li>
-               <a href="https://lin.ee/kBYIyk1" target="_blank" rel="noreferrer" onClick={handleNavClick} className="flex items-center gap-3 p-3.5 bg-[#00B900] hover:bg-[#00A000] rounded-xl shadow-md text-white font-bold transition-all no-underline transform hover:scale-[1.02]">
-                 <MessageCircle className="w-5 h-5" /> ติดต่อเรา
-               </a>
-             </li>
+        <div className="flex-1 overflow-y-auto">
+          {/* แก้ไขเมนู: ลบจุดกลม และเอาเส้นใต้สีน้ำเงินออก */}
+          <ul className="flex flex-col text-[13px] md:text-sm font-prompt font-medium list-none p-0 m-0">
+             <li className="border-b border-gray-100"><a href="#home" onClick={handleNavClick} className="block p-4 hover:bg-gray-100 transition-colors text-gray-800 no-underline">หน้าหลัก</a></li>
+             <li className="border-b border-gray-100"><a href="#promotions" onClick={handleNavClick} className="block p-4 hover:bg-gray-100 transition-colors text-gray-800 no-underline">โปรโมชั่น</a></li>
+             <li className="border-b border-gray-100"><a href="#info-rules" onClick={handleNavClick} className="block p-4 hover:bg-gray-100 transition-colors text-gray-800 no-underline">ฝาก-ถอน / กติกา</a></li>
+             <li className="border-b border-gray-100"><a href="https://ezpok168.com/" target="_blank" rel="noreferrer" onClick={handleNavClick} className="block p-4 hover:bg-gray-100 transition-colors text-red-600 font-bold no-underline">ทางเข้าเล่นเกมส์</a></li>
+             <li className="border-b border-gray-100"><a href="#live-video" onClick={handleNavClick} className="block p-4 hover:bg-gray-100 transition-colors text-gray-800 no-underline">ชมรีวิวไพ่ป๊อกเด้ง/หรือชมไลฟ์สด</a></li>
+             <li className="border-b border-gray-100"><a href="#knowledge-seo" onClick={handleNavClick} className="block p-4 hover:bg-gray-100 transition-colors text-gray-800 no-underline">บทความ ความรู้</a></li>
+             <li className="border-b border-gray-100"><a href="#" className="block p-4 hover:bg-gray-100 transition-colors text-blue-600 no-underline">เข้ากลุ่ม Telegram</a></li>
+             <li className="border-b border-gray-100"><a href="https://lin.ee/kBYIyk1" target="_blank" rel="noreferrer" onClick={handleNavClick} className="block p-4 hover:bg-gray-100 transition-colors text-gray-800 no-underline">ติดต่อเรา</a></li>
           </ul>
-          
-          <div className="mt-6">
-             <a href="https://ezpok168.com/" target="_blank" rel="noreferrer" className="flex items-center justify-center w-full py-3.5 rounded-xl border border-ezgold-500 text-ezgold-600 font-bold hover:bg-ezgold-500 hover:text-black transition-colors bg-white shadow-sm no-underline">
-               สมัครสมาชิก
-             </a>
+          <div className="p-5">
+             <a href="https://ezpok168.com/" target="_blank" rel="noreferrer" className="flex items-center justify-center w-full py-2.5 md:py-3 rounded-full border-2 border-gray-400 text-gray-700 font-bold hover:bg-gray-200 transition-colors no-underline">สมัครสมาชิก</a>
           </div>
         </div>
       </div>
 
-      {/* เอาเส้นแบ่ง (border-b) ออก เพื่อให้กลมกลืนกัน */}
-      <header className="bg-ezdark/95 backdrop-blur-md sticky top-0 z-40 shadow-[0_4px_20px_rgba(0,0,0,0.5)]">
+      <header className="bg-ezdark/95 backdrop-blur-md sticky top-0 z-40 border-b border-ezgold-500/30 shadow-[0_4px_20px_rgba(0,0,0,0.5)]">
         <nav className="max-w-5xl mx-auto px-4 h-14 md:h-16 flex items-center justify-between">
           <div className="flex items-center gap-2 md:gap-3">
             <button onClick={() => setIsSidebarOpen(true)} className="p-1.5 hover:bg-white/10 rounded-md transition-colors mr-1">
@@ -216,8 +177,7 @@ export default function HomePage() {
         </nav>
       </header>
 
-      {/* เอาเส้นแบ่ง (border-b) ออกจากช่องค้นหา */}
-      <div className="w-full bg-[#13071A] py-3 md:py-4 px-4 z-30 relative shadow-inner">
+      <div className="w-full bg-[#13071A] border-b border-gray-800 py-3 md:py-4 px-4 z-30 relative shadow-inner">
         <div className="max-w-3xl mx-auto relative group">
             <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                 <Search className="h-5 w-5 text-ezgold-500" />
@@ -343,11 +303,11 @@ export default function HomePage() {
                 </p>
                 
                 <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto justify-center">
-                    <a href="https://ezpok168.com/" target="_blank" rel="noreferrer" onClick={(e) => handleLinkClick('Click POK9DENG เล่นเลย', e.currentTarget.href)} className="px-8 py-3.5 bg-gradient-to-r from-ezgold-500 to-ezgold-300 text-black font-bold text-lg rounded-xl shadow-[0_0_20px_rgba(212,175,55,0.5)] hover:scale-105 transition-transform flex items-center justify-center gap-2 no-underline">
-                        เล่นเลย <PlayCircle className="w-5 h-5" />
+                    <a href="https://pok9deng-pokerthai.org/" target="_blank" rel="noreferrer" onClick={(e) => handleLinkClick('Click POK9DENG เล่นเลย', e.currentTarget.href)} className="px-8 py-3.5 bg-gradient-to-r from-ezgold-500 to-ezgold-300 text-black font-bold text-lg rounded-xl shadow-[0_0_20px_rgba(212,175,55,0.5)] hover:scale-105 transition-transform flex items-center justify-center gap-2 no-underline">
+                       สมัครสมาชิก <PlayCircle className="w-5 h-5" />
                     </a>
-                    <a href="https://ezpok168.com/" target="_blank" rel="noreferrer" onClick={(e) => handleLinkClick('Click POK9DENG สมัครสมาชิก', e.currentTarget.href)} className="px-8 py-3.5 bg-black/60 backdrop-blur-sm border-2 border-ezgold-500 text-ezgold-400 font-bold text-lg rounded-xl hover:bg-ezgold-500 hover:text-black transition-colors flex items-center justify-center gap-2 no-underline">
-                        สมัครสมาชิก <UserPlus className="w-5 h-5" />
+                    <a href="https://lin.ee/8bzIg5hL" target="_blank" rel="noreferrer" onClick={(e) => handleLinkClick('Click POK9DENG สมัครสมาชิก', e.currentTarget.href)} className="px-8 py-3.5 bg-black/60 backdrop-blur-sm border-2 border-ezgold-500 text-ezgold-400 font-bold text-lg rounded-xl hover:bg-ezgold-500 hover:text-black transition-colors flex items-center justify-center gap-2 no-underline">
+                        ติดต่อแอดมิน<UserPlus className="w-5 h-5" />
                     </a>
                 </div>
             </div>
@@ -381,15 +341,15 @@ export default function HomePage() {
         </section>
 
         <section className="mb-12 w-full flex flex-col items-center justify-center gap-5">
-          <a href="ใส่ลิ้งพันธมิตร_1_ตรงนี้" target="_blank" rel="noreferrer" className="block w-full max-w-[860px] group no-underline">
+          <a href="https://lin.ee/8bzIg5hL" target="_blank" rel="noreferrer" className="block w-full max-w-[860px] group no-underline">
             <img 
               src="/affiliate-banner1.gif" 
-              alt="แบนเนอร์พันธมิตร วงป๊อกเด้ง 1" 
+              alt="แบนเนอร์พันธมิตร หวยออนไลน์ 1" 
               className="w-full h-auto aspect-[860/124] object-cover rounded-xl border border-gray-700 group-hover:border-ezgold-400 transition-colors shadow-[0_4px_15px_rgba(0,0,0,0.5)]" 
               onError={(e) => { e.currentTarget.style.display='none'; e.currentTarget.parentElement!.innerHTML = '<div class="w-full aspect-[860/124] flex items-center justify-center bg-gray-800/80 text-gray-400 border border-dashed border-gray-500 rounded-xl text-xs md:text-sm">พื้นที่แบนเนอร์พันธมิตร 1 (860 x 124 px)</div>'; }}
             />
           </a>
-          <a href="ใส่ลิ้งพันธมิตร_2_ตรงนี้" target="_blank" rel="noreferrer" className="block w-full max-w-[860px] group no-underline">
+          <a href="https://ezpok.com/" target="_blank" rel="noreferrer" className="block w-full max-w-[860px] group no-underline">
             <img 
               src="/affiliate-banner2.gif" 
               alt="แบนเนอร์พันธมิตร หวยออนไลน์ 2" 
@@ -397,7 +357,7 @@ export default function HomePage() {
               onError={(e) => { e.currentTarget.style.display='none'; e.currentTarget.parentElement!.innerHTML = '<div class="w-full aspect-[860/124] flex items-center justify-center bg-gray-800/80 text-gray-400 border border-dashed border-gray-500 rounded-xl text-xs md:text-sm">พื้นที่แบนเนอร์พันธมิตร 2 (860 x 124 px)</div>'; }}
             />
           </a>
-          <a href="ใส่ลิ้งพันธมิตร_3_ตรงนี้" target="_blank" rel="noreferrer" className="block w-full max-w-[860px] group no-underline">
+          <a href="https://ezpok.com/" target="_blank" rel="noreferrer" className="block w-full max-w-[860px] group no-underline">
             <img 
               src="/affiliate-banner3.gif" 
               alt="แบนเนอร์พันธมิตร หวยออนไลน์ 3" 
