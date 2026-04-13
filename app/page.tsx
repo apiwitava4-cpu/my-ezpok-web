@@ -177,7 +177,6 @@ export default function HomePage() {
         </div>
       </div>
 
-      {/* เอาเส้นขอบล่าง (border-b) ออก เพื่อความกลมกลืน */}
       <header className="bg-ezdark/95 backdrop-blur-md sticky top-0 z-40 shadow-md">
         <nav className="max-w-5xl mx-auto px-4 h-14 md:h-16 flex items-center justify-between">
           <div className="flex items-center gap-2 md:gap-3">
@@ -192,7 +191,6 @@ export default function HomePage() {
         </nav>
       </header>
 
-      {/* เอาเส้นขอบล่าง (border-b) ออก เพื่อความกลมกลืน */}
       <div className="w-full bg-[#13071A] py-3 md:py-4 px-4 z-30 relative">
         <div className="max-w-3xl mx-auto relative group">
             <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -243,7 +241,6 @@ export default function HomePage() {
 
       <main className="max-w-5xl mx-auto px-4 py-6 md:py-8 relative z-10">
 
-        {/* ลบกรอบ (border) และพื้นหลังทึบออก เพื่อให้ภาพโลโก้ลอยเนียนๆ กับพื้นหลังดำ */}
         <section className="w-full relative z-30 flex flex-col items-center bg-transparent pt-4 pb-6 mb-4">
             <img 
                 src="/NEWLOGOBANNER.gif" 
@@ -259,7 +256,6 @@ export default function HomePage() {
             </p>
         </section>
 
-        {/* ปรับขอบของแถบประกาศให้บางลง ไม่ให้เป็นเส้นชัดเกินไป */}
         <section className="mb-10 max-w-4xl mx-auto w-full">
             <div className="relative border border-ezgold-500/20 rounded-full p-1.5 md:p-2 flex items-center shadow-lg overflow-hidden bg-[url('/marquee-bg.gif')] bg-cover bg-center">
                 <div className="absolute inset-0 bg-black/60"></div>
@@ -282,7 +278,6 @@ export default function HomePage() {
             </div>
         </section>
 
-        {/* เอาเส้นขอบ (border) ของกรอบวิดีโอออก ให้เหลือแค่เงาเบาๆ */}
 		<section className="mb-10 max-w-[800px] mx-auto w-full" id="live-video">
             <div className="bg-gradient-to-br from-[#2E0249] to-black rounded-2xl p-1 shadow-2xl">
                 <div className="bg-black/80 backdrop-blur-md rounded-xl p-3 md:p-5">
@@ -305,7 +300,8 @@ export default function HomePage() {
             </div>
         </section>
 
-        <section className="mb-8 bg-[url('/pok9-bg.gif')] bg-cover bg-center rounded-3xl overflow-hidden shadow-[0_0_30px_rgba(212,175,55,0.3)] border border-ezgold-500/40 relative group">
+        {/* สังเกตตรงนี้ครับ ผมใส่เครื่องหมาย / หน้ารูปให้แล้ว */}
+        <section className="mb-8 bg-[url('/pok9-bg.png')] bg-cover bg-center rounded-3xl overflow-hidden shadow-[0_0_30px_rgba(212,175,55,0.3)] border border-ezgold-500/40 relative group">
             <div className="absolute inset-0 bg-black/70 md:bg-black/60 z-0"></div>
             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-ezgold-500 to-transparent opacity-50 z-10"></div>
             
@@ -332,7 +328,8 @@ export default function HomePage() {
             </div>
         </section>
 
-        <section className="mb-10 bg-[url('/ezpok-bg.gif')] bg-cover bg-center rounded-3xl overflow-hidden shadow-[0_0_30px_rgba(168,85,247,0.3)] border border-purple-500/40 relative group">
+        {/* สังเกตตรงนี้ครับ ผมใส่เครื่องหมาย / หน้ารูปให้แล้ว */}
+        <section className="mb-10 bg-[url('/ezpok-bg.png')] bg-cover bg-center rounded-3xl overflow-hidden shadow-[0_0_30px_rgba(168,85,247,0.3)] border border-purple-500/40 relative group">
             <div className="absolute inset-0 bg-black/70 md:bg-black/60 z-0"></div>
             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-purple-500 to-transparent opacity-50 z-10"></div>
             
@@ -636,96 +633,41 @@ export default function HomePage() {
             </div>
         </section>
 
+        {/* --- ส่วนศูนย์รวมความรู้ ในหน้า page.tsx --- */}
         <section className="mb-8 bg-gradient-to-b from-[#190028] to-black p-5 md:p-8 rounded-2xl border border-purple-500/30 shadow-[0_0_20px_rgba(168,85,247,0.15)] mx-auto w-full relative overflow-hidden" id="knowledge-seo">
           <div className="absolute top-0 right-0 w-64 h-64 bg-purple-600/10 rounded-full blur-3xl pointer-events-none"></div>
           
-          <div className="flex items-center gap-2 mb-6 border-b border-purple-500/30 pb-3 relative z-10">
-            <ScrollText className="w-6 h-6 text-purple-400" />
-            <h2 className="font-prompt font-bold text-xl md:text-2xl text-white">ศูนย์รวมความรู้ (Knowledge Center) & FAQ</h2>
+          <div className="flex items-center justify-between mb-6 border-b border-purple-500/30 pb-3 relative z-10">
+            <div className="flex items-center gap-2">
+                <ScrollText className="w-6 h-6 text-purple-400" />
+                <h2 className="font-prompt font-bold text-xl md:text-2xl text-white">ศูนย์รวมความรู้ SEO & เคล็ดลับ</h2>
+            </div>
           </div>
 
-          <article className="prose prose-sm prose-invert max-w-none text-gray-300 leading-relaxed relative z-10">
-            <p className="text-sm mb-6">
-              ยินดีต้อนรับสู่ <strong>ศูนย์รวมความรู้ วงป๊อกเด้งไทย</strong> แหล่งรวบรวมเทคนิค วิธีเล่น และข้อมูลเชิงลึกสำหรับเกมไพ่ยอดนิยม ไม่ว่าจะเป็น <strong className="text-ezgold-400">ป๊อกเด้งออนไลน์ 2 ใบเปิด</strong>, บาคาร่า หรือหวยออนไลน์ เรามีข้อมูลให้คุณศึกษาเพื่อเพิ่มโอกาสทำกำไรสูงสุด
-            </p>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                <div className="bg-black/50 p-5 rounded-xl border border-gray-800 hover:border-ezgold-500/50 transition-colors">
-                    <h3 className="font-prompt font-bold text-lg text-ezgold-400 mb-3 flex items-center gap-2">
-                        <Trophy className="w-5 h-5" /> เทคนิคการเล่นป๊อกเด้งให้ได้กำไร
-                    </h3>
-                    <p className="text-[13px] text-gray-400 mb-3">การเล่นป๊อกเด้งให้ได้เงินจริง ไม่ใช่แค่พึ่งพาดวง แต่ต้องอาศัยเทคนิคการอ่านเค้าไพ่และการเดินเงิน:</p>
-                    <ul className="list-disc list-inside text-[12px] space-y-1.5 text-gray-300 ml-1">
-                        <li><strong>วิเคราะห์เจ้ามือ:</strong> สังเกตสถิติการออกไพ่ของเจ้ามือ หากเจ้ามือดวงกำลังขึ้น ให้ลดเบทลง</li>
-                        <li><strong>การเดินเงินแบบทบ (Martingale):</strong> เมื่อเสียให้ทบเงินในตาถัดไป เพื่อเรียกทุนคืนพร้อมกำไร</li>
-                        <li><strong>เล่นหลายขา (กระจายความเสี่ยง):</strong> ใน <strong>วงป๊อกเด้งไทย</strong> สามารถแทงได้หลายขาพร้อมกันเพื่อเพิ่มโอกาสชนะ</li>
-                    </ul>
-                </div>
-
-                <div className="bg-black/50 p-5 rounded-xl border border-gray-800 hover:border-ezgold-500/50 transition-colors">
-                    <h3 className="font-prompt font-bold text-lg text-ezgold-400 mb-3 flex items-center gap-2">
-                        <Gamepad2 className="w-5 h-5" /> คู่มือบาคาร่าเบื้องต้น สำหรับมือใหม่
-                    </h3>
-                    <p className="text-[13px] text-gray-400 mb-3">บาคาร่าคือ <strong>เกมไพ่ยอดนิยม</strong> ระดับโลก มีวิธีการเล่นคล้ายป๊อกเด้ง แต่เลือกแทงฝั่ง Player หรือ Banker:</p>
-                    <ul className="list-disc list-inside text-[12px] space-y-1.5 text-gray-300 ml-1">
-                        <li><strong>แทงฝั่ง Banker (เจ้ามือ):</strong> มีโอกาสชนะสูงกว่าเล็กน้อย แต่จะโดนหักคอมมิชชั่น 5%</li>
-                        <li><strong>อ่านเค้าไพ่ (มังกร/ปิงปอง):</strong> สังเกตตารางสถิติ หากออกฝั่งเดิมซ้ำๆ (มังกร) ให้ตามไปเรื่อยๆ</li>
-                        <li><strong>ตั้งเป้าหมายกำไร-ขาดทุน:</strong> สิ่งสำคัญที่สุดในการเล่นคาสิโนออนไลน์คือวินัยทางการเงิน</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div className="mt-8 border-t border-gray-800 pt-6">
-              <div className="flex items-center gap-2 mb-5">
-                <HelpCircle className="w-5 h-5 text-ezgold-400" />
-                <h3 className="font-prompt font-bold text-lg md:text-xl text-white">คำถามที่พบบ่อย (FAQ) - วงป๊อกเด้ง & บาคาร่า</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 relative z-10">
+              {/* การ์ด 1: ป๊อกเด้ง */}
+              <div className="bg-black/50 p-6 rounded-xl border border-gray-800 hover:border-ezgold-500 transition-all group flex flex-col">
+                  <h3 className="font-prompt font-bold text-xl text-ezgold-400 mb-3 flex items-center gap-2">
+                      <Trophy className="w-6 h-6" /> เทคนิคเซียนป๊อกเด้ง 2 ใบเปิด
+                  </h3>
+                  <p className="text-[13px] text-gray-400 mb-4 flex-1">เจาะลึก 1000+ คำ! เรียนรู้วิธีอ่านเค้าไพ่ การเดินเงินแบบทบ (Martingale) และเคล็ดลับการกระจายความเสี่ยงแทงหลายขา เพื่อทำกำไรหลักพันต่อวัน</p>
+                  <a href="/seo/pokdeng" className="inline-flex items-center gap-2 text-ezgold-400 font-bold text-sm hover:text-white transition-colors no-underline">
+                      อ่านบทความฉบับเต็ม <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </a>
               </div>
-              
-              <div className="space-y-3 text-[13px] text-gray-300">
-                <details className="bg-[#111] p-4 rounded-xl border border-gray-800 cursor-pointer group" open>
-                  <summary className="font-prompt font-bold text-gray-200 group-open:text-ezgold-400 flex items-center justify-between">
-                    <span>1. วงป๊อกเด้งไทย คืออะไร และเล่นอย่างไร?</span>
-                    <ArrowDownRight className="w-5 h-5 transform group-open:rotate-180 transition-transform" />
-                  </summary>
-                  <p className="mt-3 text-gray-400 leading-relaxed border-t border-gray-800 pt-3">
-                    <strong>วงป๊อกเด้งไทย</strong> คือระบบการเล่นป๊อกเด้งออนไลน์รูปแบบใหม่ ที่ให้บริการผ่านกลุ่มไลน์ โดยมีแอดมินสับไพ่และไลฟ์สดแบบเรียลไทม์ ผู้เล่นสามารถเลือกแทงฝั่ง "เจ้ามือ" หรือ "ลูกมือ (ขา)" ได้อย่างอิสระ 
-                  </p>
-                </details>
-                
-                <details className="bg-[#111] p-4 rounded-xl border border-gray-800 cursor-pointer group">
-                  <summary className="font-prompt font-bold text-gray-200 group-open:text-ezgold-400 flex items-center justify-between">
-                    <span>2. ป๊อกเด้งออนไลน์ 2 ใบเปิด ต่างกับ 3 ใบอย่างไร?</span>
-                    <ArrowDownRight className="w-5 h-5 transform group-open:rotate-180 transition-transform" />
-                  </summary>
-                  <p className="mt-3 text-gray-400 leading-relaxed border-t border-gray-800 pt-3">
-                    ระบบ <strong>2 ใบเปิด</strong> จะวัดแต้มกันที่ไพ่สองใบแรกที่แจกให้เท่านั้น โดยไม่มีการจั่วไพ่ใบที่สามเพิ่ม การเล่นแบบนี้ทำให้เกมรวดเร็ว กระชับ และเน้นลุ้นป๊อก 8 ป๊อก 9 เป็นหลัก ซึ่งเป็นที่นิยมมากในปัจจุบัน
-                  </p>
-                </details>
 
-                <details className="bg-[#111] p-4 rounded-xl border border-gray-800 cursor-pointer group">
-                  <summary className="font-prompt font-bold text-gray-200 group-open:text-ezgold-400 flex items-center justify-between">
-                    <span>3. ป๊อกเด้ง กับ บาคาร่า เกมไพ่ไหนเล่นง่ายกว่ากัน?</span>
-                    <ArrowDownRight className="w-5 h-5 transform group-open:rotate-180 transition-transform" />
-                  </summary>
-                  <p className="mt-3 text-gray-400 leading-relaxed border-t border-gray-800 pt-3">
-                    ทั้งสองเป็น <strong>เกมไพ่ยอดนิยม</strong> ที่มีการนับแต้มคล้ายกัน (สูงสุด 9 แต้ม) แต่ <strong>ป๊อกเด้ง</strong> จะมีความหลากหลายในการได้รางวัลมากกว่า (เช่น 2 เด้ง, ตอง, เซียน) ทำให้สนุกและลุ้นเงินคูณได้เยอะกว่า ส่วน <strong>บาคาร่า</strong> จะเน้นแทงฝั่ง Player หรือ Banker ทายผลว่าฝั่งไหนจะชนะ เหมาะกับคนที่ชอบเกมเร็วและอ่านเค้าไพ่
-                  </p>
-                </details>
-                
-                <details className="bg-[#111] p-4 rounded-xl border border-gray-800 cursor-pointer group">
-                  <summary className="font-prompt font-bold text-gray-200 group-open:text-ezgold-400 flex items-center justify-between">
-                    <span>4. สมัครเล่น วงป๊อกเด้งไทย ปลอดภัยแค่ไหน? ฝาก-ถอน ขั้นต่ำเท่าไหร่?</span>
-                    <ArrowDownRight className="w-5 h-5 transform group-open:rotate-180 transition-transform" />
-                  </summary>
-                  <p className="mt-3 text-gray-400 leading-relaxed border-t border-gray-800 pt-3">
-                    เราคือเว็บอันดับ 1 ในไทย ให้บริการด้วยความโปร่งใส 100% มีแอดมินสับไพ่สดๆ ให้ดูผ่านวิดีโอเรียลไทม์ <strong>ฝาก-ถอนระบบออโต้ ไม่มีขั้นต่ำ</strong> 1 บาทก็ฝากได้ พร้อมทีมงานบริการ 24 ชั่วโมง
-                  </p>
-                </details>
+              {/* การ์ด 2: บาคาร่า & หวย */}
+              <div className="bg-black/50 p-6 rounded-xl border border-gray-800 hover:border-purple-500 transition-all group flex flex-col">
+                  <h3 className="font-prompt font-bold text-xl text-purple-400 mb-3 flex items-center gap-2">
+                      <Gamepad2 className="w-6 h-6" /> คู่มือบาคาร่า & หวยออนไลน์
+                  </h3>
+                  <p className="text-[13px] text-gray-400 mb-4 flex-1">เปรียบเทียบข้อดีของบาคาร่าและป๊อกเด้ง พร้อมแนะนำการแทงหวยไทย-ลาว EZLOTTO บาทละ 90 จ่ายเต็มไม่มีอั้น ครบจบในที่เดียว</p>
+                  <a href="#" className="inline-flex items-center gap-2 text-purple-400 font-bold text-sm hover:text-white transition-colors no-underline">
+                      อ่านบทความฉบับเต็ม (เร็วๆ นี้) <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </a>
               </div>
-            </div>
-          </article>
+          </div>
         </section>
-
       </main>
 
       <nav className="footer-nav md:hidden">

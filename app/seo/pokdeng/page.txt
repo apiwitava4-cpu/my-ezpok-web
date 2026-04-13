@@ -1,0 +1,140 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import { ArrowLeft, CheckCircle, Trophy, HelpCircle } from "lucide-react";
+
+// 1. ตั้งค่า Meta Tags สำหรับ SEO โดยเฉพาะ (Google จะเอาตรงนี้ไปโชว์ในผลการค้นหา)
+export const metadata: Metadata = {
+  title: 'เจาะลึกเทคนิค ป๊อกเด้งออนไลน์ 2 ใบเปิด สูตรเซียนทำกำไร | EZPOK',
+  description: 'คู่มือฉบับสมบูรณ์ 2026 สอนวิธีเล่นป๊อกเด้งออนไลน์ เทคนิคการอ่านเค้าไพ่ การเดินเงินแบบทบ และเคล็ดลับการแทงหลายขาเพื่อทำกำไรทุกวัน',
+  keywords: 'ป๊อกเด้ง, ป๊อกเด้งออนไลน์, ไพ่ป๊อกเด้ง, ป๊อกเด้ง 2 ใบเปิด, สูตรป๊อกเด้ง',
+};
+
+// 2. สร้างโครงสร้างข้อมูล (Schema) ให้ Google เข้าใจว่าเป็นบทความและ FAQ (AEO)
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "เทคนิคการเล่นป๊อกเด้งออนไลน์ 2 ใบเปิด ให้ได้กำไรทุกวัน",
+  "author": { "@type": "Organization", "name": "วงป๊อกเด้งไทย" },
+  "publisher": { "@type": "Organization", "name": "วงป๊อกเด้งไทย", "logo": { "@type": "ImageObject", "url": "https://ezpok168.net/NEWLOGO.png" } },
+  "datePublished": "2026-04-10",
+  "description": "คู่มือการเล่นไพ่ป๊อกเด้งออนไลน์สำหรับมือใหม่และมือโปร พร้อมเทคนิคการทำกำไร..."
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "ป๊อกเด้งออนไลน์ 2 ใบเปิด คืออะไร?",
+      "acceptedAnswer": { "@type": "Answer", "text": "คือการเล่นไพ่ป๊อกเด้งที่ตัดสินผลแพ้ชนะจากไพ่ 2 ใบแรกเท่านั้น ไม่มีการจั่วไพ่ใบที่ 3 ทำให้เกมรวดเร็ว ลุ้นสนุก และมีโอกาสได้กำไรจากป๊อก 8 ป๊อก 9 มากขึ้น" }
+    },
+    {
+      "@type": "Question",
+      "name": "เทคนิคการแทงหลายขาในป๊อกเด้งดีอย่างไร?",
+      "acceptedAnswer": { "@type": "Answer", "text": "การแทงหลายขา (เช่น แทงพร้อมกัน 3 ขา) ช่วยกระจายความเสี่ยง หากขาหนึ่งแต้มน้อยหรือบอด ยังมีโอกาสชนะในขาอื่นๆ ทำให้โอกาสขาดทุนรวดเดียวน้อยลง" }
+    }
+  ]
+};
+
+export default function PokDengSeoPage() {
+  return (
+    <div className="min-h-screen bg-[#0D0514] text-gray-200 font-sans pb-20">
+      {/* ฝัง Schema ลงใน HTML */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+
+      {/* Header */}
+      <header className="bg-ezdark/95 backdrop-blur-md sticky top-0 z-40 border-b border-ezgold-500/30 p-4">
+        <div className="max-w-4xl mx-auto flex items-center justify-between">
+          <Link href="/" className="flex items-center gap-2 text-ezgold-400 hover:text-white transition-colors">
+            <ArrowLeft className="w-5 h-5" /> <span className="font-prompt font-bold">กลับหน้าหลัก</span>
+          </Link>
+          <span className="font-prompt font-bold text-lg">วงป๊อกเด้งไทย SEO Hub</span>
+        </div>
+      </header>
+
+      {/* เนื้อหาบทความ 1000+ คำ (ปรับปรุงเพื่อ SEO) */}
+      <main className="max-w-4xl mx-auto px-4 py-8">
+        <article className="bg-black/40 p-6 md:p-10 rounded-2xl border border-gray-800 shadow-xl">
+          <h1 className="font-prompt font-extrabold text-3xl md:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-ezgold-300 to-ezgold-500 mb-6 leading-tight">
+            เคล็ดลับเซียน! เทคนิคเล่นไพ่ป๊อกเด้งออนไลน์ 2 ใบเปิด ให้ได้กำไรทุกวัน (อัปเดต 2026)
+          </h1>
+          
+          <div className="prose prose-invert prose-gold max-w-none text-base md:text-lg leading-loose">
+            <p>
+              <strong>ไพ่ป๊อกเด้ง (Pok Deng)</strong> คือราชาแห่งเกมไพ่ที่อยู่คู่กับคนไทยมาอย่างยาวนาน ด้วยกติกาที่เข้าใจง่าย รวดเร็ว และมีการคูณเงินรางวัล (เด้ง) ที่ทำให้ผู้เล่นสามารถทำกำไรได้เป็นกอบเป็นกำในเวลาอันสั้น ปัจจุบันเทคโนโลยีได้นำพาเกมไพ่สุดคลาสสิกนี้ก้าวเข้าสู่ยุคดิจิทัลในรูปแบบของ <strong>ป๊อกเด้งออนไลน์</strong> โดยเฉพาะระบบ <strong>"2 ใบเปิด"</strong> ที่กำลังได้รับความนิยมสูงสุดในเว็บอย่าง POK9DENG และ EZPOK
+            </p>
+
+            <h2 className="text-ezgold-400 font-prompt text-2xl mt-8 mb-4 border-b border-gray-700 pb-2 flex items-center gap-2">
+              <Trophy className="w-6 h-6" /> ทำไม ป๊อกเด้งออนไลน์ 2 ใบเปิด ถึงได้รับความนิยม?
+            </h2>
+            <p>
+              หลายคนอาจสงสัยว่าการเล่นแบบ 2 ใบเปิด แตกต่างจากการเล่นแบบดั้งเดิม (ที่จั่วใบที่ 3 ได้) อย่างไร? คำตอบคือ <strong>"ความรวดเร็วและโอกาสในการรับเงินคูณ"</strong> ในระบบ 2 ใบเปิด เกมจะจบลงทันทีเมื่อแจกไพ่ครบ 2 ใบ หากคุณได้ป๊อก 8 หรือ ป๊อก 9 คุณจะกินรอบวงทันที นอกจากนี้ หากคุณได้ไพ่ดอกเดียวกัน (เช่น โพดำ 2 ใบ) หรือไพ่คู่ คุณยังได้รับเงินรางวัลทวีคูณเป็น 2 เด้ง!
+            </p>
+
+            <h2 className="text-ezgold-400 font-prompt text-2xl mt-8 mb-4 border-b border-gray-700 pb-2">
+              3 สูตรลับจากเซียนป๊อกเด้ง (ทำกำไร 1,000 บาท/วัน)
+            </h2>
+            
+            <h3 className="text-white text-xl mt-6 mb-2">1. เทคนิคกระจายความเสี่ยง (เล่นหลายขา)</h3>
+            <p>
+              ข้อได้เปรียบของการเล่นป๊อกเด้งออนไลน์คือคุณไม่ได้ถูกจำกัดให้เล่นเพียงขาเดียว การที่คุณเปิดบิลแทงพร้อมกัน 2 หรือ 3 ขา (เช่น ขา 1, ขา 2, ขา 3) เป็นการกระจายความเสี่ยงชั้นยอด หากขาแรกของคุณได้แต้มบอด (0 แต้ม) คุณยังมีโอกาสใช้ขาที่สองที่อาจจะป๊อก 9 เพื่อดึงทุนและกำไรกลับคืนมา 
+            </p>
+
+            <h3 className="text-white text-xl mt-6 mb-2">2. การจัดการเงินทุน (Money Management)</h3>
+            <p>
+              "ไม่มีนักพนันคนไหนรวยได้หากขาดวินัย" การเดินเงินแบบ Martingale (การทบยอด) นำมาประยุกต์ใช้กับป๊อกเด้งได้ สมมติว่าตาแรกคุณลงเดิมพัน 50 บาทแล้วเสีย ตาถัดไปให้คุณเพิ่มเป็น 100 บาท หากชนะ คุณจะได้ทุน 50 บาทคืนพร้อมกำไรอีก 50 บาท แต่ข้อควรระวังคือ คุณต้องเตรียมสายป่าน (ทุนรวม) ให้ยาวพอ และตั้งเป้าหมาย "Stop Loss" เอาไว้เสมอ
+            </p>
+
+            <h3 className="text-white text-xl mt-6 mb-2">3. สังเกต "ดวง" ของเจ้ามือ (สถิติเค้าไพ่)</h3>
+            <p>
+              ในวงป๊อกเด้งไทย ที่มีการไลฟ์สดสับไพ่เรียลไทม์ 24 ชม. คุณสามารถสังเกตสถิติได้ หากเจ้ามือป๊อก 8 หรือ ป๊อก 9 ติดต่อกันเกิน 3 ตา ให้คุณ "หยุดรอดู" หรือลดจำนวนเบทลง เพราะตามหลักสถิติ โอกาสที่ไพ่ใหญ่จะเข้าฝั่งเจ้ามือติดต่อกันนานๆ มีน้อยมาก ให้รอจังหวะที่เจ้ามือเริ่มบอด แล้วค่อยจัดหนักในฝั่งขา
+            </p>
+
+            <div className="bg-ezpurple-950/40 p-6 rounded-xl border border-purple-500/30 my-8">
+              <h3 className="text-purple-300 font-bold text-xl mb-3 mt-0">สรุป: ป๊อกเด้ง vs บาคาร่า เลือกอะไรดี?</h3>
+              <p className="text-sm">
+                แม้ <strong>บาคาร่าออนไลน์</strong> จะเป็นเกมที่ได้รับความนิยมระดับโลกและมีเค้าไพ่ให้อ่านง่ายกว่า แต่ <strong>ไพ่ป๊อกเด้ง</strong> ให้อัตราผลตอบแทนที่เร้าใจกว่าผ่านระบบ "เด้ง" หากคุณชอบเกมเร็ว ลุ้นเงินคูณ 2 เท่า ป๊อกเด้งคือคำตอบ แต่หากคุณชอบการวิเคราะห์ตารางสถิติยาวๆ บาคาร่าอาจจะเหมาะกับคุณมากกว่า ทั้งสองเกมนี้มีให้บริการครบจบที่ EZPOK และ POK9DENG ครับ
+              </p>
+            </div>
+          </div>
+        </article>
+
+        {/* AEO FAQ Section สำหรับ Feature Snippet ของ Google */}
+        <section className="mt-12 bg-black/40 p-6 md:p-10 rounded-2xl border border-gray-800 shadow-xl">
+          <div className="flex items-center gap-2 mb-6 border-b border-gray-700 pb-4">
+            <HelpCircle className="w-6 h-6 text-ezgold-400" />
+            <h2 className="font-prompt font-bold text-2xl text-white">คำถามที่พบบ่อย (AEO & FAQ)</h2>
+          </div>
+          
+          <div className="space-y-4">
+            <details className="bg-[#111] p-5 rounded-xl border border-gray-800 cursor-pointer group" open>
+              <summary className="font-prompt font-bold text-gray-200 group-open:text-ezgold-400 text-lg">
+                ป๊อกเด้งออนไลน์ 2 ใบเปิด คืออะไร?
+              </summary>
+              <p className="mt-4 text-gray-400 leading-relaxed">
+                คือการเล่นไพ่ป๊อกเด้งที่ตัดสินผลแพ้ชนะจากไพ่ 2 ใบแรกที่ได้รับเท่านั้น โดยไม่มีการขอจั่วไพ่ใบที่ 3 เพิ่ม ทำให้เกมดำเนินไปอย่างรวดเร็ว ได้เงินไว และเป็นที่นิยมที่สุดในคาสิโนออนไลน์ปัจจุบัน
+              </p>
+            </details>
+
+            <details className="bg-[#111] p-5 rounded-xl border border-gray-800 cursor-pointer group">
+              <summary className="font-prompt font-bold text-gray-200 group-open:text-ezgold-400 text-lg">
+                แทงป๊อกเด้งหลายขา ดีไหม?
+              </summary>
+              <p className="mt-4 text-gray-400 leading-relaxed">
+                ดีมากครับ! การแทงหลายขา (เช่น แทงพร้อมกัน 3 ขา) ช่วยกระจายความเสี่ยง หากขาหนึ่งแต้มน้อยหรือบอด ยังมีโอกาสชนะในขาอื่นๆ ทำให้โอกาสเสียเงินรวดเดียวน้อยลง เป็นเทคนิคที่เซียนพนันส่วนใหญ่ใช้
+              </p>
+            </details>
+          </div>
+        </section>
+
+        <div className="mt-10 text-center">
+            <Link href="https://ezpok168.com/" target="_blank" className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-ezgold-500 to-ezgold-300 text-black font-bold text-xl rounded-xl shadow-[0_0_20px_rgba(212,175,55,0.5)] hover:scale-105 transition-transform no-underline">
+                สมัครเล่น ป๊อกเด้งออนไลน์ วันนี้! <ArrowRight className="w-6 h-6" />
+            </Link>
+        </div>
+      </main>
+    </div>
+  );
+}
