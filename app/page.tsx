@@ -123,7 +123,7 @@ export default function HomePage() {
   };
 
   return (
-    <div className="min-h-screen relative overflow-x-hidden bg-[#0D0514] text-white font-sans pb-16 md:pb-0" id="home">
+    <div className="min-h-screen relative overflow-x-hidden text-white font-sans pb-16 md:pb-0" style={{ backgroundColor: '#0D0514' }} id="home">
       
       <script
         type="application/ld+json"
@@ -132,7 +132,7 @@ export default function HomePage() {
 
       <div id="bg-watermark"></div>
       <div className="fixed top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
-        <div className="absolute top-[-10%] left-[-10%] w-96 h-96 bg-ezgold-500 rounded-full mix-blend-screen filter blur-[120px] opacity-10"></div>
+        <div className="absolute top-[-10%] left-[-10%] w-96 h-96 rounded-full mix-blend-screen filter blur-[120px] opacity-10" style={{ backgroundColor: '#D4AF37' }}></div>
       </div>
 
       <div 
@@ -148,24 +148,23 @@ export default function HomePage() {
            <button onClick={() => setIsSidebarOpen(false)} className="p-1.5 hover:bg-gray-100 rounded-full transition-colors"><X className="text-gray-600 w-5 h-5" /></button>
         </div>
         
-        {/* --- ส่วนเมนูแบบใหม่ (ทำเป็นปุ่มสีสันสวยงาม) --- */}
         <div className="flex-1 overflow-y-auto p-4 bg-gray-50 space-y-3">
-           <a href="#home" onClick={handleNavClick} className="flex items-center gap-3 p-3.5 bg-white hover:bg-gray-100 rounded-xl shadow-sm border border-gray-200 text-gray-800 font-bold transition-all no-underline">
+           <a href="#home" onClick={handleNavClick} className="flex items-center gap-3 p-3.5 bg-white hover:bg-gray-100 rounded-xl shadow-sm text-gray-800 font-bold transition-all no-underline">
              <Home className="w-5 h-5 text-blue-500" /> หน้าหลัก
            </a>
-           <a href="#promotions" onClick={handleNavClick} className="flex items-center gap-3 p-3.5 bg-white hover:bg-gray-100 rounded-xl shadow-sm border border-gray-200 text-gray-800 font-bold transition-all no-underline">
+           <a href="#promotions" onClick={handleNavClick} className="flex items-center gap-3 p-3.5 bg-white hover:bg-gray-100 rounded-xl shadow-sm text-gray-800 font-bold transition-all no-underline">
              <Gift className="w-5 h-5 text-pink-500" /> โปรโมชั่น
            </a>
-           <a href="#info-rules" onClick={handleNavClick} className="flex items-center gap-3 p-3.5 bg-white hover:bg-gray-100 rounded-xl shadow-sm border border-gray-200 text-gray-800 font-bold transition-all no-underline">
+           <a href="#info-rules" onClick={handleNavClick} className="flex items-center gap-3 p-3.5 bg-white hover:bg-gray-100 rounded-xl shadow-sm text-gray-800 font-bold transition-all no-underline">
              <ScrollText className="w-5 h-5 text-orange-500" /> ฝาก-ถอน / กติกา
            </a>
            <a href="https://pok9deng-pokerthai.org/" target="_blank" rel="noreferrer" onClick={handleNavClick} className="flex items-center justify-center gap-2 p-3.5 bg-gradient-to-r from-red-600 to-red-500 hover:from-red-500 hover:to-red-400 rounded-xl shadow-md text-white font-bold transition-all no-underline transform hover:scale-[1.02]">
              <Gamepad2 className="w-5 h-5" /> ทางเข้าเล่นเกมส์
            </a>
-           <a href="#live-video" onClick={handleNavClick} className="flex items-center gap-3 p-3.5 bg-white hover:bg-gray-100 rounded-xl shadow-sm border border-gray-200 text-gray-800 font-bold transition-all no-underline">
+           <a href="#live-video" onClick={handleNavClick} className="flex items-center gap-3 p-3.5 bg-white hover:bg-gray-100 rounded-xl shadow-sm text-gray-800 font-bold transition-all no-underline">
              <Video className="w-5 h-5 text-purple-500" /> ชมรีวิวไพ่ป๊อกเด้ง/ไลฟ์สด
            </a>
-           <a href="#knowledge-seo" onClick={handleNavClick} className="flex items-center gap-3 p-3.5 bg-white hover:bg-gray-100 rounded-xl shadow-sm border border-gray-200 text-gray-800 font-bold transition-all no-underline">
+           <a href="#knowledge-seo" onClick={handleNavClick} className="flex items-center gap-3 p-3.5 bg-white hover:bg-gray-100 rounded-xl shadow-sm text-gray-800 font-bold transition-all no-underline">
              <HelpCircle className="w-5 h-5 text-yellow-500" /> บทความ ความรู้
            </a>
            <a href="#" className="flex items-center justify-center gap-2 p-3.5 bg-[#0088cc] hover:bg-[#0077b3] rounded-xl shadow-md text-white font-bold transition-all no-underline transform hover:scale-[1.02] mt-4">
@@ -177,63 +176,78 @@ export default function HomePage() {
         </div>
       </div>
 
-      <header className="bg-ezdark/95 backdrop-blur-md sticky top-0 z-40 shadow-md">
-        <nav className="max-w-5xl mx-auto px-4 h-14 md:h-16 flex items-center justify-between">
-          <div className="flex items-center gap-2 md:gap-3">
-            <button onClick={() => setIsSidebarOpen(true)} className="p-1.5 hover:bg-white/10 rounded-md transition-colors mr-1">
-               <Menu className="w-5 h-5 md:w-6 md:h-6 text-white" />
-            </button>
-            <span className="font-prompt font-bold text-lg md:text-2xl tracking-tight"><span className="text-white">วง</span><span className="text-ezgold-400">ป๊อกเด้งไทย</span></span>
-          </div>
-          <a href="https://lin.ee/8bzIg5hL" target="_blank" rel="noreferrer" className="text-[11px] md:text-sm font-medium bg-ezgold-500/10 text-ezgold-400 border border-ezgold-500/50 px-3 py-1.5 rounded-full flex items-center gap-1.5 hover:bg-ezgold-500 hover:text-black transition-all no-underline">
-            <MessageCircle className="w-3.5 h-3.5 md:w-4 md:h-4" /> แอดมิน 24 ชม.
-          </a>
-        </nav>
-      </header>
+      {/* 🟢 1. ปุ่มเมนูลอยตัวด้านซ้าย (ล็อกสีทองรับประกันสีไม่หาย) */}
+      <button
+        onClick={() => setIsSidebarOpen(true)}
+        className="fixed top-[40%] left-0 z-[100] text-black py-4 px-2.5 rounded-r-xl shadow-[4px_0_20px_rgba(212,175,55,0.5)] flex flex-col items-center justify-center hover:px-4 transition-all duration-300"
+        style={{ background: 'linear-gradient(to right, #D4AF37, #F3E5AB)' }}
+      >
+        <Menu className="w-5 h-5 md:w-6 md:h-6 mb-1 animate-pulse" />
+        <span className="text-[12px] md:text-sm font-bold font-prompt" style={{ writingMode: 'vertical-rl', textOrientation: 'upright' }}>เมนู</span>
+      </button>
 
-      <div className="w-full bg-[#13071A] py-3 md:py-4 px-4 z-30 relative">
-        <div className="max-w-3xl mx-auto relative group">
-            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                <Search className="h-5 w-5 text-ezgold-500" />
-            </div>
-            <input 
-                type="text" 
-                className="block w-full pl-10 pr-3 py-2.5 md:py-3 border border-ezgold-500/40 rounded-full leading-5 bg-black/50 text-gray-300 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-ezgold-500/50 focus:border-ezgold-500 transition-all text-sm md:text-base font-prompt" 
-                placeholder="ค้นหา: ป๊อกเด้งออนไลน์, บาคาร่า, เกมไพ่ยอดนิยม..." 
-            />
-            <button className="absolute inset-y-1 right-1 px-4 bg-ezgold-500 hover:bg-ezgold-400 text-black font-bold rounded-full text-xs md:text-sm transition-colors">
-                ค้นหา
-            </button>
-        </div>
-      </div>
-
-      <div className="fixed bottom-24 md:bottom-10 right-2 md:right-4 z-50 flex flex-col items-end gap-3">
-        <button
-          onClick={scrollToTop}
-          className={`p-2.5 md:p-3 bg-ezgold-500 hover:bg-ezgold-400 text-black rounded-full shadow-[0_0_15px_rgba(212,175,55,0.4)] transition-all duration-300 transform ${showScrollTop ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'}`}
-          aria-label="เลื่อนขึ้นบนสุด"
-        >
-          <ArrowUp className="w-5 h-5 md:w-6 md:h-6" />
-        </button>
-
-        <div className="bg-[#0D0514]/95 backdrop-blur-sm border border-white/50 p-2 md:p-2.5 rounded shadow-[0_0_15px_rgba(0,0,0,0.8)] text-center transform transition-all hover:scale-105 w-[90px] md:w-[110px]">
-          <p className="text-[10px] md:text-xs text-white font-bold mb-1.5 font-prompt tracking-wide">ติดต่อแอดมิน 24 ชม.</p>
-          <a href="https://lin.ee/8bzIg5hL" target="_blank" rel="noreferrer" onClick={(e) => handleLinkClick('กดเพิ่มเพื่อนไลน์ (ขวาล่าง)', e.currentTarget.href)} className="block hover:opacity-90 transition-opacity bg-[#00B900] rounded p-1 no-underline">
+      {/* 🟢 2. ย้ายปุ่มติดต่อแอดมินมาลอยตัวด้านขวา (ล็อกตำแหน่งขวาสุด) */}
+      <div className="fixed top-[40%] z-[100] flex flex-col items-end hover:pr-1 transition-all duration-300" style={{ right: 0 }}>
+        <div className="p-2 md:p-2.5 rounded-l-xl shadow-[-4px_0_20px_rgba(0,185,0,0.4)] text-center w-[85px] md:w-[100px] border border-r-0 border-[#00B900]/50" style={{ backgroundColor: 'rgba(13, 5, 20, 0.95)', backdropFilter: 'blur(8px)' }}>
+          <p className="text-[9px] md:text-[11px] text-white font-bold mb-1.5 font-prompt tracking-wide">แอดมิน 24 ชม.</p>
+          <a href="https://lin.ee/8bzIg5hL" target="_blank" rel="noreferrer" onClick={(e) => handleLinkClick('กดเพิ่มเพื่อนไลน์ (ขวาลอย)', e.currentTarget.href)} className="block hover:opacity-90 transition-opacity rounded p-1 shadow-inner no-underline" style={{ backgroundColor: '#00B900' }}>
             <img src="https://scdn.line-apps.com/n/line_add_friends/btn/th.png" alt="เพิ่มเพื่อนแอดมิน 24 ชม." className="w-full h-auto mx-auto" loading="lazy" />
           </a>
         </div>
       </div>
 
+      {/* ปุ่มเลื่อนขึ้นบนสุด (คงไว้ที่มุมขวาล่าง) */}
+      <div className="fixed bottom-24 md:bottom-10 right-4 z-40">
+        <button
+          onClick={scrollToTop}
+          className={`p-2.5 md:p-3 text-black rounded-full shadow-[0_0_15px_rgba(212,175,55,0.4)] transition-all duration-300 transform ${showScrollTop ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'}`}
+          style={{ backgroundColor: '#D4AF37' }}
+          aria-label="เลื่อนขึ้นบนสุด"
+        >
+          <ArrowUp className="w-5 h-5 md:w-6 md:h-6" />
+        </button>
+      </div>
+
+      {/* แถบด้านบนสุด (ล็อกสีพื้นหลังดำโปร่งแสง) */}
+      <header className="sticky top-0 z-40 shadow-md" style={{ backgroundColor: 'rgba(13, 5, 20, 0.95)', backdropFilter: 'blur(10px)' }}>
+        <nav className="max-w-5xl mx-auto px-4 h-14 md:h-16 flex items-center justify-between">
+          <div className="flex items-center gap-2 md:gap-3 pl-8 md:pl-0">
+            <span className="font-prompt font-bold text-lg md:text-2xl tracking-tight"><span className="text-white">วง</span><span style={{ color: '#D4AF37' }}>ป๊อกเด้งไทย</span></span>
+          </div>
+          <a href="https://lin.ee/8bzIg5hL" target="_blank" rel="noreferrer" className="text-[11px] md:text-sm font-medium px-3 py-1.5 rounded-full flex items-center gap-1.5 transition-all no-underline" style={{ backgroundColor: 'rgba(212, 175, 55, 0.1)', color: '#D4AF37', border: '1px solid rgba(212, 175, 55, 0.5)' }}>
+            <MessageCircle className="w-3.5 h-3.5 md:w-4 md:h-4" /> แอดมิน 24 ชม.
+          </a>
+        </nav>
+      </header>
+
+      {/* แถบค้นหา (ล็อกสีพื้นหลังดำ) */}
+      <div className="w-full py-3 md:py-4 px-4 z-30 relative" style={{ backgroundColor: '#13071A' }}>
+        <div className="max-w-3xl mx-auto relative group">
+            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                <Search className="h-5 w-5" style={{ color: '#D4AF37' }} />
+            </div>
+            <input 
+                type="text" 
+                className="block w-full pl-10 pr-3 py-2.5 md:py-3 rounded-full leading-5 text-gray-300 placeholder-gray-500 focus:outline-none focus:ring-2 transition-all text-sm md:text-base font-prompt" 
+                style={{ backgroundColor: 'rgba(0,0,0,0.5)', border: '1px solid rgba(212, 175, 55, 0.4)' }}
+                placeholder="ค้นหา: ป๊อกเด้งออนไลน์, บาคาร่า, เกมไพ่ยอดนิยม..." 
+            />
+            <button className="absolute inset-y-1 right-1 px-4 text-black font-bold rounded-full text-xs md:text-sm transition-colors hover:opacity-90" style={{ backgroundColor: '#D4AF37' }}>
+                ค้นหา
+            </button>
+        </div>
+      </div>
+
       <div className={`fixed inset-0 bg-black/85 flex items-center justify-center z-[60] transition-opacity duration-300 p-4 ${isModalOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`} onClick={() => setIsModalOpen(false)}>
-        <div className="bg-gradient-to-b from-ezpurple-900 to-ezdark border-2 border-ezgold-500 p-4 rounded-2xl w-[95%] max-w-sm max-h-[85vh] overflow-y-auto text-center shadow-[0_0_40px_rgba(212,175,55,0.4)] relative scrollbar-hide" onClick={e => e.stopPropagation()}>
-          <button onClick={() => setIsModalOpen(false)} className="absolute top-2 right-2 md:-top-3 md:-right-3 text-white bg-red-600 hover:bg-red-500 border-2 border-white rounded-full transition-colors p-1.5 z-10 shadow-lg" aria-label="Close">
+        <div className="p-4 rounded-2xl w-[95%] max-w-sm max-h-[85vh] overflow-y-auto text-center shadow-[0_0_40px_rgba(212,175,55,0.4)] relative scrollbar-hide" style={{ background: 'linear-gradient(to bottom, #2E0249, #0D0514)' }} onClick={e => e.stopPropagation()}>
+          <button onClick={() => setIsModalOpen(false)} className="absolute top-2 right-2 md:-top-3 md:-right-3 text-white bg-red-600 hover:bg-red-500 rounded-full transition-colors p-1.5 z-10 shadow-lg" aria-label="Close">
             <X className="w-4 h-4 md:w-5 md:h-5" />
           </button>
-          <h2 className="font-prompt font-bold text-lg md:text-xl text-transparent bg-clip-text bg-gradient-to-r from-ezgold-300 to-ezgold-500 mb-3 mt-2 md:mt-0">💦 โปรใหม่ ต้อนรับสมาชิก 💦</h2>
-          <div className="w-full rounded-xl overflow-hidden mb-4 border border-ezgold-500/30 shadow-lg flex justify-center bg-black/50">
+          <h2 className="font-prompt font-bold text-lg md:text-xl text-transparent bg-clip-text mb-3 mt-2 md:mt-0" style={{ backgroundImage: 'linear-gradient(to right, #FDF5E6, #D4AF37)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>💦 โปรใหม่ ต้อนรับสมาชิก 💦</h2>
+          <div className="w-full rounded-xl overflow-hidden mb-4 shadow-lg flex justify-center bg-black/50">
             <img src="/new-mumber.jpg" alt="โปรโมชั่นสมัครใหม่" className="w-full h-auto max-h-[40vh] object-contain" />
           </div>
-          <button onClick={handleModalAccept} className="w-full py-2.5 md:py-3 bg-gradient-to-r from-ezgold-500 to-ezgold-400 text-black font-bold text-sm md:text-lg rounded-xl shadow-lg transition-all active:scale-95 flex items-center justify-center gap-2 pulse-gold">
+          <button onClick={handleModalAccept} className="w-full py-2.5 md:py-3 text-black font-bold text-sm md:text-lg rounded-xl shadow-lg transition-all active:scale-95 flex items-center justify-center gap-2 pulse-gold" style={{ background: 'linear-gradient(to right, #D4AF37, #F3E5AB)' }}>
             รับโปรโมชันนี้ <CheckCircle className="w-4 h-4 md:w-5 md:h-5" />
           </button>
         </div>
@@ -248,7 +262,7 @@ export default function HomePage() {
                 className="w-full max-w-3xl h-auto object-contain drop-shadow-[0_0_20px_rgba(212,175,55,0.3)] mb-4" 
                 onError={(e) => {
                 e.currentTarget.style.display='none';
-                e.currentTarget.parentElement!.innerHTML = '<div class="w-full max-w-3xl h-[150px] flex items-center justify-center bg-gray-900 text-ezgold-400 border border-dashed border-ezgold-500/40 rounded-xl mb-4 text-sm p-4">ใส่ไฟล์ NEWLOGOBANNER.gif ในโฟลเดอร์ public</div>';
+                e.currentTarget.parentElement!.innerHTML = '<div class="w-full max-w-3xl h-[150px] flex items-center justify-center bg-gray-900 rounded-xl mb-4 text-sm p-4" style="color: #D4AF37;">ใส่ไฟล์ NEWLOGOBANNER.gif ในโฟลเดอร์ public</div>';
                 }}
             />
             <p className="text-gray-300 text-sm md:text-lg font-prompt text-center max-w-2xl px-2 leading-relaxed">
@@ -257,15 +271,15 @@ export default function HomePage() {
         </section>
 
         <section className="mb-10 max-w-4xl mx-auto w-full">
-            <div className="relative border border-ezgold-500/20 rounded-full p-1.5 md:p-2 flex items-center shadow-lg overflow-hidden bg-[url('/marquee-bg.gif')] bg-cover bg-center">
+            <div className="relative rounded-full p-1.5 md:p-2 flex items-center shadow-lg overflow-hidden bg-[url('/marquee-bg.gif')] bg-cover bg-center">
                 <div className="absolute inset-0 bg-black/60"></div>
                 
-                <div className="bg-ezgold-500 text-black font-bold text-[10px] md:text-sm px-3 md:px-4 py-1.5 rounded-full whitespace-nowrap z-10 flex items-center gap-1.5 shadow-md relative">
+                <div className="text-black font-bold text-[10px] md:text-sm px-3 md:px-4 py-1.5 rounded-full whitespace-nowrap z-10 flex items-center gap-1.5 shadow-md relative" style={{ backgroundColor: '#D4AF37' }}>
                     <AlertTriangle className="w-3.5 h-3.5 md:w-4 md:h-4" /> ประกาศ
                 </div>
                 
                 <div className="flex-1 overflow-hidden ml-2 flex items-center relative z-10">
-                    <Marquee className="text-[11px] md:text-sm text-ezgold-300 font-medium tracking-wide mt-1" scrollamount="4">
+                    <Marquee className="text-[11px] md:text-sm font-medium tracking-wide mt-1" scrollamount="4" style={{ color: '#FDF5E6' }}>
                         <span className="mx-4">🔥 ID254_รูดเจ้า เจ้าป๊อกเก้าเด้ง ยินดีด้วยค่ะคุณชนะรอบวง</span>
                         <span className="text-white mx-4">|</span>
                         <span className="mx-4">💰 ID224 ถอน 15,052 บาท</span>
@@ -279,18 +293,18 @@ export default function HomePage() {
         </section>
 
 		<section className="mb-10 max-w-[800px] mx-auto w-full" id="live-video">
-            <div className="bg-gradient-to-br from-[#2E0249] to-black rounded-2xl p-1 shadow-2xl">
+            <div className="rounded-2xl p-1 shadow-2xl" style={{ background: 'linear-gradient(to bottom right, #2E0249, #000000)' }}>
                 <div className="bg-black/80 backdrop-blur-md rounded-xl p-3 md:p-5">
                     <div className="flex items-center justify-between mb-4">
                         <div className="flex items-center gap-2">
                             <Video className="text-purple-400 w-5 h-5 md:w-6 md:h-6" />
                             <h2 className="font-prompt font-bold text-lg md:text-xl text-white">ชมรีวิวไพ่ป๊อกเด้ง / ไลฟ์สด</h2>
                         </div>
-                        <span className="px-3 py-1 bg-red-500/20 text-red-400 text-[10px] md:text-xs font-bold rounded-full border border-red-500/40 flex items-center gap-1.5 animate-pulse">
+                        <span className="px-3 py-1 bg-red-500/20 text-red-400 text-[10px] md:text-xs font-bold rounded-full flex items-center gap-1.5 animate-pulse">
                             <span className="w-2 h-2 rounded-full bg-red-500"></span> LIVE
                         </span>
                     </div>
-                    <div className="w-full aspect-square max-w-[800px] mx-auto bg-black rounded-lg border border-purple-500/20 overflow-hidden relative flex items-center justify-center shadow-inner">
+                    <div className="w-full aspect-square max-w-[800px] mx-auto bg-black rounded-lg overflow-hidden relative flex items-center justify-center shadow-inner">
                          <video className="w-full h-full object-cover" controls autoPlay loop muted playsInline>
                              <source src="/video.mp4" type="video/mp4" />
                               เบราว์เซอร์ของคุณไม่รองรับวิดีโอ
@@ -300,38 +314,42 @@ export default function HomePage() {
             </div>
         </section>
 
-        {/* สังเกตตรงนี้ครับ ผมใส่เครื่องหมาย / หน้ารูปให้แล้ว */}
-        <section className="mb-8 bg-[url('/pok9-bg.png')] bg-cover bg-center rounded-3xl overflow-hidden shadow-[0_0_30px_rgba(212,175,55,0.3)] border border-ezgold-500/40 relative group">
+        <section 
+            className="mb-8 bg-cover bg-center rounded-3xl overflow-hidden shadow-[0_0_30px_rgba(212,175,55,0.3)] relative group"
+            style={{ backgroundImage: `url('/pok9-bg.gif')` }} 
+        >
             <div className="absolute inset-0 bg-black/70 md:bg-black/60 z-0"></div>
-            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-ezgold-500 to-transparent opacity-50 z-10"></div>
+            <div className="absolute top-0 left-0 w-full h-1 opacity-50 z-10" style={{ background: 'linear-gradient(to right, transparent, #D4AF37, transparent)' }}></div>
             
             <div className="relative z-10 p-8 md:p-12 flex flex-col items-center text-center">
                 <span className="px-4 py-1.5 bg-red-600 text-white font-bold text-xs md:text-sm rounded-full mb-5 shadow-lg animate-pulse">🔥 แนะนำบ้านหลัก 🔥</span>
                 
                 <h2 className="font-prompt font-extrabold text-4xl md:text-6xl text-white mb-3 drop-shadow-lg tracking-tight">
-                    POK9<span className="text-ezgold-400">DENG</span>
+                    POK9<span style={{ color: '#D4AF37' }}>DENG</span>
                 </h2>
-                <p className="text-xl md:text-2xl text-ezgold-300 font-bold mb-5 drop-shadow-md">อันดับ 1 ในไทย เล่นง่าย จ่ายจริง 100%</p>
+                <p className="text-xl md:text-2xl font-bold mb-5 drop-shadow-md" style={{ color: '#FDF5E6' }}>อันดับ 1 ในไทย เล่นง่าย จ่ายจริง 100%</p>
                 
-                <p className="text-sm md:text-base text-gray-200 mb-8 max-w-lg mx-auto font-medium bg-black/50 p-3.5 rounded-xl border border-gray-700/50 backdrop-blur-sm leading-relaxed">
+                <p className="text-sm md:text-base text-gray-200 mb-8 max-w-lg mx-auto font-medium bg-black/50 p-3.5 rounded-xl backdrop-blur-sm leading-relaxed">
                     สุดยอดเว็บป๊อกเด้งออนไลน์ สับไพ่สด 24 ชม. <br className="hidden md:block" /> ฝาก-ถอน ออโต้ ไม่มีขั้นต่ำ
                 </p>
                 
                 <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto justify-center">
-                    <a href="https://pok9deng-pokerthai.org/" target="_blank" rel="noreferrer" onClick={(e) => handleLinkClick('Click POK9DENG เล่นเลย', e.currentTarget.href)} className="px-8 py-3.5 bg-gradient-to-r from-ezgold-500 to-ezgold-300 text-black font-bold text-lg rounded-xl shadow-[0_0_20px_rgba(212,175,55,0.5)] hover:scale-105 transition-transform flex items-center justify-center gap-2 no-underline">
+                    <a href="https://pok9deng-pokerthai.org/" target="_blank" rel="noreferrer" onClick={(e) => handleLinkClick('Click POK9DENG เล่นเลย', e.currentTarget.href)} className="px-8 py-3.5 text-black font-bold text-lg rounded-xl shadow-[0_0_20px_rgba(212,175,55,0.5)] hover:scale-105 transition-transform flex items-center justify-center gap-2 no-underline" style={{ background: 'linear-gradient(to right, #D4AF37, #F3E5AB)' }}>
                        สมัครสมาชิก <PlayCircle className="w-5 h-5" />
                     </a>
-                    <a href="https://lin.ee/8bzIg5hL" target="_blank" rel="noreferrer" onClick={(e) => handleLinkClick('Click POK9DENG สมัครสมาชิก', e.currentTarget.href)} className="px-8 py-3.5 bg-black/60 backdrop-blur-sm border-2 border-ezgold-500 text-ezgold-400 font-bold text-lg rounded-xl hover:bg-ezgold-500 hover:text-black transition-colors flex items-center justify-center gap-2 no-underline">
+                    <a href="https://lin.ee/8bzIg5hL" target="_blank" rel="noreferrer" onClick={(e) => handleLinkClick('Click POK9DENG สมัครสมาชิก', e.currentTarget.href)} className="px-8 py-3.5 bg-black/60 backdrop-blur-sm font-bold text-lg rounded-xl transition-colors flex items-center justify-center gap-2 no-underline hover:opacity-90" style={{ color: '#D4AF37' }}>
                         ติดต่อแอดมิน<UserPlus className="w-5 h-5" />
                     </a>
                 </div>
             </div>
         </section>
 
-        {/* สังเกตตรงนี้ครับ ผมใส่เครื่องหมาย / หน้ารูปให้แล้ว */}
-        <section className="mb-10 bg-[url('/ezpok-bg.png')] bg-cover bg-center rounded-3xl overflow-hidden shadow-[0_0_30px_rgba(168,85,247,0.3)] border border-purple-500/40 relative group">
+        <section 
+            className="mb-10 bg-cover bg-center rounded-3xl overflow-hidden shadow-[0_0_30px_rgba(168,85,247,0.3)] relative group"
+            style={{ backgroundImage: `url('/ezpok-bg.gif')` }}
+        >
             <div className="absolute inset-0 bg-black/70 md:bg-black/60 z-0"></div>
-            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-purple-500 to-transparent opacity-50 z-10"></div>
+            <div className="absolute top-0 left-0 w-full h-1 opacity-50 z-10" style={{ background: 'linear-gradient(to right, transparent, #A855F7, transparent)' }}></div>
             
             <div className="relative z-10 p-8 md:p-12 flex flex-col items-center text-center">
                 <span className="px-4 py-1.5 bg-purple-600 text-white font-bold text-xs md:text-sm rounded-full mb-5 shadow-lg animate-pulse">💎 แนะนำบ้านในเครือ 💎</span>
@@ -341,7 +359,7 @@ export default function HomePage() {
                 </h2>
                 <p className="text-xl md:text-2xl text-purple-300 font-bold mb-5 drop-shadow-md">ป๊อกเด้งออนไลน์ 2 ใบเปิด ระบบบอท 2026</p>
                 
-                <p className="text-sm md:text-base text-gray-200 mb-8 max-w-lg mx-auto font-medium bg-black/50 p-3.5 rounded-xl border border-gray-700/50 backdrop-blur-sm leading-relaxed">
+                <p className="text-sm md:text-base text-gray-200 mb-8 max-w-lg mx-auto font-medium bg-black/50 p-3.5 rounded-xl backdrop-blur-sm leading-relaxed">
                     มีทั้งหวยไทยหวยลาว <br className="hidden md:block" /> ครบจบที่เดียว
                 </p>
                 
@@ -349,7 +367,7 @@ export default function HomePage() {
                     <a href="https://ezpok168.com/" target="_blank" rel="noreferrer" onClick={(e) => handleLinkClick('Click EZPOK เล่นเลย', e.currentTarget.href)} className="px-8 py-3.5 bg-gradient-to-r from-purple-500 to-purple-300 text-white font-bold text-lg rounded-xl shadow-[0_0_20px_rgba(168,85,247,0.5)] hover:scale-105 transition-transform flex items-center justify-center gap-2 no-underline">
                         เล่นเลย <PlayCircle className="w-5 h-5" />
                     </a>
-                    <a href="https://ezpok168.com/" target="_blank" rel="noreferrer" onClick={(e) => handleLinkClick('Click EZPOK สมัครสมาชิก', e.currentTarget.href)} className="px-8 py-3.5 bg-black/60 backdrop-blur-sm border-2 border-purple-500 text-purple-400 font-bold text-lg rounded-xl hover:bg-purple-500 hover:text-white transition-colors flex items-center justify-center gap-2 no-underline">
+                    <a href="https://ezpok168.com/" target="_blank" rel="noreferrer" onClick={(e) => handleLinkClick('Click EZPOK สมัครสมาชิก', e.currentTarget.href)} className="px-8 py-3.5 bg-black/60 backdrop-blur-sm text-purple-400 font-bold text-lg rounded-xl transition-colors flex items-center justify-center gap-2 no-underline hover:opacity-90">
                         สมัครสมาชิก <UserPlus className="w-5 h-5" />
                     </a>
                 </div>
@@ -361,93 +379,93 @@ export default function HomePage() {
             <img 
               src="/affiliate-banner1.gif" 
               alt="แบนเนอร์พันธมิตร หวยออนไลน์ 1" 
-              className="w-full h-auto aspect-[860/124] object-cover rounded-xl border border-gray-700 group-hover:border-ezgold-400 transition-colors shadow-[0_4px_15px_rgba(0,0,0,0.5)]" 
-              onError={(e) => { e.currentTarget.style.display='none'; e.currentTarget.parentElement!.innerHTML = '<div class="w-full aspect-[860/124] flex items-center justify-center bg-gray-800/80 text-gray-400 border border-dashed border-gray-500 rounded-xl text-xs md:text-sm">พื้นที่แบนเนอร์พันธมิตร 1 (860 x 124 px)</div>'; }}
+              className="w-full h-auto aspect-[860/124] object-cover rounded-xl shadow-[0_4px_15px_rgba(0,0,0,0.5)]" 
+              onError={(e) => { e.currentTarget.style.display='none'; e.currentTarget.parentElement!.innerHTML = '<div class="w-full aspect-[860/124] flex items-center justify-center bg-gray-800/80 text-gray-400 rounded-xl text-xs md:text-sm">พื้นที่แบนเนอร์พันธมิตร 1 (860 x 124 px)</div>'; }}
             />
           </a>
           <a href="https://ezpok.com/" target="_blank" rel="noreferrer" className="block w-full max-w-[860px] group no-underline">
             <img 
               src="/affiliate-banner2.gif" 
               alt="แบนเนอร์พันธมิตร หวยออนไลน์ 2" 
-              className="w-full h-auto aspect-[860/124] object-cover rounded-xl border border-gray-700 group-hover:border-ezgold-400 transition-colors shadow-[0_4px_15px_rgba(0,0,0,0.5)]" 
-              onError={(e) => { e.currentTarget.style.display='none'; e.currentTarget.parentElement!.innerHTML = '<div class="w-full aspect-[860/124] flex items-center justify-center bg-gray-800/80 text-gray-400 border border-dashed border-gray-500 rounded-xl text-xs md:text-sm">พื้นที่แบนเนอร์พันธมิตร 2 (860 x 124 px)</div>'; }}
+              className="w-full h-auto aspect-[860/124] object-cover rounded-xl shadow-[0_4px_15px_rgba(0,0,0,0.5)]" 
+              onError={(e) => { e.currentTarget.style.display='none'; e.currentTarget.parentElement!.innerHTML = '<div class="w-full aspect-[860/124] flex items-center justify-center bg-gray-800/80 text-gray-400 rounded-xl text-xs md:text-sm">พื้นที่แบนเนอร์พันธมิตร 2 (860 x 124 px)</div>'; }}
             />
           </a>
           <a href="https://ezpok.com/" target="_blank" rel="noreferrer" className="block w-full max-w-[860px] group no-underline">
             <img 
               src="/affiliate-banner3.gif" 
               alt="แบนเนอร์พันธมิตร หวยออนไลน์ 3" 
-              className="w-full h-auto aspect-[860/124] object-cover rounded-xl border border-gray-700 group-hover:border-ezgold-400 transition-colors shadow-[0_4px_15px_rgba(0,0,0,0.5)]" 
-              onError={(e) => { e.currentTarget.style.display='none'; e.currentTarget.parentElement!.innerHTML = '<div class="w-full aspect-[860/124] flex items-center justify-center bg-gray-800/80 text-gray-400 border border-dashed border-gray-500 rounded-xl text-xs md:text-sm">พื้นที่แบนเนอร์พันธมิตร 3 (860 x 124 px)</div>'; }}
+              className="w-full h-auto aspect-[860/124] object-cover rounded-xl shadow-[0_4px_15px_rgba(0,0,0,0.5)]" 
+              onError={(e) => { e.currentTarget.style.display='none'; e.currentTarget.parentElement!.innerHTML = '<div class="w-full aspect-[860/124] flex items-center justify-center bg-gray-800/80 text-gray-400 rounded-xl text-xs md:text-sm">พื้นที่แบนเนอร์พันธมิตร 3 (860 x 124 px)</div>'; }}
             />
           </a>
         </section>
 
         <section className="mb-12" id="promotions">
-            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-5 border-b border-gray-800 pb-3">
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-5 pb-3">
                 <div className="flex items-center gap-2">
-                    <Gift className="w-6 h-6 text-ezgold-400" />
+                    <Gift className="w-6 h-6" style={{ color: '#D4AF37' }} />
                     <h2 className="font-prompt font-bold text-xl md:text-2xl text-white">โปรโมชันพิเศษ (เลื่อนเพื่อดู)</h2>
                 </div>
                 <div className="flex gap-2 text-xs md:text-sm">
-                    <button onClick={() => setActivePromoTab('ALL')} className={`px-4 py-1.5 rounded-full font-bold transition-colors border ${activePromoTab === 'ALL' ? 'bg-ezgold-500 text-black border-ezgold-500' : 'bg-transparent text-gray-400 border-gray-700 hover:border-ezgold-400 hover:text-white'}`}>ทั้งหมด</button>
-                    <button onClick={() => setActivePromoTab('POK9')} className={`px-4 py-1.5 rounded-full font-bold transition-colors border ${activePromoTab === 'POK9' ? 'bg-red-600 text-white border-red-600' : 'bg-transparent text-gray-400 border-gray-700 hover:border-red-500 hover:text-white'}`}>POK9</button>
-                    <button onClick={() => setActivePromoTab('EZPOK')} className={`px-4 py-1.5 rounded-full font-bold transition-colors border ${activePromoTab === 'EZPOK' ? 'bg-purple-600 text-white border-purple-600' : 'bg-transparent text-gray-400 border-gray-700 hover:border-purple-500 hover:text-white'}`}>EZPOK</button>
+                    <button onClick={() => setActivePromoTab('ALL')} className={`px-4 py-1.5 rounded-full font-bold transition-colors ${activePromoTab === 'ALL' ? 'text-black' : 'bg-transparent text-gray-400 hover:text-white'}`} style={activePromoTab === 'ALL' ? { backgroundColor: '#D4AF37' } : {}}>ทั้งหมด</button>
+                    <button onClick={() => setActivePromoTab('POK9')} className={`px-4 py-1.5 rounded-full font-bold transition-colors ${activePromoTab === 'POK9' ? 'bg-red-600 text-white' : 'bg-transparent text-gray-400 hover:text-white'}`}>POK9</button>
+                    <button onClick={() => setActivePromoTab('EZPOK')} className={`px-4 py-1.5 rounded-full font-bold transition-colors ${activePromoTab === 'EZPOK' ? 'bg-purple-600 text-white' : 'bg-transparent text-gray-400 hover:text-white'}`}>EZPOK</button>
                 </div>
             </div>
             
             <div className="flex overflow-x-auto snap-x snap-mandatory gap-4 pb-6 scrollbar-hide -mx-4 px-4 md:mx-0 md:px-0">
-                <a className={`snap-center shrink-0 w-[260px] md:w-[320px] bg-black border border-gray-700 hover:border-red-500 rounded-xl overflow-hidden group transition-all no-underline ${activePromoTab === 'ALL' || activePromoTab === 'POK9' ? 'block' : 'hidden'}`} href="https://lin.ee/kBYIyk1" target="_blank" rel="noreferrer">
+                <a className={`snap-center shrink-0 w-[260px] md:w-[320px] bg-black rounded-xl overflow-hidden group transition-all no-underline ${activePromoTab === 'ALL' || activePromoTab === 'POK9' ? 'block' : 'hidden'}`} href="https://lin.ee/kBYIyk1" target="_blank" rel="noreferrer">
                     <div className="w-full aspect-square bg-[#111] relative overflow-hidden flex items-center justify-center">
                         <span className="absolute top-2 left-2 z-10 bg-red-600 text-white text-[10px] font-bold px-2 py-0.5 rounded shadow">POK9</span>
                         <img loading="lazy" src="/pok9-promo1.jpg" alt="โปรโมชั่น POK9" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onError={(e) => { e.currentTarget.style.display='none'; e.currentTarget.parentElement!.innerHTML += `<span class="text-gray-500 text-sm">รูปโปร POK9 (500x500)</span>`; }} />
                     </div>
-                    <div className="p-3 text-center border-t border-gray-800 bg-gradient-to-b from-gray-900 to-black">
+                    <div className="p-3 text-center bg-gradient-to-b from-gray-900 to-black">
                         <p className="text-sm font-bold text-red-400 font-prompt truncate">สมาชิกใหม่รับโบนัส 100%</p>
                     </div>
                 </a>
 
-                <a className={`snap-center shrink-0 w-[260px] md:w-[320px] bg-black border border-gray-700 hover:border-purple-500 rounded-xl overflow-hidden group transition-all no-underline ${activePromoTab === 'ALL' || activePromoTab === 'EZPOK' ? 'block' : 'hidden'}`} href="https://lin.ee/kBYIyk1" target="_blank" rel="noreferrer">
+                <a className={`snap-center shrink-0 w-[260px] md:w-[320px] bg-black rounded-xl overflow-hidden group transition-all no-underline ${activePromoTab === 'ALL' || activePromoTab === 'EZPOK' ? 'block' : 'hidden'}`} href="https://lin.ee/kBYIyk1" target="_blank" rel="noreferrer">
                     <div className="w-full aspect-square bg-[#111] relative overflow-hidden flex items-center justify-center">
                         <span className="absolute top-2 left-2 z-10 bg-purple-600 text-white text-[10px] font-bold px-2 py-0.5 rounded shadow">EZPOK</span>
                         <img loading="lazy" src="/por_ezlt.gif" alt="โปรโมชั่น EZPOK" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onError={(e) => { e.currentTarget.style.display='none'; e.currentTarget.parentElement!.innerHTML += `<span class="text-gray-500 text-sm">รูปโปร EZPOK (500x500)</span>`; }} />
                     </div>
-                    <div className="p-3 text-center border-t border-gray-800 bg-gradient-to-b from-gray-900 to-black">
+                    <div className="p-3 text-center bg-gradient-to-b from-gray-900 to-black">
                         <p className="text-sm font-bold text-purple-400 font-prompt truncate">เล่นป๊อกเด้ง คืนยอดเสีย 5%</p>
                     </div>
                 </a>
 
-                <a className={`snap-center shrink-0 w-[260px] md:w-[320px] bg-black border border-gray-700 hover:border-ezgold-400 rounded-xl overflow-hidden group transition-all no-underline ${activePromoTab === 'ALL' || activePromoTab === 'EZLOTTO' ? 'block' : 'hidden'}`} href="https://lin.ee/kBYIyk1" target="_blank" rel="noreferrer">
+                <a className={`snap-center shrink-0 w-[260px] md:w-[320px] bg-black rounded-xl overflow-hidden group transition-all no-underline ${activePromoTab === 'ALL' || activePromoTab === 'EZLOTTO' ? 'block' : 'hidden'}`} href="https://lin.ee/kBYIyk1" target="_blank" rel="noreferrer">
                     <div className="w-full aspect-square bg-[#111] relative overflow-hidden flex items-center justify-center">
-                        <span className="absolute top-2 left-2 z-10 bg-ezgold-600 text-black text-[10px] font-bold px-2 py-0.5 rounded shadow">EZLOTTO</span>
+                        <span className="absolute top-2 left-2 z-10 bg-yellow-600 text-black text-[10px] font-bold px-2 py-0.5 rounded shadow">EZLOTTO</span>
                         <img loading="lazy" src="/ezlt_pro.jpg" alt="โปรโมชั่น EZLOTTO" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onError={(e) => { e.currentTarget.style.display='none'; e.currentTarget.parentElement!.innerHTML += `<span class="text-gray-500 text-sm">รูปโปร EZLOTTO (500x500)</span>`; }} />
                     </div>
-                    <div className="p-3 text-center border-t border-gray-800 bg-gradient-to-b from-gray-900 to-black">
-                        <p className="text-sm font-bold text-ezgold-400 font-prompt truncate">หวยบาทละ 90 จ่ายเต็ม</p>
+                    <div className="p-3 text-center bg-gradient-to-b from-gray-900 to-black">
+                        <p className="text-sm font-bold font-prompt truncate" style={{ color: '#D4AF37' }}>หวยบาทละ 90 จ่ายเต็ม</p>
                     </div>
                 </a>
 
-                <a className={`snap-center shrink-0 w-[260px] md:w-[320px] bg-black border border-gray-700 hover:border-ezgold-400 rounded-xl overflow-hidden group transition-all no-underline ${activePromoTab === 'ALL' ? 'block' : 'hidden'}`} href="https://lin.ee/kBYIyk1" target="_blank" rel="noreferrer">
+                <a className={`snap-center shrink-0 w-[260px] md:w-[320px] bg-black rounded-xl overflow-hidden group transition-all no-underline ${activePromoTab === 'ALL' ? 'block' : 'hidden'}`} href="https://lin.ee/kBYIyk1" target="_blank" rel="noreferrer">
                     <div className="w-full aspect-square bg-[#111] relative overflow-hidden flex items-center justify-center">
                         <span className="absolute top-2 left-2 z-10 bg-gray-600 text-white text-[10px] font-bold px-2 py-0.5 rounded shadow">รวมทุกเครือ</span>
                         <img loading="lazy" src="/top-level-vip-320.webp" alt="โปรโมชั่น VIP" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onError={(e) => { e.currentTarget.style.display='none'; e.currentTarget.parentElement!.innerHTML += `<span class="text-gray-500 text-sm">รูปโปร VIP (500x500)</span>`; }} />
                     </div>
-                    <div className="p-3 text-center border-t border-gray-800 bg-gradient-to-b from-gray-900 to-black">
+                    <div className="p-3 text-center bg-gradient-to-b from-gray-900 to-black">
                         <p className="text-sm font-bold text-gray-300 font-prompt truncate">สะสมแต้ม VIP แลกของรางวัล</p>
                     </div>
                 </a>
             </div>
         </section>
 
-        <section className="mb-12 bg-black/40 p-4 md:p-6 rounded-2xl border border-ezgold-500/20 shadow-lg" id="info-rules">
-            <div className="flex items-center gap-2 mb-4 md:mb-5 border-b border-gray-800 pb-2">
-                <ScrollText className="text-ezgold-400 w-5 h-5 md:w-6 md:h-6" />
+        <section className="mb-12 bg-black/40 p-4 md:p-6 rounded-2xl shadow-lg" id="info-rules">
+            <div className="flex items-center gap-2 mb-4 md:mb-5 pb-2">
+                <ScrollText className="w-5 h-5 md:w-6 md:h-6" style={{ color: '#D4AF37' }} />
                 <h2 className="font-prompt font-bold text-lg md:text-xl text-white">กติกา วงป๊อกเด้ง 2 ใบเปิด</h2>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-5 mb-5">
-                <div className="bg-ezpurple-950/50 rounded-xl p-4 border border-ezgold-500/30">
-                    <div className="flex items-center gap-1.5 text-ezgold-400 font-bold mb-3 text-sm md:text-base font-prompt">
+                <div className="rounded-xl p-4" style={{ backgroundColor: 'rgba(46, 2, 73, 0.5)' }}>
+                    <div className="flex items-center gap-1.5 font-bold mb-3 text-sm md:text-base font-prompt" style={{ color: '#D4AF37' }}>
                         <Gavel className="w-4 h-4 md:w-5 md:h-5" /> การอ่านแต้มไพ่ & อัตราจ่าย
                     </div>
                     <ul className="space-y-2 text-gray-300 text-[11px] md:text-[13px] leading-relaxed">
@@ -457,34 +475,34 @@ export default function HomePage() {
                         <li className="flex items-start gap-1.5"><CheckCircle className="w-3.5 h-3.5 text-green-400 shrink-0 mt-0.5" /> <span>10+ฝรั่ง 10-K,10-Q,10-J = 7.5แต้ม (ดอกเดียวกัน#เด้ง / คนละดอก#ไม่เด้ง)</span></li>
                         <li className="flex items-start gap-1.5"><CheckCircle className="w-3.5 h-3.5 text-green-400 shrink-0 mt-0.5" /> <span>A-K ดอกเดียวกัน =7.5 #เด้ง, A-K คนละดอก = 1 แต้ม</span></li>
 					</ul>
-                    <div className="mt-3 p-2.5 bg-red-900/20 border border-red-500/30 rounded text-[10px] md:text-xs text-red-200 flex gap-1.5">
+                    <div className="mt-3 p-2.5 bg-red-900/20 rounded text-[10px] md:text-xs text-red-200 flex gap-1.5">
                         <AlertTriangle className="w-3.5 h-3.5 shrink-0 text-orange-400" /> 
                         <p>แต้มพิเศษ 7.5 หรือ 7.5 เด้ง จะชนะ 7 แต้ม แต่แพ้ป๊อก8 และป๊อก9 ในกติกา วงป๊อกเด้ง</p>
                     </div>
                 </div>
 
-                <div className="bg-black/60 rounded-xl p-4 border border-[#06C755]/50 relative overflow-hidden">
+                <div className="bg-black/60 rounded-xl p-4 relative overflow-hidden">
                     <div className="absolute top-0 right-0 w-20 h-20 bg-[#06C755]/10 rounded-full blur-xl"></div>
                     <div className="flex items-center gap-1.5 text-[#06C755] font-bold mb-3 text-sm md:text-base font-prompt">
                         <Info className="w-4 h-4 md:w-5 md:h-5" /> เงื่อนไขและข้อมูลบริการ
                     </div>
                     <div className="grid grid-cols-2 gap-2 mb-3">
-                        <div className="bg-[#06C755]/10 p-2 rounded border border-[#06C755]/30 text-center flex flex-col items-center justify-center">
+                        <div className="bg-[#06C755]/10 p-2 rounded text-center flex flex-col items-center justify-center">
                             <Clock className="w-3.5 h-3.5 text-[#06C755] mb-1" />
                             <span className="text-[9px] text-gray-400">เวลาทำการ</span>
                             <span className="text-[10px] md:text-xs font-bold text-white">แอดมินดูแล 24 ชม.</span>
                         </div>
-                        <div className="bg-[#06C755]/10 p-2 rounded border border-[#06C755]/30 text-center flex flex-col items-center justify-center">
+                        <div className="bg-[#06C755]/10 p-2 rounded text-center flex flex-col items-center justify-center">
                             <Coins className="w-3.5 h-3.5 text-[#06C755] mb-1" />
                             <span className="text-[9px] text-gray-400">ระบบการเล่น</span>
                             <span className="text-[10px] md:text-xs font-bold text-white">ลงเล่นได้ทั้ง 2 ฝั่ง</span>
                         </div>
-                        <div className="bg-[#06C755]/10 p-2 rounded border border-[#06C755]/30 text-center flex flex-col items-center justify-center">
+                        <div className="bg-[#06C755]/10 p-2 rounded text-center flex flex-col items-center justify-center">
                             <Banknote className="w-3.5 h-3.5 text-[#06C755] mb-1" />
                             <span className="text-[9px] text-gray-400">ธุรกรรมการเงิน</span>
                             <span className="text-[10px] md:text-xs font-bold text-white">ฝาก-ถอนไม่มีขั้นต่ำ</span>
                         </div>
-                        <div className="bg-[#06C755]/10 p-2 rounded border border-[#06C755]/30 text-center flex flex-col items-center justify-center">
+                        <div className="bg-[#06C755]/10 p-2 rounded text-center flex flex-col items-center justify-center">
                             <Gamepad2 className="w-3.5 h-3.5 text-[#06C755] mb-1" />
                             <span className="text-[9px] text-gray-400">ยอดเดิมพัน</span>
                             <span className="text-[10px] md:text-xs font-bold text-white">10฿ ถึง 2,500฿</span>
@@ -499,10 +517,10 @@ export default function HomePage() {
 
             <div>
                 <div className="flex items-center gap-1.5 text-white font-bold text-sm md:text-lg mb-3 font-prompt">
-                    <Keyboard className="w-4 h-4 md:w-5 md:h-5 text-ezgold-400" /> ตัวอย่างวิธีพิมพ์เล่น วงป๊อกเด้ง ในกลุ่ม
+                    <Keyboard className="w-4 h-4 md:w-5 md:h-5" style={{ color: '#D4AF37' }} /> ตัวอย่างวิธีพิมพ์เล่น วงป๊อกเด้ง ในกลุ่ม
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                    <div className="bg-gray-900/60 p-3.5 rounded-lg border border-green-500/30">
+                    <div className="bg-gray-900/60 p-3.5 rounded-lg">
                         <p className="font-prompt text-green-400 font-bold text-xs md:text-sm mb-2">🟢 วิธีการเล่นขา (สายขา)</p>
                         <p className="text-[11px] md:text-xs text-gray-300 mb-2">&#x1F4B4; รูปแบบ: <span className="text-white font-mono bg-black px-1 rounded">ตัวเลข / จำนวนเงิน</span></p>
                         <ul className="space-y-1 text-[11px] md:text-xs text-gray-300 font-mono ml-4 list-disc marker:text-green-500">
@@ -512,7 +530,7 @@ export default function HomePage() {
                             <li><span className="text-white">รข/10</span> (รูดขา: แทงขาทั้งหมดสู้เจ้า ขาละ 10฿)</li>
                         </ul>
                     </div>
-                    <div className="bg-gray-900/60 p-3.5 rounded-lg border border-red-500/30">
+                    <div className="bg-gray-900/60 p-3.5 rounded-lg">
                         <p className="font-prompt text-red-400 font-bold text-xs md:text-sm mb-2">🔴 วิธีการเล่นเจ้า (สายเจ้า)</p>
                         <p className="text-[11px] md:text-xs text-gray-300 mb-2">&#x1F4B4; รูปแบบ: <span className="text-white font-mono bg-black px-1 rounded">จ ตัวเลข / จำนวนเงิน</span></p>
                         <ul className="space-y-1 text-[11px] md:text-xs text-gray-300 font-mono ml-4 list-disc marker:text-red-500">
@@ -527,62 +545,62 @@ export default function HomePage() {
         </section>
 
         <div className="mb-12">
-            <div className="flex items-center justify-between gap-2 mb-4 border-b border-gray-800 pb-2">
+            <div className="flex items-center justify-between gap-2 mb-4 pb-2">
                 <div className="flex items-center gap-1.5 md:gap-2">
-                    <BarChart2 className="w-5 h-5 md:w-6 md:h-6 text-ezgold-400" />
+                    <BarChart2 className="w-5 h-5 md:w-6 md:h-6" style={{ color: '#D4AF37' }} />
                     <h2 className="font-prompt font-bold text-lg md:text-xl text-white">กระดานผลรางวัลล่าสุด</h2>
                 </div>
-                <a href="https://result.ez-huay.com/" target="_blank" rel="noreferrer" className="text-[10px] md:text-sm text-ezgold-400 hover:text-white flex items-center gap-1 no-underline">
+                <a href="https://result.ez-huay.com/" target="_blank" rel="noreferrer" className="text-[10px] md:text-sm hover:text-white flex items-center gap-1 no-underline" style={{ color: '#D4AF37' }}>
                     ดูทั้งหมด <ExternalLink className="w-3 h-3" />
                 </a>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="result-card rounded-xl p-4 relative">
+                <div className="rounded-xl p-4 relative" style={{ backgroundColor: 'rgba(0,0,0,0.5)' }}>
                     <h3 className="font-prompt font-bold text-sm md:text-base text-white flex items-center justify-center gap-2 mb-3">
                         <span className="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse"></span> ผลสลากกินแบ่งรัฐบาลไทย
                     </h3>
                     <div className="text-center mb-4">
                         <p className="text-[11px] md:text-sm text-gray-300">รางวัลที่ 1</p>
-                        <div className="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-ezgold-300 to-ezgold-500 tracking-[0.1em] my-1">833009</div>
+                        <div className="text-3xl md:text-4xl font-bold text-transparent bg-clip-text tracking-[0.1em] my-1" style={{ backgroundImage: 'linear-gradient(to right, #FDF5E6, #D4AF37)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>833009</div>
                     </div>
                     <div className="grid grid-cols-3 gap-1.5 md:gap-2 text-center">
-                        <div className="bg-black/50 border border-ezgold-500/10 rounded-md p-2">
+                        <div className="bg-black/50 rounded-md p-2">
                             <p className="text-[9px] text-gray-400">เลขหน้า 3 ตัว</p>
                             <div className="text-sm md:text-base font-bold text-white tracking-widest leading-tight mt-1">510 <br/> 983</div>
                         </div>
-                        <div className="bg-black/50 border border-ezgold-500/10 rounded-md p-2">
+                        <div className="bg-black/50 rounded-md p-2">
                             <p className="text-[9px] text-gray-400">เลขท้าย 3 ตัว</p>
                             <div className="text-sm md:text-base font-bold text-white tracking-widest leading-tight mt-1">439 <br/> 954</div>
                         </div>
-                        <div className="bg-[#190028] border border-ezgold-500/40 rounded-md p-2 flex flex-col justify-center">
-                            <p className="text-[9px] text-ezgold-400 font-bold">เลขท้าย 2 ตัว</p>
-                            <div className="text-xl md:text-2xl font-bold text-ezgold-400 tracking-widest mt-0.5">64</div>
+                        <div className="bg-[#190028] rounded-md p-2 flex flex-col justify-center">
+                            <p className="text-[9px] font-bold" style={{ color: '#D4AF37' }}>เลขท้าย 2 ตัว</p>
+                            <div className="text-xl md:text-2xl font-bold tracking-widest mt-0.5" style={{ color: '#D4AF37' }}>64</div>
                         </div>
                     </div>
                 </div>
 
-                <div className="result-card rounded-xl p-4 relative">
+                <div className="rounded-xl p-4 relative" style={{ backgroundColor: 'rgba(0,0,0,0.5)' }}>
                     <h3 className="font-prompt font-bold text-sm md:text-base text-white flex items-center justify-center gap-2 mb-3">
-                        <span className="w-1.5 h-1.5 rounded-full bg-ezgold-400 animate-pulse"></span> ตรวจหวยลาวพัฒนา
+                        <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: '#D4AF37' }}></span> ตรวจหวยลาวพัฒนา
                     </h3>
                     <div className="grid grid-cols-3 gap-1.5 md:gap-2 text-center mb-3">
-                        <div className="bg-black/50 border border-ezgold-500/10 rounded-md p-2">
+                        <div className="bg-black/50 rounded-md p-2">
                             <p className="text-[9px] text-gray-400">เลขท้าย 4 ตัว</p>
                             <div className="text-sm md:text-base font-bold text-white tracking-widest mt-1">4329</div>
                         </div>
-                        <div className="bg-black/50 border border-ezgold-500/10 rounded-md p-2">
+                        <div className="bg-black/50 rounded-md p-2">
                             <p className="text-[9px] text-gray-400">เลขท้าย 3 ตัว</p>
                             <div className="text-sm md:text-base font-bold text-white tracking-widest mt-1">329</div>
                         </div>
-                        <div className="bg-[#190028] border border-ezgold-500/40 rounded-md p-2">
-                            <p className="text-[9px] text-ezgold-400 font-bold">เลขท้าย 2 ตัว</p>
-                            <div className="text-lg md:text-xl font-bold text-ezgold-400 tracking-widest mt-0.5">29</div>
+                        <div className="bg-[#190028] rounded-md p-2">
+                            <p className="text-[9px] font-bold" style={{ color: '#D4AF37' }}>เลขท้าย 2 ตัว</p>
+                            <div className="text-lg md:text-xl font-bold tracking-widest mt-0.5" style={{ color: '#D4AF37' }}>29</div>
                         </div>
                     </div>
-                    <div className="bg-black/40 border border-gray-800 rounded-md p-2 text-center">
+                    <div className="bg-black/40 rounded-md p-2 text-center">
                         <p className="text-[10px] text-gray-400 mb-1">หวยลาว (ชุด 5 ตัว)</p>
-                        <div className="flex justify-center gap-2 text-base font-bold text-ezgold-400">
+                        <div className="flex justify-center gap-2 text-base font-bold" style={{ color: '#D4AF37' }}>
                             <span>42</span><span>40</span><span>26</span><span>14</span><span>15</span>
                         </div>
                     </div>
@@ -590,29 +608,29 @@ export default function HomePage() {
             </div>
         </div>
 
-        <section className="mb-16 bg-gradient-to-br from-ezpurple-950 via-ezdark to-black p-5 md:p-6 rounded-2xl border border-ezgold-500/40 text-center relative mx-auto w-full">
-            <h2 className="font-prompt font-bold text-xl md:text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-ezgold-300 to-ezgold-600 mb-1 leading-tight">TOP 100 LEVEL VIP</h2>
+        <section className="mb-16 rounded-2xl text-center relative mx-auto w-full p-5 md:p-6" style={{ background: 'linear-gradient(to bottom right, #2E0249, #0D0514, #000000)' }}>
+            <h2 className="font-prompt font-bold text-xl md:text-2xl font-extrabold text-transparent bg-clip-text mb-1 leading-tight" style={{ backgroundImage: 'linear-gradient(to right, #FDF5E6, #D4AF37)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>TOP 100 LEVEL VIP</h2>
             <p className="font-prompt text-[11px] md:text-sm font-medium text-gray-400 mb-5">ประจำเดือน มีนาคม 69 - วงป๊อกเด้ง & หวย</p>
             
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 items-center w-full">
                  <div className="flex justify-center items-center w-full">
-                    <img loading="lazy" src="/top100.jpg" alt="ทำเนียบ TOP 100 VIP วงป๊อกเด้ง" className="w-full h-auto max-w-[280px] md:max-w-[350px] object-contain rounded-xl border border-ezgold-500/50 shadow-lg" onError={(e) => e.currentTarget.style.display='none'} />
+                    <img loading="lazy" src="/top100.jpg" alt="ทำเนียบ TOP 100 VIP วงป๊อกเด้ง" className="w-full h-auto max-w-[280px] md:max-w-[350px] object-contain rounded-xl shadow-lg" onError={(e) => e.currentTarget.style.display='none'} />
                 </div>
 
-                <div className="text-left bg-black/60 p-4 md:p-5 rounded-xl border border-gray-700 w-full">
-                    <h3 className="font-prompt text-sm font-bold text-ezgold-300 mb-3 flex items-center gap-1.5">
-                        <Star className="w-4 h-4 text-ezgold-400" /> ทำเนียบ TOP VIP 
+                <div className="text-left bg-black/60 p-4 md:p-5 rounded-xl w-full">
+                    <h3 className="font-prompt text-sm font-bold mb-3 flex items-center gap-1.5" style={{ color: '#FDF5E6' }}>
+                        <Star className="w-4 h-4" style={{ color: '#D4AF37' }} /> ทำเนียบ TOP VIP 
                     </h3>
                     <ul className="text-sm text-gray-300 space-y-2">
-                        <li className="flex items-center gap-2 md:gap-3 bg-gradient-to-r from-ezgold-900/40 to-transparent p-2 rounded border border-ezgold-500/30">
-                            <span className="font-black text-lg md:text-xl text-ezgold-400 w-5 md:w-6 text-center">1</span>
-                            <Crown className="w-4 h-4 md:w-5 md:h-5 text-ezgold-400 shrink-0" />
+                        <li className="flex items-center gap-2 md:gap-3 p-2 rounded" style={{ background: 'linear-gradient(to right, rgba(212,175,55,0.2), transparent)' }}>
+                            <span className="font-black text-lg md:text-xl w-5 md:w-6 text-center" style={{ color: '#D4AF37' }}>1</span>
+                            <Crown className="w-4 h-4 md:w-5 md:h-5 shrink-0" style={{ color: '#D4AF37' }} />
                             <div className="overflow-hidden flex-1">
                                 <p className="text-white font-bold text-[11px] md:text-xs truncate">Ah Ho0ng,,🍁🍁2468🧉🧉</p>
-                                <p className="text-[9px] md:text-[10px] text-ezgold-300">Level 48 - ยอด 2.5M</p>
+                                <p className="text-[9px] md:text-[10px]" style={{ color: '#FDF5E6' }}>Level 48 - ยอด 2.5M</p>
                             </div>
                         </li>
-                        <li className="flex items-center gap-2 md:gap-3 bg-black/40 p-2 rounded border border-gray-800">
+                        <li className="flex items-center gap-2 md:gap-3 bg-black/40 p-2 rounded">
                             <span className="font-black text-sm text-gray-400 w-5 md:w-6 text-center">2</span>
                             <User className="w-3.5 h-3.5 md:w-4 md:h-4 text-gray-400 shrink-0" />
                             <div className="overflow-hidden flex-1">
@@ -620,7 +638,7 @@ export default function HomePage() {
                                 <p className="text-[9px] md:text-[10px] text-gray-500">Level 34 - ยอด 1.7M</p>
                             </div>
                         </li>
-                        <li className="flex items-center gap-2 md:gap-3 bg-black/40 p-2 rounded border border-gray-800">
+                        <li className="flex items-center gap-2 md:gap-3 bg-black/40 p-2 rounded">
                             <span className="font-black text-sm text-gray-500 w-5 md:w-6 text-center">3</span>
                             <User className="w-3.5 h-3.5 md:w-4 md:h-4 text-gray-500 shrink-0" />
                             <div className="overflow-hidden flex-1">
@@ -633,11 +651,10 @@ export default function HomePage() {
             </div>
         </section>
 
-        {/* --- ส่วนศูนย์รวมความรู้ ในหน้า page.tsx --- */}
-        <section className="mb-8 bg-gradient-to-b from-[#190028] to-black p-5 md:p-8 rounded-2xl border border-purple-500/30 shadow-[0_0_20px_rgba(168,85,247,0.15)] mx-auto w-full relative overflow-hidden" id="knowledge-seo">
-          <div className="absolute top-0 right-0 w-64 h-64 bg-purple-600/10 rounded-full blur-3xl pointer-events-none"></div>
+        <section className="mb-8 p-5 md:p-8 rounded-2xl shadow-[0_0_20px_rgba(168,85,247,0.15)] mx-auto w-full relative overflow-hidden" style={{ background: 'linear-gradient(to bottom, #190028, #000000)' }} id="knowledge-seo">
+          <div className="absolute top-0 right-0 w-64 h-64 rounded-full blur-3xl pointer-events-none" style={{ backgroundColor: 'rgba(168, 85, 247, 0.1)' }}></div>
           
-          <div className="flex items-center justify-between mb-6 border-b border-purple-500/30 pb-3 relative z-10">
+          <div className="flex items-center justify-between mb-6 pb-3 relative z-10">
             <div className="flex items-center gap-2">
                 <ScrollText className="w-6 h-6 text-purple-400" />
                 <h2 className="font-prompt font-bold text-xl md:text-2xl text-white">ศูนย์รวมความรู้ SEO & เคล็ดลับ</h2>
@@ -645,19 +662,17 @@ export default function HomePage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 relative z-10">
-              {/* การ์ด 1: ป๊อกเด้ง */}
-              <div className="bg-black/50 p-6 rounded-xl border border-gray-800 hover:border-ezgold-500 transition-all group flex flex-col">
-                  <h3 className="font-prompt font-bold text-xl text-ezgold-400 mb-3 flex items-center gap-2">
+              <div className="bg-black/50 p-6 rounded-xl transition-all group flex flex-col">
+                  <h3 className="font-prompt font-bold text-xl mb-3 flex items-center gap-2" style={{ color: '#D4AF37' }}>
                       <Trophy className="w-6 h-6" /> เทคนิคเซียนป๊อกเด้ง 2 ใบเปิด
                   </h3>
                   <p className="text-[13px] text-gray-400 mb-4 flex-1">เจาะลึก 1000+ คำ! เรียนรู้วิธีอ่านเค้าไพ่ การเดินเงินแบบทบ (Martingale) และเคล็ดลับการกระจายความเสี่ยงแทงหลายขา เพื่อทำกำไรหลักพันต่อวัน</p>
-                  <a href="/seo/pokdeng" className="inline-flex items-center gap-2 text-ezgold-400 font-bold text-sm hover:text-white transition-colors no-underline">
+                  <a href="/seo/pokdeng" className="inline-flex items-center gap-2 font-bold text-sm hover:text-white transition-colors no-underline" style={{ color: '#D4AF37' }}>
                       อ่านบทความฉบับเต็ม <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </a>
               </div>
 
-              {/* การ์ด 2: บาคาร่า & หวย */}
-              <div className="bg-black/50 p-6 rounded-xl border border-gray-800 hover:border-purple-500 transition-all group flex flex-col">
+              <div className="bg-black/50 p-6 rounded-xl transition-all group flex flex-col">
                   <h3 className="font-prompt font-bold text-xl text-purple-400 mb-3 flex items-center gap-2">
                       <Gamepad2 className="w-6 h-6" /> คู่มือบาคาร่า & หวยออนไลน์
                   </h3>
@@ -688,10 +703,10 @@ export default function HomePage() {
         </a>
       </nav>
 
-      <footer className="bg-black py-6 text-center text-gray-500 text-[10px] md:text-xs border-t border-gray-800 pb-20 md:pb-6 leading-loose">
+      <footer className="bg-black py-6 text-center text-gray-500 text-[10px] md:text-xs pb-20 md:pb-6 leading-loose">
           <p className="font-prompt text-gray-400 font-bold mb-1">วงป๊อกเด้งไทย อันดับ 1</p>
           <p>&copy; 2026 วงป๊อกเด้งไทย. ศูนย์รวมเกมไพ่ ป๊อกเด้งออนไลน์ 2 ใบเปิด บาคาร่า สับไพ่สด 24 ชม. &amp; หวย EZLOTTO มั่นคง โปร่งใส 100%</p>
       </footer>
     </div>
   );
-} 
+}
