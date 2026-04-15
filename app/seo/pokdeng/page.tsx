@@ -1,23 +1,23 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowLeft, CheckCircle, Trophy, HelpCircle, Star, PlayCircle, Gamepad2 } from "lucide-react";
+import { ArrowLeft, CheckCircle, Trophy, HelpCircle, Star, PlayCircle, Gamepad2, BookOpen, AlertTriangle, Info } from "lucide-react";
+// 🟢 1. SEO Metadata: ปรับให้ดึงดูดการคลิก (CTR) และครอบคลุมคีย์เวิร์ดหลัก
 
-// 🟢 1. SEO Metadata: เน้นคีย์เวิร์ดหลักให้ Google ดึงไปโชว์
 export const metadata: Metadata = {
-  title: 'ป๊อกเด้ง คืออะไร? กติกา วิธีเล่นป๊อกเด้งออนไลน์ให้ได้เงิน | EZPOK168',
-  description: 'เจาะลึกกติกาไพ่ป๊อกเด้งแบบวิกิพีเดีย พร้อมเทคนิคการเล่น ป๊อกเด้งออนไลน์ 2 ใบเปิด บาคาร่า และ แทงหวยออนไลน์ ที่ EZPOK168.COM เว็บตรง จ่ายจริง 100%',
-  keywords: 'ป๊อกเด้ง, ป๊อกเด้งออนไลน์, ไพ่ป๊อกเด้ง, ป๊อก 8 ป๊อก 9, บาคาร่า, หวยไทย, หวยลาว, EZPOK168',
+  title: 'ป๊อกเด้ง คืออะไร? กติกา วิธีเล่นป๊อกเด้งออนไลน์ 2 ใบเปิด ให้ได้กำไร | EZPOK168',
+  description: 'คู่มือป๊อกเด้งฉบับสมบูรณ์ (อัปเดต 2026) เจาะลึกกติกาไพ่ป๊อกเด้ง การนับแต้ม ป๊อก 8 ป๊อก 9 อัตราจ่ายไพ่ตอง พร้อมสูตรบาคาร่า และ แทงหวยออนไลน์ ที่ EZPOK168.COM',
+  keywords: 'ป๊อกเด้ง, ป๊อกเด้งออนไลน์, ไพ่ป๊อกเด้ง, ป๊อก 8 ป๊อก 9, กติกาป๊อกเด้ง, เล่นป๊อกเด้ง, บาคาร่า, หวยไทย, หวยลาว, EZPOK168',
 };
 
-// 🟢 2. AEO & SEO Schema: สร้างโครงสร้างข้อมูลให้ AI ของ Google อ่าน (Article + FAQ)
+// 🟢 2. AEO & SEO Schema: โครงสร้างข้อมูลที่ Google นำไปตอบคำถามอัตโนมัติ (Featured Snippet)
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": "กติกาไพ่ป๊อกเด้ง และเทคนิคเล่นป๊อกเด้งออนไลน์ 2 ใบเปิด",
+  "headline": "กติกาไพ่ป๊อกเด้ง และเทคนิคเซียนเล่นป๊อกเด้งออนไลน์ 2 ใบเปิด",
   "author": { "@type": "Organization", "name": "EZPOK168" },
   "publisher": { "@type": "Organization", "name": "EZPOK168", "logo": { "@type": "ImageObject", "url": "https://ezpok168.net/logo.png" } },
-  "datePublished": "2026-04-14",
-  "description": "คู่มือฉบับสมบูรณ์ อธิบายกติกาการเล่นป๊อกเด้ง การนับแต้มไพ่พิเศษ และเทคนิคการเล่นคาสิโนออนไลน์..."
+  "datePublished": "2026-04-15",
+  "description": "เจาะลึกกติกาการเล่นป๊อกเด้งออนไลน์ การนับแต้มไพ่พิเศษ ไพ่ตอง ไพ่เรียง สเตรทฟลัช และเทคนิคการเล่นคาสิโนออนไลน์ให้ได้เงินจริงแบบยั่งยืน"
 };
 
 const faqSchema = {
@@ -26,18 +26,23 @@ const faqSchema = {
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "ไพ่ป๊อกเด้ง คืออะไร?",
-      "acceptedAnswer": { "@type": "Answer", "text": "ป๊อกเด้ง เป็นเกมไพ่ยอดนิยมของไทย ผู้เล่นต้องรวมแต้มไพ่ 2-3 ใบให้ได้ใกล้เคียง 9 แต้มมากที่สุด เพื่อเอาชนะเจ้ามือ" }
+      "name": "ไพ่ป๊อกเด้ง คืออะไร แตกต่างจากบาคาร่าอย่างไร?",
+      "acceptedAnswer": { "@type": "Answer", "text": "ป๊อกเด้ง เป็นเกมไพ่พื้นบ้านของไทยที่ผู้เล่น (ลูกมือ) ต้องแข่งแต้มกับเจ้ามือให้ใกล้เคียง 9 แต้มที่สุด มีจุดเด่นคือการได้เงินทวีคูณ (เด้ง) ส่วนบาคาร่าเป็นการทายผลว่าฝั่ง Player หรือ Banker ฝั่งไหนจะชนะ" }
     },
     {
       "@type": "Question",
-      "name": "ป๊อก 8 ป๊อก 9 คืออะไร?",
-      "acceptedAnswer": { "@type": "Answer", "text": "คือการที่ไพ่ 2 ใบแรกบวกกันได้ 8 หรือ 9 แต้ม ถือเป็นแต้มสูงสุดในเกม จะชนะและได้เงินรางวัลทันทีโดยไม่ต้องจั่วไพ่เพิ่ม" }
+      "name": "ไพ่ ป๊อก 8 ป๊อก 9 คืออะไร?",
+      "acceptedAnswer": { "@type": "Answer", "text": "คือผลรวมของไพ่ 2 ใบแรกที่แจกให้ หากบวกกันได้ 8 หรือ 9 แต้ม จะเรียกว่าป๊อก ซึ่งเป็นแต้มที่ใหญ่ที่สุดในเกม จะชนะและได้รับเงินรางวัลทันทีโดยไม่ต้องทำการจั่วไพ่ใบที่ 3" }
     },
     {
       "@type": "Question",
-      "name": "เว็บเล่นป๊อกเด้งออนไลน์ที่เชื่อถือได้คือเว็บไหน?",
-      "acceptedAnswer": { "@type": "Answer", "text": "EZPOK168.COM คือเว็บผู้ให้บริการป๊อกเด้งออนไลน์ 2 ใบเปิด บาคาร่า และหวยออนไลน์ ที่มีระบบฝากถอนออโต้ มั่นคง ปลอดภัยที่สุด" }
+      "name": "ไพ่ตอง และ ไพ่เซียน (สามเหลือง) ได้เงินกี่เท่า?",
+      "acceptedAnswer": { "@type": "Answer", "text": "ในกติกาป๊อกเด้งมาตรฐาน หากผู้เล่นได้ไพ่ตอง (เลขเดียวกัน 3 ใบ) จะได้รับเงินรางวัล 5 เท่า (5 เด้ง) และหากได้ไพ่เซียน หรือขอบ (J, Q, K ทั้ง 3 ใบ) จะได้รับเงินรางวัล 3 เท่า (3 เด้ง)" }
+    },
+    {
+      "@type": "Question",
+      "name": "เล่น ป๊อกเด้งออนไลน์ เว็บไหนดีที่สุด จ่ายจริง ไม่ล็อคยูส?",
+      "acceptedAnswer": { "@type": "Answer", "text": "EZPOK168.COM คือเว็บผู้ให้บริการ ป๊อกเด้งออนไลน์ 2 ใบเปิด อันดับ 1 สับไพ่ไลฟ์สดเรียลไทม์ พร้อมบริการ บาคาร่า และ หวยออนไลน์ (หวยไทย, หวยลาว) ฝากถอนออโต้ ไม่มีขั้นต่ำ" }
     }
   ]
 };
@@ -68,129 +73,229 @@ export default function PokdengSeoArticle() {
         
         {/* Banner บทความ */}
         <div className="w-full rounded-2xl overflow-hidden mb-8 border border-ezgold-500/30 shadow-[0_0_30px_rgba(212,175,55,0.15)] relative">
-            <div className="absolute inset-0 bg-black/60 z-10"></div>
-            <img src="/pok9-bg.gif" alt="ป๊อกเด้งออนไลน์ EZPOK168" className="w-full h-[200px] md:h-[300px] object-cover" />
+            <div className="absolute inset-0 bg-black/70 z-10"></div>
+            <img src="/pok9-bg.gif" alt="ป๊อกเด้งออนไลน์ กติกา EZPOK168" className="w-full h-[250px] md:h-[350px] object-cover" />
             <div className="absolute inset-0 z-20 flex flex-col items-center justify-center p-6 text-center">
-                <span className="px-4 py-1.5 bg-ezgold-500 text-black font-bold text-xs md:text-sm rounded-full mb-4">คู่มือการเล่นฉบับสมบูรณ์</span>
-                <h1 className="font-prompt font-extrabold text-2xl md:text-5xl text-white drop-shadow-lg leading-tight">
+                <span className="px-5 py-2 bg-gradient-to-r from-ezgold-600 to-ezgold-400 text-black font-extrabold text-xs md:text-sm rounded-full mb-4 shadow-lg">คู่มือสารานุกรมฉบับสมบูรณ์ 2026</span>
+                <h1 className="font-prompt font-black text-3xl md:text-5xl text-white drop-shadow-[0_4px_10px_rgba(0,0,0,0.8)] leading-tight max-w-3xl">
                     เจาะลึกกติกา <span style={{ color: '#D4AF37' }}>ไพ่ป๊อกเด้ง</span> <br className="hidden md:block" />
-                    พร้อมสูตรทำเงินออนไลน์ 2026
+                    วิธีเล่น เทคนิคการนับแต้ม และสูตรทำเงินออนไลน์
                 </h1>
             </div>
         </div>
 
-        {/* Article Body (Long-form Content เน้นคีย์เวิร์ด) */}
+        {/* Article Body (SEO Long-form Content 1500+ Words Structure) */}
         <article className="bg-black/40 p-6 md:p-10 rounded-2xl border border-gray-800 shadow-xl leading-loose">
           
-          <p className="text-lg text-gray-300 mb-6 font-medium">
-             หากพูดถึงเกมไพ่ที่คนไทยคุ้นเคยและชื่นชอบมากที่สุด คงหนีไม่พ้น <strong>"ไพ่ป๊อกเด้ง"</strong> (Pok Deng) เกมเดิมพันสุดคลาสสิกที่มีประวัติศาสตร์ยาวนาน ด้วยกติกาที่เข้าใจง่าย จบเกมไว และมีลุ้นอัตราจ่ายที่ทวีคูณ (เด้ง) ในยุคดิจิทัลนี้ การเล่นป๊อกเด้งได้ถูกยกระดับขึ้นเป็น <strong><span className="text-ezgold-400">ป๊อกเด้งออนไลน์</span></strong> ที่สามารถเข้าเล่นได้ตลอด 24 ชั่วโมง ผ่านเว็บไซต์ชั้นนำอย่าง <strong>WWW.EZPOK168.COM</strong> บทความนี้จะพาทุกท่านไปทำความเข้าใจตั้งแต่กติกาพื้นฐานแบบวิกิพีเดีย ไปจนถึงเทคนิคการทำกำไรขั้นสูง
+          <div className="flex items-center gap-3 mb-6 p-4 bg-ezgold-500/10 border-l-4 border-ezgold-500 rounded-r-lg">
+              <BookOpen className="w-6 h-6 text-ezgold-400 shrink-0" />
+              <p className="text-sm md:text-base text-gray-300 font-medium">
+                  <strong>บทสรุปผู้บริหาร:</strong> บทความนี้จัดทำขึ้นเพื่ออธิบายกติกา <strong>"ไพ่ป๊อกเด้ง"</strong> อย่างละเอียดเทียบเท่าสารานุกรมวิกิพีเดีย ตั้งแต่อุปกรณ์ที่ใช้ วิธีการแจกไพ่ การนับแต้ม <strong>ป๊อก 8 ป๊อก 9</strong> การคิดอัตราจ่ายสองเด้ง สามเด้ง ไปจนถึงเทคนิคการทำกำไรจาก <strong>ป๊อกเด้งออนไลน์ 2 ใบเปิด</strong> และ <strong>บาคาร่า</strong> บนเว็บไซต์ <strong>WWW.EZPOK168.COM</strong>
+              </p>
+          </div>
+
+          <p className="text-base md:text-lg text-gray-300 mb-6 font-medium">
+             หากพูดถึงการละเล่นพื้นบ้านที่อยู่คู่กับสังคมไทยมาอย่างช้านาน คงไม่มีใครไม่รู้จัก <strong>"ไพ่ป๊อกเด้ง" (Pok Deng)</strong> เกมไพ่ที่อาศัยทั้งดวงและทักษะการคำนวณตัวเลขอย่างรวดเร็ว ด้วยกติกาที่ตรงไปตรงมา จบเกมไว และมีลุ้นอัตราจ่ายที่ทวีคูณ หรือที่เรียกติดปากกันว่า <strong>"เด้ง"</strong> ทำให้เกมนี้กลายเป็นกิจกรรมยอดฮิตในวงสนทนา ปัจจุบัน ด้วยเทคโนโลยีที่ก้าวล้ำ การเล่นป๊อกเด้งได้ถูกยกระดับขึ้นเป็น <strong><span className="text-ezgold-400">ป๊อกเด้งออนไลน์</span></strong> ที่ผู้เล่นสามารถเดิมพันได้ตลอด 24 ชั่วโมงผ่านสมาร์ทโฟน
           </p>
 
-          <h2 className="text-2xl md:text-3xl font-prompt font-bold mt-10 mb-5 border-b border-gray-700 pb-3 flex items-center gap-3" style={{ color: '#D4AF37' }}>
-            <Trophy className="w-8 h-8" /> ป๊อกเด้ง คืออะไร? ทำความเข้าใจพื้นฐาน
+          {/* Section 1: กติกาพื้นฐาน */}
+          <h2 className="text-2xl md:text-3xl font-prompt font-bold mt-12 mb-5 border-b border-gray-700 pb-3 flex items-center gap-3" style={{ color: '#D4AF37' }}>
+            <Trophy className="w-8 h-8" /> 1. ไพ่ป๊อกเด้ง คืออะไร? และ อุปกรณ์ที่ใช้เล่น
           </h2>
           <p className="mb-4 text-gray-300">
-            <strong>ป๊อกเด้ง</strong> เป็นเกมไพ่ที่ใช้ไพ่มาตรฐาน 1 สำรับ (52 ใบ ไม่รวมโจ๊กเกอร์) โดยแบ่งผู้เล่นออกเป็น 2 ฝ่ายหลักๆ คือ <strong>"เจ้ามือ"</strong> (Dealer) และ <strong>"ลูกมือ"</strong> หรือผู้เล่น (Player) วัตถุประสงค์หลักของเกมคือ ลูกมือจะต้องรวมแต้มไพ่ในมือ (2 หรือ 3 ใบ) ให้ได้แต้มรวมใกล้เคียงกับ <strong>9 แต้ม</strong> ให้ได้มากที่สุด เพื่อนำไปวัดผลแพ้ชนะกับแต้มไพ่ของฝั่งเจ้ามือ
+            <strong>ป๊อกเด้ง</strong> เป็นเกมไพ่ที่ต้องอาศัยผู้เล่นตั้งแต่ 2 คนขึ้นไป (รวมเจ้ามือ) อุปกรณ์หลักที่ใช้คือ <strong>ไพ่มาตรฐาน 1 สำรับ (Standard Deck)</strong> จำนวน 52 ใบ โดยจะทำการตัดไพ่โจ๊กเกอร์ (Joker) ออกทั้งหมด โครงสร้างของผู้เล่นจะแบ่งเป็น 2 ฝ่ายหลักๆ อย่างชัดเจน ได้แก่:
           </p>
-          <p className="mb-4 text-gray-300">
-            จุดเด่นที่ทำให้เกมนี้มีเสน่ห์คือคำว่า <strong>"เด้ง"</strong> ซึ่งหมายถึงอัตราการจ่ายเงินรางวัลที่เพิ่มขึ้นเป็น 2 เท่า หรือ 3 เท่า หากไพ่ในมือมีดอกเดียวกัน (สัญลักษณ์เดียวกัน) หรือเป็นไพ่คู่ 
-          </p>
-
-          <h2 className="text-2xl md:text-3xl font-prompt font-bold mt-10 mb-5 border-b border-gray-700 pb-3 flex items-center gap-3 text-white">
-            <CheckCircle className="w-8 h-8 text-green-500" /> กติกาการนับแต้มไพ่ ป๊อกเด้ง (Card Valuation)
-          </h2>
-          <p className="mb-4 text-gray-300">การนับแต้มของไพ่ป๊อกเด้งนั้นคล้ายคลึงกับเกม <strong>บาคาร่า</strong> โดยมีหลักการนับแต้มดังต่อไปนี้:</p>
-          <ul className="list-disc list-inside space-y-2 mb-6 text-gray-300 ml-4 p-4 bg-black/30 rounded-xl border border-gray-800">
-            <li><strong>ไพ่ A (Ace):</strong> มีค่าเท่ากับ 1 แต้ม</li>
-            <li><strong>ไพ่ตัวเลข 2 ถึง 9:</strong> มีค่าเท่ากับตัวเลขที่ปรากฏบนหน้าไพ่</li>
-            <li><strong>ไพ่ 10, J, Q, K:</strong> มีค่าเท่ากับ 0 แต้ม (แต่หากได้ไพ่กลุ่มนี้ผสมกันอาจเป็นไพ่รูปแบบพิเศษได้)</li>
+          <ul className="list-decimal list-inside space-y-3 mb-6 text-gray-300 ml-4">
+            <li><strong>เจ้ามือ (Dealer/Banker):</strong> ผู้ทำหน้าที่สับไพ่ แจกไพ่ และเป็นศูนย์กลางในการรับจ่ายเงินเดิมพันจากผู้เล่นทุกคนรอบวง</li>
+            <li><strong>ลูกมือ หรือ ขา (Player/Punter):</strong> ผู้เล่นทั่วไปที่วางเงินเดิมพันแข่งกับเจ้ามือ โดยลูกมือสามารถลงเดิมพันได้หลายมือพร้อมกัน (เรียกว่า เล่นหลายขา)</li>
           </ul>
           <p className="mb-4 text-gray-300">
-            <em>ตัวอย่างการรวมแต้ม:</em> หากคุณได้ไพ่ 4 และ 5 แต้มรวมคือ 9 (<strong>ป๊อก 9</strong>) / หากคุณได้ไพ่ 8 และ 5 แต้มรวมคือ 13 จะนับเฉพาะหลักหน่วยคือ 3 แต้ม
+            วัตถุประสงค์สูงสุดของเกมนี้ คือการที่ลูกมือต้องลุ้นให้แต้มไพ่ในมือของตนเอง (จากการรวมไพ่ 2 หรือ 3 ใบ) มีแต้มรวมใกล้เคียงกับ <strong>9 แต้ม</strong> ให้ได้มากที่สุด เพื่อนำไปวัดผลแพ้ชนะกับไพ่ของ <strong>เจ้ามือ</strong>
           </p>
 
-          <h2 className="text-2xl md:text-3xl font-prompt font-bold mt-10 mb-5 border-b border-gray-700 pb-3 flex items-center gap-3 text-white">
-            <Star className="w-8 h-8 text-purple-500" /> รูปแบบไพ่พิเศษ เรียงลำดับจากใหญ่ไปเล็ก
+          {/* Section 2: การนับแต้ม */}
+          <h2 className="text-2xl md:text-3xl font-prompt font-bold mt-12 mb-5 border-b border-gray-700 pb-3 flex items-center gap-3 text-white">
+            <CheckCircle className="w-8 h-8 text-green-500" /> 2. กติกาการนับแต้มไพ่ ป๊อกเด้ง (Card Valuation)
+          </h2>
+          <p className="mb-4 text-gray-300">การนับแต้มของไพ่ป๊อกเด้งนั้นมีหลักการที่คล้ายคลึงกับเกมระดับสากลอย่าง <strong>บาคาร่าออนไลน์</strong> โดยจะประเมินค่าของหน้าไพ่แต่ละใบดังต่อไปนี้:</p>
+          
+          <div className="bg-black/30 p-6 rounded-xl border border-gray-800 mb-6 shadow-inner">
+              <ul className="space-y-4 text-gray-300">
+                <li className="flex items-start gap-3">
+                    <span className="bg-ezgold-500 text-black font-bold px-3 py-1 rounded">ไพ่ A (Ace)</span> 
+                    <span>มีค่าเท่ากับ <strong>1 แต้ม</strong> เสมอ</span>
+                </li>
+                <li className="flex items-start gap-3">
+                    <span className="bg-ezgold-500 text-black font-bold px-3 py-1 rounded">ไพ่ 2 ถึง 9</span> 
+                    <span>มีค่าเท่ากับ <strong>ตัวเลขที่ปรากฏบนหน้าไพ่</strong> โดยตรง</span>
+                </li>
+                <li className="flex items-start gap-3">
+                    <span className="bg-gray-600 text-white font-bold px-3 py-1 rounded">ไพ่ 10, J, Q, K</span> 
+                    <span>มีค่าเท่ากับ <strong>0 แต้ม</strong> (แต่หากไพ่กลุ่มภาษาอังกฤษผสมกัน อาจเกิดเป็นไพ่รูปแบบพิเศษ หรือ 'ไพ่เซียน' ได้)</span>
+                </li>
+              </ul>
+          </div>
+          <p className="mb-4 text-gray-300">
+            <strong>วิธีคิดผลรวมแต้ม:</strong> ให้นำแต้มของไพ่ทุกใบในมือมาบวกกัน หากผลรวมเกิน 9 แต้ม (ตั้งแต่ 10 ขึ้นไป) ให้ยึดเอา <strong>ตัวเลขหลักหน่วย</strong> เป็นหลัก เช่น:
+            <br/>- ได้ไพ่ 4 และ 5 แต้มรวมคือ 9 (เรียก <strong>ป๊อก 9</strong>)
+            <br/>- ได้ไพ่ 8 และ 7 แต้มรวมคือ 15 จะนับเฉพาะหลักหน่วยคือ <strong>5 แต้ม</strong>
+            <br/>- ได้ไพ่ K และ 6 แต้มรวมคือ 0 + 6 = <strong>6 แต้ม</strong>
+          </p>
+
+          {/* Section 3: ไพ่พิเศษ */}
+          <h2 className="text-2xl md:text-3xl font-prompt font-bold mt-12 mb-5 border-b border-gray-700 pb-3 flex items-center gap-3 text-white">
+            <Star className="w-8 h-8 text-purple-500" /> 3. รูปแบบไพ่พิเศษ และ อัตราการจ่ายเงิน (ลำดับความใหญ่)
           </h2>
           <p className="mb-4 text-gray-300">
-             การเล่น <strong>ป๊อกเด้งออนไลน์</strong> บน <strong>EZPOK168</strong> สิ่งที่นักเดิมพันทุกคนใฝ่ฝันคือการได้ไพ่รูปแบบพิเศษ เพราะนอกจากจะชนะเจ้ามือได้ง่ายแล้ว ยังได้รับอัตราจ่ายที่สูงมาก เรียงตามความใหญ่ได้ดังนี้:
+             เหตุผลที่ทำให้ <strong>ป๊อกเด้ง</strong> ครองใจนักเดิมพันมากกว่าเกมไพ่ทั่วไป คือระบบ <strong>"เด้ง"</strong> และไพ่รูปแบบพิเศษต่างๆ ที่ให้อัตราผลตอบแทนทวีคูณ ในการเล่นบน <strong>EZPOK168</strong> หากคุณได้ไพ่เหล่านี้ ถือเป็นแจ็คพอตเลยทีเดียว โดยเรียงลำดับจากความใหญ่ (สู้ชนะทุกรูปแบบด้านล่าง) ดังนี้:
           </p>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
-            <div className="p-5 rounded-xl border border-ezgold-500/30" style={{ background: 'linear-gradient(to bottom right, rgba(212,175,55,0.1), rgba(0,0,0,0.8))' }}>
-                <h4 className="font-bold text-lg text-ezgold-400 mb-2">1. ป๊อก 9 และ ป๊อก 8 (แต้มสูงสุด)</h4>
-                <p className="text-sm text-gray-300">คือไพ่ 2 ใบแรกที่แจกมาบวกกันได้ 9 หรือ 8 แต้ม ถือว่าใหญ่ที่สุดในเกม หากได้ดอกเดียวกันด้วยจะเรียกว่า <strong>ป๊อก 9 สองเด้ง</strong> (รับเงิน 2 เท่า)</p>
+            <div className="p-6 rounded-xl border border-ezgold-500/50 relative overflow-hidden" style={{ background: 'linear-gradient(to bottom right, rgba(212,175,55,0.15), rgba(0,0,0,0.9))' }}>
+                <div className="absolute top-0 right-0 bg-red-600 text-white text-[10px] font-bold px-2 py-1 rounded-bl-lg">ใหญ่ที่สุด</div>
+                <h4 className="font-bold text-xl text-ezgold-400 mb-2">1. ป๊อก 9 และ ป๊อก 8</h4>
+                <p className="text-sm text-gray-300 mb-3">คือสถานการณ์ที่ไพ่ 2 ใบแรกบวกกันได้ 9 หรือ 8 แต้มพอดี เกมจะหยุดและคุณจะชนะไพ่ธรรมดาทั้งหมดทันที (ป๊อก 9 ชนะ ป๊อก 8)</p>
+                <div className="text-xs bg-black/50 p-2 rounded border border-gray-700">
+                    <strong className="text-white">อัตราจ่าย:</strong> 1 เท่า <br/>
+                    <strong className="text-ezgold-400">*หากดอกเดียวกัน หรือไพ่คู่:</strong> จ่าย 2 เท่า (ป๊อกสองเด้ง)
+                </div>
             </div>
-            <div className="p-5 rounded-xl border border-gray-700 bg-black/50">
-                <h4 className="font-bold text-lg text-white mb-2">2. ตอง (Three of a Kind)</h4>
-                <p className="text-sm text-gray-300">เมื่อจั่วไพ่ใบที่ 3 แล้วได้ไพ่ตัวเลขหรือตัวภาษาอังกฤษเหมือนกันทั้ง 3 ใบ เช่น K-K-K หรือ 5-5-5 ชนะแต้มธรรมดาทุกรูปแบบ อัตราจ่าย <strong>5 เท่า (5 เด้ง)</strong></p>
+
+            <div className="p-6 rounded-xl border border-gray-700 bg-black/50">
+                <h4 className="font-bold text-xl text-white mb-2">2. ตอง (Three of a Kind)</h4>
+                <p className="text-sm text-gray-300 mb-3">เกิดขึ้นเมื่อผู้เล่นจั่วไพ่ใบที่ 3 แล้วได้หน้าไพ่ตัวเลข หรือตัวอักษร <strong>เหมือนกันทั้ง 3 ใบ</strong> (เช่น K-K-K, 5-5-5, 2-2-2) ถือเป็นไพ่ที่ใหญ่ที่สุดรองจากป๊อก</p>
+                <div className="text-xs bg-black/80 p-2 rounded border border-gray-700">
+                    <strong className="text-ezgold-400">อัตราจ่าย:</strong> 5 เท่า (5 เด้ง)
+                </div>
             </div>
-            <div className="p-5 rounded-xl border border-gray-700 bg-black/50">
-                <h4 className="font-bold text-lg text-white mb-2">3. สเตรทฟลัช (Straight Flush)</h4>
-                <p className="text-sm text-gray-300">ไพ่ 3 ใบเรียงลำดับกันและมีดอกเดียวกัน เช่น 4-5-6 โพแดง อัตราจ่าย <strong>5 เท่า (5 เด้ง)</strong></p>
+
+            <div className="p-6 rounded-xl border border-gray-700 bg-black/50">
+                <h4 className="font-bold text-xl text-white mb-2">3. สเตรทฟลัช (Straight Flush)</h4>
+                <p className="text-sm text-gray-300 mb-3">คือไพ่ 3 ใบที่มี <strong>ดอกเดียวกันทั้งหมด</strong> และมี <strong>แต้มเรียงลำดับกัน</strong> (เช่น 4-5-6 โพแดง, 8-9-10 ดอกจิก) ไพ่ชุดนี้จะชนะไพ่เรียงธรรมดา</p>
+                <div className="text-xs bg-black/80 p-2 rounded border border-gray-700">
+                    <strong className="text-ezgold-400">อัตราจ่าย:</strong> 5 เท่า (5 เด้ง)
+                </div>
             </div>
-            <div className="p-5 rounded-xl border border-gray-700 bg-black/50">
-                <h4 className="font-bold text-lg text-white mb-2">4. เรียง (Straight)</h4>
-                <p className="text-sm text-gray-300">ไพ่ 3 ใบเรียงลำดับกันแต่ดอกไม่เหมือนกัน เช่น 7-8-9 อัตราจ่าย <strong>3 เท่า (3 เด้ง)</strong></p>
+
+            <div className="p-6 rounded-xl border border-gray-700 bg-black/50">
+                <h4 className="font-bold text-xl text-white mb-2">4. เรียง (Straight)</h4>
+                <p className="text-sm text-gray-300 mb-3">ไพ่ 3 ใบที่มีตัวเลข <strong>เรียงลำดับกันตามหน้าไพ่</strong> แต่สีหรือดอกไม่จำเป็นต้องเหมือนกัน (เช่น 7-8-9, 10-J-Q) *หมายเหตุ: K-A-2 ถือว่าไม่เรียงในบางกติกา</p>
+                <div className="text-xs bg-black/80 p-2 rounded border border-gray-700">
+                    <strong className="text-ezgold-400">อัตราจ่าย:</strong> 3 เท่า (3 เด้ง)
+                </div>
             </div>
-            <div className="p-5 rounded-xl border border-gray-700 bg-black/50">
-                <h4 className="font-bold text-lg text-white mb-2">5. สามเหลือง / ขอบ / เซียน</h4>
-                <p className="text-sm text-gray-300">ไพ่ 3 ใบเป็นฝรั่งทั้งหมด (J, Q, K รูปแบบใดก็ได้) อัตราจ่าย <strong>3 เท่า (3 เด้ง)</strong></p>
+
+            <div className="p-6 rounded-xl border border-gray-700 bg-black/50 md:col-span-2">
+                <h4 className="font-bold text-xl text-white mb-2">5. เซียน / สามเหลือง / ขอบ</h4>
+                <p className="text-sm text-gray-300 mb-3">ไพ่ 3 ใบประกอบไปด้วย <strong>ไพ่หน้าคนภาษาอังกฤษทั้งหมด (J, Q, K)</strong> โดยจะเป็นรูปแบบใดก็ได้ เช่น J-J-Q หรือ K-Q-J ถือว่าชนะแต้มธรรมดาทุกกรณี (ยกเว้นป๊อก 8, ป๊อก 9, ตอง, เรียง)</p>
+                <div className="text-xs bg-black/80 p-2 rounded border border-gray-700 inline-block">
+                    <strong className="text-ezgold-400">อัตราจ่าย:</strong> 3 เท่า (3 เด้ง)
+                </div>
             </div>
           </div>
 
+          <div className="mt-8 p-4 bg-blue-900/20 border border-blue-500/30 rounded-xl flex items-start gap-3">
+              <Info className="w-5 h-5 text-blue-400 shrink-0 mt-0.5" />
+              <p className="text-sm text-blue-200">
+                  <strong>ความหมายของคำว่า "เด้ง":</strong> ในไพ่ธรรมดาที่ไม่ได้เป็นไพ่พิเศษ หากคุณถือไพ่ 2 ใบที่มีดอกเดียวกัน (เช่น โพดำทั้งคู่) จะได้รางวัล 2 เท่า (2 เด้ง) และหากจั่วใบที่ 3 แล้วได้ดอกเดียวกันทั้ง 3 ใบ จะได้รับรางวัล 3 เท่า (3 เด้ง) 
+              </p>
+          </div>
+
+          {/* Section 4: ป๊อกเด้งออนไลน์ 2 ใบเปิด */}
           <h2 className="text-2xl md:text-3xl font-prompt font-bold mt-12 mb-5 border-b border-gray-700 pb-3 flex items-center gap-3 text-white">
-            <Gamepad2 className="w-8 h-8 text-red-500" /> จากวงไพ่พื้นบ้าน สู่ "ป๊อกเด้งออนไลน์ 2 ใบเปิด"
+            <Gamepad2 className="w-8 h-8 text-red-500" /> 4. ยุคใหม่ของคาสิโน: "ป๊อกเด้งออนไลน์ 2 ใบเปิด"
           </h2>
           <p className="mb-4 text-gray-300">
-             ปัจจุบันรูปแบบที่ได้รับความนิยมมากที่สุดในคาสิโนออนไลน์คือ <strong>"ป๊อกเด้ง 2 ใบเปิด"</strong> รูปแบบนี้จะตัดการจั่วไพ่ใบที่ 3 ออกไป วัดผลแพ้ชนะกันด้วยไพ่ 2 ใบแรกเท่านั้น ข้อดีคือเกมมีความรวดเร็ว ทันใจ โปร่งใส 100% เพราะมีการถ่ายทอดสด (Live) สับไพ่ให้ดูแบบเรียลไทม์ ซึ่งเว็บไซต์ <strong>WWW.EZPOK168.COM</strong> เป็นผู้นำด้านระบบนี้ 
+             แม้ป๊อกเด้งแบบดั้งเดิมจะสนุก แต่ในวงการ <strong>คาสิโนออนไลน์</strong> ปัจจุบัน รูปแบบที่ได้รับความนิยมสูงสุดระดับปรากฏการณ์คือ <strong>"ป๊อกเด้ง 2 ใบเปิด"</strong> กติกานี้ถูกออกแบบมาเพื่อแก้ไขปัญหาความล่าช้าในการตัดสินใจจั่วไพ่ใบที่ 3 โดยมีจุดเด่นดังนี้:
           </p>
+          <ul className="list-disc list-inside space-y-2 mb-6 text-gray-300 ml-4">
+            <li><strong>ไร้การจั่วไพ่:</strong> ระบบจะแจกไพ่เพียงฝั่งละ 2 ใบ และหงายเพื่อวัดแต้มกันทันที</li>
+            <li><strong>รู้ผลลัพธ์ใน 15 วินาที:</strong> ทำให้ทำรอบและหมุนเวียนเงินเดิมพัน (Turnover) ได้เร็วกว่าบาคาร่า</li>
+            <li><strong>ไลฟ์สดโปร่งใส:</strong> บน <strong>WWW.EZPOK168.COM</strong> มีการตั้งกล้องถ่ายทอดสดแอดมินสาวสวยทำการสับไพ่และเปิดไพ่ให้ดูแบบ Real-time ตัดปัญหาการล็อคผลจากโปรแกรมบอท 100%</li>
+          </ul>
+
+          {/* Section 5: เทคนิคเซียน */}
+          <h2 className="text-2xl md:text-3xl font-prompt font-bold mt-12 mb-5 border-b border-gray-700 pb-3 flex items-center gap-3" style={{ color: '#D4AF37' }}>
+            <Trophy className="w-8 h-8" /> 5. เทคนิคและสูตรทำเงิน (ฉบับเซียน EZPOK)
+          </h2>
           <p className="mb-4 text-gray-300">
-             นอกจาก <strong>ป๊อกเด้ง</strong> แล้ว ภายในระบบของ EZPOK168 ยังมีบริการเกมไพ่ <strong>บาคาร่าออนไลน์</strong> ที่คอไพ่สามารถใช้สูตรอ่านเค้าไพ่มังกรหรือปิงปองในการทำกำไรได้ รวมถึงสายเสี่ยงโชคตัวเลข ทางเราก็มีบริการ <strong>หวยออนไลน์</strong> ทั้ง <strong>หวยไทย</strong> และ <strong>หวยลาวพัฒนา</strong> ที่ให้อัตราจ่ายสูงถึงบาทละ 90 จ่ายเต็มไม่มีอั้น ทำให้คุณสามารถสนุกได้ครบจบในยูสเซอร์เดียว
+             การเล่นพนันให้ได้กำไรไม่ใช่เรื่องของดวงเพียงอย่างเดียว แต่ต้องอาศัยการบริหารจัดการความเสี่ยง นี่คือ 3 เทคนิคที่เซียนพนันมักใช้:
+          </p>
+          <ol className="list-decimal list-inside space-y-4 mb-6 text-gray-300 ml-4">
+            <li>
+                <strong>เทคนิคกระจายความเสี่ยง (เล่นหลายขา):</strong> 
+                ข้อได้เปรียบของออนไลน์คือคุณเปิดบิลแทงพร้อมกันกี่ขาก็ได้ หากคุณแทงพร้อมกัน 3 ขา (ขา 1, ขา 2, ขา 3) แม้ขาแรกจะบอด (0 แต้ม) คุณยังมีโอกาสใช้ขาที่เหลือดึงทุนและกำไรคืนมาได้ เป็นการอุดรูรั่วของการเสียเงินรวดเดียว
+            </li>
+            <li>
+                <strong>การเดินเงินแบบทบ (Martingale):</strong> 
+                ต้องใช้ควบคู่กับเป้าหมายที่ชัดเจน หากตาแรกแพ้ 50 บาท ตาต่อไปให้ลง 100 บาท หากชนะจะได้ทุนคืนพร้อมกำไร 50 บาท แต่เทคนิคนี้ต้องมีเงินทุนสายป่านยาวพอสมควร และต้องรู้จัก <em>Stop Loss (หยุดเมื่อเสียถึงเป้า)</em>
+            </li>
+            <li>
+                <strong>อ่านสถิติเจ้ามือ (Dealer Pattern):</strong> 
+                เช่นเดียวกับเค้าไพ่ <strong>บาคาร่า</strong> หากสังเกตว่าเจ้ามือ ป๊อก 8 ป๊อก 9 กินเรียบมา 3-4 ตาติด ตามสถิติความน่าจะเป็น โอกาสที่ตาถัดไปเจ้ามือจะแต้มต่ำมีสูงมาก ให้รอจังหวะนั้นแล้วค่อยอัดเดิมพันในฝั่งลูกมือ
+            </li>
+          </ol>
+
+          <p className="mb-4 text-gray-300">
+             นอกจาก <strong>ป๊อกเด้ง</strong> แล้ว ภายในระบบของแพลตฟอร์ม <strong>EZPOK168</strong> ยังเป็นศูนย์รวมความบันเทิงเต็มรูปแบบ มีบริการเกมไพ่ <strong>บาคาร่าออนไลน์</strong> จากค่ายดัง และสายเสี่ยงโชคตัวเลข ทางเราก็มีบริการ <strong>หวยออนไลน์</strong> ยอดฮิตอย่าง <strong>หวยรัฐบาลไทย</strong> และ <strong>หวยลาวพัฒนา</strong> ที่ให้อัตราจ่ายสูงถึง <em>บาทละ 90</em> จ่ายเต็ม ไม่มีเลขอั้น ทำให้คุณสามารถทำกำไรและสนุกได้ครบจบในแพลตฟอร์มเดียว
           </p>
 
-          <div className="mt-10 p-6 md:p-8 rounded-2xl border border-ezgold-500/50 text-center" style={{ background: 'linear-gradient(to right, rgba(212,175,55,0.1), rgba(168,85,247,0.1))' }}>
-              <h3 className="font-prompt font-bold text-2xl text-white mb-4">พร้อมที่จะประลองฝีมือแล้วหรือยัง?</h3>
-              <p className="text-gray-300 mb-6">สมัครสมาชิกเล่น ป๊อกเด้งออนไลน์ บาคาร่า หวยไทย หวยลาว กับ <strong className="text-ezgold-400">EZPOK168</strong> ฝาก-ถอน ระบบออโต้ ไม่มีขั้นต่ำ 1 บาทก็เล่นได้!</p>
-              <Link href="https://ezpok168.com/" target="_blank" className="inline-flex items-center gap-2 px-8 py-4 text-black font-bold text-lg md:text-xl rounded-xl shadow-[0_0_20px_rgba(212,175,55,0.5)] hover:scale-105 transition-transform no-underline" style={{ background: 'linear-gradient(to right, #D4AF37, #F3E5AB)' }}>
-                  คลิกที่นี่ เพื่อเข้าสู่ระบบ EZPOK168 <PlayCircle className="w-6 h-6" />
+          {/* Call to action (CTA) */}
+          <div className="mt-12 p-8 md:p-10 rounded-2xl border border-ezgold-500/50 text-center shadow-[0_10px_40px_rgba(212,175,55,0.2)] relative overflow-hidden" style={{ background: 'linear-gradient(135deg, rgba(46,2,73,0.8), rgba(13,5,20,0.9))' }}>
+              <div className="absolute top-0 left-0 w-full h-1" style={{ background: 'linear-gradient(to right, transparent, #D4AF37, transparent)' }}></div>
+              <h3 className="font-prompt font-extrabold text-3xl text-white mb-4 drop-shadow-md">พร้อมลงสนามประลองฝีมือแล้วหรือยัง?</h3>
+              <p className="text-gray-300 mb-8 text-lg">
+                  สมัครสมาชิกเล่น ป๊อกเด้งออนไลน์ บาคาร่า หวยไทย หวยลาว กับ <strong className="text-ezgold-400 text-xl">EZPOK168.COM</strong> <br className="hidden md:block"/> 
+                  ระบบฝาก-ถอน อัตโนมัติ 3 วินาที ไม่มีขั้นต่ำ 1 บาทก็เริ่มต้นทำกำไรได้ทันที!
+              </p>
+              <Link href="https://ezpok168.com/" target="_blank" className="inline-flex items-center gap-3 px-10 py-4 text-black font-black text-xl rounded-full shadow-[0_0_20px_rgba(212,175,55,0.6)] hover:scale-105 hover:shadow-[0_0_30px_rgba(212,175,55,0.8)] transition-all duration-300 no-underline pulse-gold" style={{ background: 'linear-gradient(to right, #D4AF37, #FDF5E6, #D4AF37)' }}>
+                  สมัครสมาชิกฟรี คลิกเลย! <PlayCircle className="w-7 h-7 fill-current" />
               </Link>
           </div>
 
         </article>
 
-        {/* 🟢 3. ส่วนของ AEO (Answer Engine Optimization) ทำเป็น FAQ ให้ Bot ดึงคำตอบไปได้เลย */}
+        {/* 🟢 3. ส่วนของ AEO (Answer Engine Optimization) & FAQ */}
         <section className="mt-12 bg-black/40 p-6 md:p-10 rounded-2xl border border-gray-800 shadow-xl">
           <div className="flex items-center gap-3 mb-8 border-b border-gray-700 pb-4">
             <HelpCircle className="w-8 h-8" style={{ color: '#D4AF37' }} />
-            <h2 className="font-prompt font-bold text-2xl md:text-3xl text-white">คำถามที่พบบ่อย (FAQ) ค้นหาจาก Google</h2>
+            <h2 className="font-prompt font-bold text-2xl md:text-3xl text-white">คำถามที่พบบ่อย (FAQ) อัปเดตล่าสุด</h2>
           </div>
           
           <div className="space-y-4">
             <details className="bg-[#111] p-5 rounded-xl border border-gray-800 cursor-pointer group" open>
               <summary className="font-prompt font-bold text-gray-200 group-open:text-ezgold-400 text-lg flex justify-between items-center outline-none">
-                <span>ไพ่ป๊อกเด้ง คืออะไร เล่นยังไง?</span>
+                <span>ไพ่ป๊อกเด้ง คืออะไร แตกต่างจากบาคาร่าอย่างไร?</span>
               </summary>
               <p className="mt-4 text-gray-400 leading-relaxed border-t border-gray-800 pt-4">
-                <strong>ป๊อกเด้ง</strong> เป็นเกมไพ่ยอดนิยมของไทย ผู้เล่นต้องรวมแต้มไพ่ 2-3 ใบให้ได้ใกล้เคียง 9 แต้มมากที่สุด เพื่อเอาชนะเจ้ามือ โดยแต้มสูงสุดคือการได้รวม 8 หรือ 9 แต้มจากไพ่ 2 ใบแรก (เรียกว่า ป๊อก 8, ป๊อก 9)
+                <strong>ป๊อกเด้ง</strong> เป็นเกมไพ่ยอดนิยมของไทย ผู้เล่น (ลูกมือ) ต้องลุ้นแต้มไพ่ 2-3 ใบให้ได้ใกล้เคียง 9 แต้มมากที่สุด เพื่อแข่งและเอาชนะแต้มของเจ้ามือโดยตรง มีจุดเด่นคือการทวีคูณเงินรางวัลหากได้ไพ่ดอกเดียวกัน (เด้ง) ส่วน <strong>บาคาร่า</strong> จะเป็นเกมทายผล ว่าฝั่ง Player หรือ Banker ฝั่งไหนจะเป็นผู้ชนะ
               </p>
             </details>
 
             <details className="bg-[#111] p-5 rounded-xl border border-gray-800 cursor-pointer group">
               <summary className="font-prompt font-bold text-gray-200 group-open:text-ezgold-400 text-lg flex justify-between items-center outline-none">
-                <span>ป๊อกเด้งออนไลน์ 2 ใบเปิด ต่างกับ 3 ใบตรงไหน?</span>
+                <span>ไพ่ ป๊อก 8 ป๊อก 9 คืออะไร?</span>
               </summary>
               <p className="mt-4 text-gray-400 leading-relaxed border-t border-gray-800 pt-4">
-                ระบบ <strong>2 ใบเปิด</strong> จะใช้การตัดสินผลแพ้ชนะจากไพ่ 2 ใบแรกที่แจกเท่านั้น ไม่มีการจั่วไพ่ใบที่ 3 ทำให้เกมจบเร็ว ลุ้นสนุก ไม่ต้องกังวลเรื่องการจั่วไพ่แล้วแต้มลด เป็นระบบที่เซียนพนันชื่นชอบมากที่สุดใน <strong>EZPOK168</strong>
+                คือสถานการณ์ที่ไพ่ 2 ใบแรกที่เจ้ามือแจกให้ นำมาบวกกันแล้วได้ผลลัพธ์เท่ากับ <strong>8 หรือ 9 แต้ม</strong> ซึ่งถือเป็นแต้มที่สูงที่สุดในเกม ผู้เล่นที่ได้ป๊อกจะถือว่าชนะทันทีและได้รับเงินรางวัลโดยไม่ต้องรอให้มีการจั่วไพ่ใบที่ 3
               </p>
             </details>
 
             <details className="bg-[#111] p-5 rounded-xl border border-gray-800 cursor-pointer group">
               <summary className="font-prompt font-bold text-gray-200 group-open:text-ezgold-400 text-lg flex justify-between items-center outline-none">
-                <span>สมัครเล่น บาคาร่า และ ป๊อกเด้ง เว็บไหนดี?</span>
+                <span>ไพ่ตอง และ ไพ่เซียน (สามเหลือง) ได้เงินกี่เท่า?</span>
               </summary>
               <p className="mt-4 text-gray-400 leading-relaxed border-t border-gray-800 pt-4">
-                ขอแนะนำ <strong>WWW.EZPOK168.COM</strong> เว็บตรงคาสิโนออนไลน์ที่รวมเกมไพ่ <strong>ป๊อกเด้งออนไลน์</strong>, <strong>บาคาร่า</strong> และระบบ <strong>หวยออนไลน์ (หวยไทย, หวยลาว)</strong> ไว้ในที่เดียว ฝาก-ถอนออโต้ตลอด 24 ชม. มั่นคงปลอดภัย 100%
+                ในกติกาป๊อกเด้งมาตรฐาน หากผู้เล่นจั่วไพ่ใบที่ 3 แล้วได้ <strong>ไพ่ตอง</strong> (เช่น 5-5-5) จะชนะและได้รับเงินรางวัลสูงถึง <strong>5 เท่า (5 เด้ง)</strong> และหากได้ <strong>ไพ่เซียน หรือ ขอบ</strong> (ไพ่ฝรั่ง J, Q, K ทั้ง 3 ใบ) จะได้รับเงินรางวัล <strong>3 เท่า (3 เด้ง)</strong>
+              </p>
+            </details>
+
+            <details className="bg-[#111] p-5 rounded-xl border border-gray-800 cursor-pointer group">
+              <summary className="font-prompt font-bold text-gray-200 group-open:text-ezgold-400 text-lg flex justify-between items-center outline-none">
+                <span>เล่น ป๊อกเด้งออนไลน์ เว็บไหนดีที่สุด จ่ายจริง ปลอดภัย?</span>
+              </summary>
+              <p className="mt-4 text-gray-400 leading-relaxed border-t border-gray-800 pt-4">
+                ขอแนะนำ <strong>WWW.EZPOK168.COM</strong> เว็บตรงคาสิโนออนไลน์ยอดนิยมของไทย ที่รวมเกมไพ่ <strong>ป๊อกเด้งออนไลน์ 2 ใบเปิด</strong> แบบไลฟ์สดสับไพ่จริงๆ พร้อมบริการ <strong>บาคาร่า</strong> และระบบ <strong>หวยออนไลน์ (หวยไทย, หวยลาว)</strong> ฝาก-ถอนออโต้รวดเร็ว ไม่มีขั้นต่ำ มั่นคงปลอดภัย 100% เล่นได้จ่ายจริงทุกยอด
               </p>
             </details>
           </div>
@@ -199,10 +304,10 @@ export default function PokdengSeoArticle() {
       </main>
 
       <footer className="bg-black py-8 mt-12 text-center text-gray-500 text-[10px] md:text-xs border-t border-gray-800 leading-loose">
-          <p className="font-prompt text-gray-400 font-bold mb-2">สงวนลิขสิทธิ์ &copy; 2026 โดย EZPOK168.NET</p>
-          <p className="max-w-2xl mx-auto px-4">
-            ศูนย์รวมความรู้เทคนิคการเล่น ป๊อกเด้งออนไลน์ บาคาร่า และ หวยไทย หวยลาว<br/>
-            เว็บไซต์นี้จัดทำขึ้นเพื่อให้ข้อมูล (SEO Knowledge Hub) เพื่อเป็นแนวทางในการเล่นคาสิโนออนไลน์อย่างมีสติ
+          <p className="font-prompt text-gray-400 font-bold mb-2 text-sm">สงวนลิขสิทธิ์ &copy; 2026 โดย EZPOK168.NET</p>
+          <p className="max-w-3xl mx-auto px-4">
+            ศูนย์รวมความรู้เทคนิคการเล่น ป๊อกเด้งออนไลน์ 2 ใบเปิด กติกาบาคาร่า และ แทงหวยไทย หวยลาว<br/>
+            เว็บไซต์นี้ (SEO & AEO Knowledge Hub) จัดทำขึ้นเพื่อเป็นสารานุกรมให้ข้อมูลกติกาที่ถูกต้อง และเป็นแนวทางในการเล่นคาสิโนออนไลน์อย่างมีสติและถูกวิธี
           </p>
       </footer>
     </div>

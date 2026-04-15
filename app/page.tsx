@@ -83,6 +83,32 @@ export default function HomePage() {
     setIsSidebarOpen(false);
   };
 
+  // 🟢 1. AEO Schema สำหรับองค์กรและเว็บไซต์ (บอก Google ว่าเราคือแบรนด์หลัก)
+  const websiteSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "EZPOK168",
+    "url": "https://ezpok168.net/",
+    "description": "ศูนย์รวมป๊อกเด้งออนไลน์ 2 ใบเปิด บาคาร่า และหวยออนไลน์ ที่ดีที่สุดในไทย ฝาก-ถอน ออโต้ 24 ชม.",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://ezpok168.net/?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  };
+
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "วงป๊อกเด้งไทย EZPOK168",
+    "url": "https://ezpok168.net/",
+    "logo": "https://ezpok168.net/NEWLOGOBANNER.gif",
+    "sameAs": [
+      "https://lin.ee/8bzIg5hL"
+    ]
+  };
+
+  // 🟢 2. AEO Schema สำหรับคำถามที่พบบ่อย (เพิ่มโอกาสติด Featured Snippet หน้าแรก)
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -92,7 +118,7 @@ export default function HomePage() {
         "name": "วงป๊อกเด้งไทย คืออะไร และเล่นอย่างไร?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "วงป๊อกเด้งไทย คือระบบการเล่นป๊อกเด้งออนไลน์รูปแบบใหม่ ที่ให้บริการผ่านกลุ่มไลน์ โดยมีแอดมินสับไพ่และไลฟ์สดแบบเรียลไทม์ ผู้เล่นสามารถเลือกแทงฝั่ง เจ้ามือ หรือ ลูกมือ (ขา) ได้อย่างอิสระ"
+          "text": "วงป๊อกเด้งไทย คือระบบการเล่นป๊อกเด้งออนไลน์รูปแบบใหม่ ที่ให้บริการผ่านกลุ่มไลน์ และเว็บไซต์ EZPOK168 โดยมีแอดมินสับไพ่และไลฟ์สดแบบเรียลไทม์ ผู้เล่นสามารถเลือกแทงฝั่ง เจ้ามือ หรือ ลูกมือ (ขา) ได้อย่างอิสระ"
         }
       },
       {
@@ -100,23 +126,23 @@ export default function HomePage() {
         "name": "ป๊อกเด้งออนไลน์ 2 ใบเปิด ต่างกับ 3 ใบอย่างไร?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "ระบบ 2 ใบเปิด จะวัดแต้มกันที่ไพ่สองใบแรกที่แจกให้เท่านั้น โดยไม่มีการจั่วไพ่ใบที่สามเพิ่ม การเล่นแบบนี้ทำให้เกมรวดเร็ว กระชับ และเน้นลุ้นป๊อก 8 ป๊อก 9 เป็นหลัก"
+          "text": "ระบบ 2 ใบเปิด จะวัดแต้มกันที่ไพ่สองใบแรกที่แจกให้เท่านั้น โดยไม่มีการจั่วไพ่ใบที่สามเพิ่ม การเล่นแบบนี้ทำให้เกมรวดเร็ว กระชับ และเน้นลุ้นป๊อก 8 ป๊อก 9 เป็นหลัก ซึ่งสามารถทำกำไรได้ไวกว่า"
         }
       },
       {
         "@type": "Question",
-        "name": "ป๊อกเด้ง กับ บาคาร่า เกมไพ่ไหนเล่นง่ายกว่ากัน?",
+        "name": "เล่น บาคาร่า หรือ ป๊อกเด้ง เกมไพ่ไหนได้เงินดีกว่ากัน?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "ป๊อกเด้งจะมีความหลากหลายในการได้รางวัลมากกว่า (เช่น 2 เด้ง, ตอง, เซียน) ทำให้สนุกและลุ้นเงินคูณได้เยอะกว่า ส่วนบาคาร่าจะเน้นแทงฝั่ง Player หรือ Banker เหมาะกับคนที่ชอบเกมเร็วและอ่านเค้าไพ่"
+          "text": "ป๊อกเด้งจะมีความหลากหลายในการได้รางวัลมากกว่า (เช่น 2 เด้ง, ตอง, เซียน) ทำให้มีโอกาสรับเงินคูณทวีคูณ ส่วนบาคาร่าจะเน้นแทงฝั่ง Player หรือ Banker เหมาะกับคนที่ชอบเกมเร็วและใช้สูตรอ่านเค้าไพ่"
         }
       },
       {
         "@type": "Question",
-        "name": "สมัครเล่น วงป๊อกเด้งไทย ปลอดภัยแค่ไหน? ฝาก-ถอน ขั้นต่ำเท่าไหร่?",
+        "name": "สมัครเล่น ป๊อกเด้งออนไลน์ EZPOK168 ฝาก-ถอน ขั้นต่ำเท่าไหร่?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "เราคือเว็บอันดับ 1 ในไทย ให้บริการด้วยความโปร่งใส 100% มีแอดมินสับไพ่สดๆ ให้ดูผ่านวิดีโอเรียลไทม์ ฝาก-ถอนระบบออโต้ ไม่มีขั้นต่ำ 1 บาทก็ฝากได้ พร้อมทีมงานบริการ 24 ชั่วโมง"
+          "text": "EZPOK168 คือเว็บตรงอันดับ 1 ในไทย ให้บริการด้วยความโปร่งใส 100% มีระบบฝาก-ถอนออโต้ ไม่มีขั้นต่ำ 1 บาทก็ฝากได้ พร้อมทีมงานบริการ 24 ชั่วโมง"
         }
       }
     ]
@@ -125,10 +151,10 @@ export default function HomePage() {
   return (
     <div className="min-h-screen relative overflow-x-hidden text-white font-sans pb-16 md:pb-0" style={{ backgroundColor: '#0D0514' }} id="home">
       
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      {/* 🟢 ฝัง Schema SEO และ AEO ทั้งหมดลงใน HTML */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       <div id="bg-watermark"></div>
       <div className="fixed top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
@@ -176,7 +202,7 @@ export default function HomePage() {
         </div>
       </div>
 
-      {/* 🟢 1. ปุ่มเมนูลอยตัวด้านซ้าย (ล็อกสีทองรับประกันสีไม่หาย) */}
+      {/* ปุ่มเมนูลอยตัวด้านซ้าย */}
       <button
         onClick={() => setIsSidebarOpen(true)}
         className="fixed top-[40%] left-0 z-[100] text-black py-4 px-2.5 rounded-r-xl shadow-[4px_0_20px_rgba(212,175,55,0.5)] flex flex-col items-center justify-center hover:px-4 transition-all duration-300"
@@ -186,7 +212,7 @@ export default function HomePage() {
         <span className="text-[12px] md:text-sm font-bold font-prompt" style={{ writingMode: 'vertical-rl', textOrientation: 'upright' }}>เมนู</span>
       </button>
 
-      {/* 🟢 2. ย้ายปุ่มติดต่อแอดมินมาลอยตัวด้านขวา (ล็อกตำแหน่งขวาสุด) */}
+      {/* ย้ายปุ่มติดต่อแอดมินมาลอยตัวด้านขวา */}
       <div className="fixed top-[40%] z-[100] flex flex-col items-end hover:pr-1 transition-all duration-300" style={{ right: 0 }}>
         <div className="p-2 md:p-2.5 rounded-l-xl shadow-[-4px_0_20px_rgba(0,185,0,0.4)] text-center w-[85px] md:w-[100px] border border-r-0 border-[#00B900]/50" style={{ backgroundColor: 'rgba(13, 5, 20, 0.95)', backdropFilter: 'blur(8px)' }}>
           <p className="text-[9px] md:text-[11px] text-white font-bold mb-1.5 font-prompt tracking-wide">แอดมิน 24 ชม.</p>
@@ -196,7 +222,7 @@ export default function HomePage() {
         </div>
       </div>
 
-      {/* ปุ่มเลื่อนขึ้นบนสุด (คงไว้ที่มุมขวาล่าง) */}
+      {/* ปุ่มเลื่อนขึ้นบนสุด */}
       <div className="fixed bottom-24 md:bottom-10 right-4 z-40">
         <button
           onClick={scrollToTop}
@@ -208,7 +234,6 @@ export default function HomePage() {
         </button>
       </div>
 
-      {/* แถบด้านบนสุด (ล็อกสีพื้นหลังดำโปร่งแสง) */}
       <header className="sticky top-0 z-40 shadow-md" style={{ backgroundColor: 'rgba(13, 5, 20, 0.95)', backdropFilter: 'blur(10px)' }}>
         <nav className="max-w-5xl mx-auto px-4 h-14 md:h-16 flex items-center justify-between">
           <div className="flex items-center gap-2 md:gap-3 pl-8 md:pl-0">
@@ -220,7 +245,6 @@ export default function HomePage() {
         </nav>
       </header>
 
-      {/* แถบค้นหา (ล็อกสีพื้นหลังดำ) */}
       <div className="w-full py-3 md:py-4 px-4 z-30 relative" style={{ backgroundColor: '#13071A' }}>
         <div className="max-w-3xl mx-auto relative group">
             <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -258,16 +282,18 @@ export default function HomePage() {
         <section className="w-full relative z-30 flex flex-col items-center bg-transparent pt-4 pb-6 mb-4">
             <img 
                 src="/NEWLOGOBANNER.gif" 
-                alt="วงป๊อกเด้งออนไลน์ 2 ใบเปิด สับไพ่เรียลไทม์ 24 ชม." 
+                alt="ป๊อกเด้งออนไลน์ บาคาร่า หวยไทย" 
                 className="w-full max-w-3xl h-auto object-contain drop-shadow-[0_0_20px_rgba(212,175,55,0.3)] mb-4" 
                 onError={(e) => {
                 e.currentTarget.style.display='none';
                 e.currentTarget.parentElement!.innerHTML = '<div class="w-full max-w-3xl h-[150px] flex items-center justify-center bg-gray-900 rounded-xl mb-4 text-sm p-4" style="color: #D4AF37;">ใส่ไฟล์ NEWLOGOBANNER.gif ในโฟลเดอร์ public</div>';
                 }}
             />
-            <p className="text-gray-300 text-sm md:text-lg font-prompt text-center max-w-2xl px-2 leading-relaxed">
-                ศูนย์รวมป๊อกเด้งออนไลน์ 2 ใบเปิด <br className="md:hidden" />สับไพ่ไลฟ์สดเรียลไทม์ มั่นคง ปลอดภัย 100%
-            </p>
+            {/* 🟢 อัปเกรดเป็น Tag <h1> เพื่อพลัง SEO สูงสุด */}
+            <h1 className="text-gray-300 text-sm md:text-lg font-prompt text-center max-w-2xl px-2 leading-relaxed">
+                ศูนย์รวม <strong>ป๊อกเด้งออนไลน์ 2 ใบเปิด</strong> <strong>บาคาร่า</strong> และ <strong>หวยออนไลน์</strong> <br className="md:hidden" />
+                สับไพ่ไลฟ์สดเรียลไทม์ มั่นคง ปลอดภัย จ่ายจริง 100%
+            </h1>
         </section>
 
         <section className="mb-10 max-w-4xl mx-auto w-full">
@@ -330,7 +356,7 @@ export default function HomePage() {
                 <p className="text-xl md:text-2xl font-bold mb-5 drop-shadow-md" style={{ color: '#FDF5E6' }}>อันดับ 1 ในไทย เล่นง่าย จ่ายจริง 100%</p>
                 
                 <p className="text-sm md:text-base text-gray-200 mb-8 max-w-lg mx-auto font-medium bg-black/50 p-3.5 rounded-xl backdrop-blur-sm leading-relaxed">
-                    สุดยอดเว็บป๊อกเด้งออนไลน์ สับไพ่สด 24 ชม. <br className="hidden md:block" /> ฝาก-ถอน ออโต้ ไม่มีขั้นต่ำ
+                    สุดยอดเว็บ <strong>ป๊อกเด้งออนไลน์</strong> สับไพ่สด 24 ชม. <br className="hidden md:block" /> ฝาก-ถอน ออโต้ ไม่มีขั้นต่ำ
                 </p>
                 
                 <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto justify-center">
@@ -360,7 +386,7 @@ export default function HomePage() {
                 <p className="text-xl md:text-2xl text-purple-300 font-bold mb-5 drop-shadow-md">ป๊อกเด้งออนไลน์ 2 ใบเปิด ระบบบอท 2026</p>
                 
                 <p className="text-sm md:text-base text-gray-200 mb-8 max-w-lg mx-auto font-medium bg-black/50 p-3.5 rounded-xl backdrop-blur-sm leading-relaxed">
-                    มีทั้งหวยไทยหวยลาว <br className="hidden md:block" /> ครบจบที่เดียว
+                    มีทั้ง <strong>หวยไทย</strong> และ <strong>หวยลาว</strong> <br className="hidden md:block" /> ครบจบที่เดียว
                 </p>
                 
                 <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto justify-center">
@@ -411,6 +437,7 @@ export default function HomePage() {
                     <button onClick={() => setActivePromoTab('ALL')} className={`px-4 py-1.5 rounded-full font-bold transition-colors ${activePromoTab === 'ALL' ? 'text-black' : 'bg-transparent text-gray-400 hover:text-white'}`} style={activePromoTab === 'ALL' ? { backgroundColor: '#D4AF37' } : {}}>ทั้งหมด</button>
                     <button onClick={() => setActivePromoTab('POK9')} className={`px-4 py-1.5 rounded-full font-bold transition-colors ${activePromoTab === 'POK9' ? 'bg-red-600 text-white' : 'bg-transparent text-gray-400 hover:text-white'}`}>POK9</button>
                     <button onClick={() => setActivePromoTab('EZPOK')} className={`px-4 py-1.5 rounded-full font-bold transition-colors ${activePromoTab === 'EZPOK' ? 'bg-purple-600 text-white' : 'bg-transparent text-gray-400 hover:text-white'}`}>EZPOK</button>
+                   <button onClick={() => setActivePromoTab('EZLOTTO')} className={`px-4 py-1.5 rounded-full font-bold transition-colors ${activePromoTab === 'EZLOTTO' ? 'bg-purple-600 text-white' : 'bg-transparent text-gray-400 hover:text-white'}`}style="color:#D4AF37>EZLOTTO</button>
                 </div>
             </div>
             
@@ -448,7 +475,7 @@ export default function HomePage() {
                 <a className={`snap-center shrink-0 w-[260px] md:w-[320px] bg-black rounded-xl overflow-hidden group transition-all no-underline ${activePromoTab === 'ALL' ? 'block' : 'hidden'}`} href="https://lin.ee/kBYIyk1" target="_blank" rel="noreferrer">
                     <div className="w-full aspect-square bg-[#111] relative overflow-hidden flex items-center justify-center">
                         <span className="absolute top-2 left-2 z-10 bg-gray-600 text-white text-[10px] font-bold px-2 py-0.5 rounded shadow">รวมทุกเครือ</span>
-                        <img loading="lazy" src="/top-level-vip-320.webp" alt="โปรโมชั่น VIP" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onError={(e) => { e.currentTarget.style.display='none'; e.currentTarget.parentElement!.innerHTML += `<span class="text-gray-500 text-sm">รูปโปร VIP (500x500)</span>`; }} />
+                        <img loading="lazy" src="/top-level-vip-320.png" alt="โปรโมชั่น VIP" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onError={(e) => { e.currentTarget.style.display='none'; e.currentTarget.parentElement!.innerHTML += `<span class="text-gray-500 text-sm">รูปโปร VIP (500x500)</span>`; }} />
                     </div>
                     <div className="p-3 text-center bg-gradient-to-b from-gray-900 to-black">
                         <p className="text-sm font-bold text-gray-300 font-prompt truncate">สะสมแต้ม VIP แลกของรางวัล</p>
@@ -517,7 +544,7 @@ export default function HomePage() {
 
             <div>
                 <div className="flex items-center gap-1.5 text-white font-bold text-sm md:text-lg mb-3 font-prompt">
-                    <Keyboard className="w-4 h-4 md:w-5 md:h-5" style={{ color: '#D4AF37' }} /> ตัวอย่างวิธีพิมพ์เล่น วงป๊อกเด้ง ในกลุ่ม
+                    <Keyboard className="w-4 h-4 md:w-5 md:h-5" style={{ color: '#D4AF37' }} /> ตัวอย่างวิธีพิมพ์เล่น <strong>ป๊อกเด้งออนไลน์</strong> ในกลุ่ม
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     <div className="bg-gray-900/60 p-3.5 rounded-lg">
@@ -614,7 +641,7 @@ export default function HomePage() {
             
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 items-center w-full">
                  <div className="flex justify-center items-center w-full">
-                    <img loading="lazy" src="/top100.jpg" alt="ทำเนียบ TOP 100 VIP วงป๊อกเด้ง" className="w-full h-auto max-w-[280px] md:max-w-[350px] object-contain rounded-xl shadow-lg" onError={(e) => e.currentTarget.style.display='none'} />
+                    <img loading="lazy" src="/top100.gif" alt="ทำเนียบ TOP 100 VIP วงป๊อกเด้ง" className="w-full h-auto max-w-[280px] md:max-w-[350px] object-contain rounded-xl shadow-lg" onError={(e) => e.currentTarget.style.display='none'} />
                 </div>
 
                 <div className="text-left bg-black/60 p-4 md:p-5 rounded-xl w-full">
@@ -651,6 +678,7 @@ export default function HomePage() {
             </div>
         </section>
 
+        {/* --- ส่วนศูนย์รวมความรู้ ในหน้า page.tsx --- */}
         <section className="mb-8 p-5 md:p-8 rounded-2xl shadow-[0_0_20px_rgba(168,85,247,0.15)] mx-auto w-full relative overflow-hidden" style={{ background: 'linear-gradient(to bottom, #190028, #000000)' }} id="knowledge-seo">
           <div className="absolute top-0 right-0 w-64 h-64 rounded-full blur-3xl pointer-events-none" style={{ backgroundColor: 'rgba(168, 85, 247, 0.1)' }}></div>
           
@@ -662,7 +690,8 @@ export default function HomePage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 relative z-10">
-              <div className="bg-black/50 p-6 rounded-xl transition-all group flex flex-col">
+              {/* การ์ด 1: ป๊อกเด้ง */}
+              <div className="bg-black/50 p-6 rounded-xl transition-all group flex flex-col border border-gray-800">
                   <h3 className="font-prompt font-bold text-xl mb-3 flex items-center gap-2" style={{ color: '#D4AF37' }}>
                       <Trophy className="w-6 h-6" /> เทคนิคเซียนป๊อกเด้ง 2 ใบเปิด
                   </h3>
@@ -672,17 +701,71 @@ export default function HomePage() {
                   </a>
               </div>
 
-              <div className="bg-black/50 p-6 rounded-xl transition-all group flex flex-col">
+              {/* การ์ด 2: คู่มือแทงหวย EZLOTTO (อัปเดตใหม่) */}
+              <div className="bg-black/50 p-6 rounded-xl transition-all group flex flex-col border border-gray-800">
                   <h3 className="font-prompt font-bold text-xl text-purple-400 mb-3 flex items-center gap-2">
-                      <Gamepad2 className="w-6 h-6" /> คู่มือบาคาร่า & หวยออนไลน์
+                      <Gamepad2 className="w-6 h-6" /> คู่มือแทงหวย EZLOTTO
                   </h3>
-                  <p className="text-[13px] text-gray-400 mb-4 flex-1">เปรียบเทียบข้อดีของบาคาร่าและป๊อกเด้ง พร้อมแนะนำการแทงหวยไทย-ลาว EZLOTTO บาทละ 90 จ่ายเต็มไม่มีอั้น ครบจบในที่เดียว</p>
-                  <a href="#" className="inline-flex items-center gap-2 text-purple-400 font-bold text-sm hover:text-white transition-colors no-underline">
-                      อ่านบทความฉบับเต็ม (เร็วๆ นี้) <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </a>
+                  <p className="text-[13px] text-gray-400 mb-4 flex-1">สถิติหวยย้อนหลัง พร้อมแนะนำกติกาการแทงหวยรัฐบาลไทย-ลาวพัฒนา EZLOTTO บาทละ 90 จ่ายเต็มไม่มีอั้น ครบจบในที่เดียว</p>
+                  
+                  <div className="flex flex-col gap-2 mt-auto">
+                    <a href="/seo/thai-lottery" className="inline-flex items-center gap-2 text-white bg-blue-600/30 px-3 py-2 rounded border border-blue-500/50 font-bold text-sm hover:bg-blue-600/50 transition-colors no-underline">
+                        คู่มือหวยรัฐบาลไทย <ArrowRight className="w-4 h-4 ml-auto" />
+                    </a>
+                    <a href="/seo/lao-lottery" className="inline-flex items-center gap-2 text-white bg-purple-600/30 px-3 py-2 rounded border border-purple-500/50 font-bold text-sm hover:bg-purple-600/50 transition-colors no-underline">
+                        คู่มือหวยลาวพัฒนา <ArrowRight className="w-4 h-4 ml-auto" />
+                    </a>
+                  </div>
               </div>
           </div>
         </section>
+
+        {/* 🟢 3. เพิ่มส่วน FAQ โชว์บนหน้าเว็บ เพื่อให้สอดคล้องกับ AEO Schema */}
+        <section className="mb-12 mt-8 bg-black/40 p-5 md:p-8 rounded-2xl border border-gray-800 shadow-xl relative z-10">
+          <div className="flex items-center gap-3 mb-6 border-b border-gray-700 pb-3">
+            <HelpCircle className="w-6 h-6" style={{ color: '#D4AF37' }} />
+            <h2 className="font-prompt font-bold text-xl md:text-2xl text-white">คำถามที่พบบ่อย (FAQ) - ป๊อกเด้งออนไลน์ & บาคาร่า</h2>
+          </div>
+          
+          <div className="space-y-4 text-[13px] md:text-sm">
+            <details className="bg-[#111] p-4 rounded-xl border border-gray-800 cursor-pointer group" open>
+              <summary className="font-prompt font-bold text-gray-200 group-open:text-ezgold-400 flex justify-between items-center outline-none">
+                <span>วงป๊อกเด้งไทย คืออะไร และเล่นอย่างไร?</span>
+              </summary>
+              <p className="mt-3 text-gray-400 leading-relaxed border-t border-gray-800 pt-3">
+                วงป๊อกเด้งไทย คือระบบการเล่น <strong>ป๊อกเด้งออนไลน์</strong> รูปแบบใหม่ ที่ให้บริการผ่านกลุ่มไลน์ และเว็บไซต์ <strong>EZPOK168</strong> โดยมีแอดมินสับไพ่และไลฟ์สดแบบเรียลไทม์ ผู้เล่นสามารถเลือกแทงฝั่ง เจ้ามือ หรือ ลูกมือ (ขา) ได้อย่างอิสระ
+              </p>
+            </details>
+
+            <details className="bg-[#111] p-4 rounded-xl border border-gray-800 cursor-pointer group">
+              <summary className="font-prompt font-bold text-gray-200 group-open:text-ezgold-400 flex justify-between items-center outline-none">
+                <span>ป๊อกเด้งออนไลน์ 2 ใบเปิด ต่างกับ 3 ใบอย่างไร?</span>
+              </summary>
+              <p className="mt-3 text-gray-400 leading-relaxed border-t border-gray-800 pt-3">
+                ระบบ <strong>2 ใบเปิด</strong> จะวัดแต้มกันที่ไพ่สองใบแรกที่แจกให้เท่านั้น โดยไม่มีการจั่วไพ่ใบที่สามเพิ่ม การเล่นแบบนี้ทำให้เกมรวดเร็ว กระชับ และเน้นลุ้น <strong>ป๊อก 8 ป๊อก 9</strong> เป็นหลัก ซึ่งสามารถทำกำไรได้ไวกว่า
+              </p>
+            </details>
+
+            <details className="bg-[#111] p-4 rounded-xl border border-gray-800 cursor-pointer group">
+              <summary className="font-prompt font-bold text-gray-200 group-open:text-ezgold-400 flex justify-between items-center outline-none">
+                <span>เล่น บาคาร่า หรือ ป๊อกเด้ง เกมไพ่ไหนได้เงินดีกว่ากัน?</span>
+              </summary>
+              <p className="mt-3 text-gray-400 leading-relaxed border-t border-gray-800 pt-3">
+                <strong>ป๊อกเด้ง</strong> จะมีความหลากหลายในการได้รางวัลมากกว่า (เช่น 2 เด้ง, ตอง, เซียน) ทำให้มีโอกาสรับเงินคูณทวีคูณ ส่วน <strong>บาคาร่า</strong> จะเน้นแทงฝั่ง Player หรือ Banker เหมาะกับคนที่ชอบเกมเร็วและใช้สูตรอ่านเค้าไพ่
+              </p>
+            </details>
+
+            <details className="bg-[#111] p-4 rounded-xl border border-gray-800 cursor-pointer group">
+              <summary className="font-prompt font-bold text-gray-200 group-open:text-ezgold-400 flex justify-between items-center outline-none">
+                <span>สมัครเล่น ป๊อกเด้งออนไลน์ EZPOK168 ฝาก-ถอน ขั้นต่ำเท่าไหร่?</span>
+              </summary>
+              <p className="mt-3 text-gray-400 leading-relaxed border-t border-gray-800 pt-3">
+                <strong>EZPOK168</strong> คือเว็บตรงอันดับ 1 ในไทย ให้บริการด้วยความโปร่งใส 100% มีระบบฝาก-ถอนออโต้ <strong>ไม่มีขั้นต่ำ 1 บาทก็ฝากได้</strong> พร้อมทีมงานบริการ 24 ชั่วโมง
+              </p>
+            </details>
+          </div>
+        </section>
+
       </main>
 
       <nav className="footer-nav md:hidden">
@@ -709,4 +792,4 @@ export default function HomePage() {
       </footer>
     </div>
   );
-} 
+}
