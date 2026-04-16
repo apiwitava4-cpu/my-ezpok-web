@@ -290,8 +290,8 @@ export default function HomePage() {
                 }}
             />
             {/* 🟢 อัปเกรดเป็น Tag <h1> เพื่อพลัง SEO สูงสุด */}
-            <h1 className="text-gray-300 text-sm md:text-lg font-prompt text-center max-w-2xl px-2 leading-relaxed">
-                ศูนย์รวม <strong>ป๊อกเด้งออนไลน์ 2 ใบเปิด</strong> <strong>บาคาร่า</strong> และ <strong>หวยออนไลน์</strong> <br className="md:hidden" />
+            <h1 className="text-gray-300 text-xs sm:text-sm md:text-base lg:text-lg font-prompt text-center max-w-2xl mx-auto px-4 md:px-2 leading-relaxed md:leading-loose">
+                ศูนย์รวม <strong>ป๊อกเด้งออนไลน์ 2 ใบเปิด</strong> <strong>บาคาร่า</strong> และ <strong>หวยออนไลน์</strong> <br className="block sm:hidden" />
                 สับไพ่ไลฟ์สดเรียลไทม์ มั่นคง ปลอดภัย จ่ายจริง 100%
             </h1>
         </section>
@@ -437,7 +437,7 @@ export default function HomePage() {
                     <button onClick={() => setActivePromoTab('ALL')} className={`px-4 py-1.5 rounded-full font-bold transition-colors ${activePromoTab === 'ALL' ? 'text-black' : 'bg-transparent text-gray-400 hover:text-white'}`} style={activePromoTab === 'ALL' ? { backgroundColor: '#D4AF37' } : {}}>ทั้งหมด</button>
                     <button onClick={() => setActivePromoTab('POK9')} className={`px-4 py-1.5 rounded-full font-bold transition-colors ${activePromoTab === 'POK9' ? 'bg-red-600 text-white' : 'bg-transparent text-gray-400 hover:text-white'}`}>POK9</button>
                     <button onClick={() => setActivePromoTab('EZPOK')} className={`px-4 py-1.5 rounded-full font-bold transition-colors ${activePromoTab === 'EZPOK' ? 'bg-purple-600 text-white' : 'bg-transparent text-gray-400 hover:text-white'}`}>EZPOK</button>
-                   <button onClick={() => setActivePromoTab('EZLOTTO')} className={`px-4 py-1.5 rounded-full font-bold transition-colors ${activePromoTab === 'EZLOTTO' ? 'bg-purple-600 text-white' : 'bg-transparent text-gray-400 hover:text-white'}`}style="color:#D4AF37>EZLOTTO</button>
+                    <button onClick={() => setActivePromoTab('EZLOTTO')} className={`px-4 py-1.5 rounded-full font-bold transition-colors ${activePromoTab === 'EZLOTTO' ? 'bg-purple-600 text-white' : 'bg-transparent text-gray-400 hover:text-white'}`}>EZLOTTO</button>
                 </div>
             </div>
             
@@ -455,7 +455,7 @@ export default function HomePage() {
                 <a className={`snap-center shrink-0 w-[260px] md:w-[320px] bg-black rounded-xl overflow-hidden group transition-all no-underline ${activePromoTab === 'ALL' || activePromoTab === 'EZPOK' ? 'block' : 'hidden'}`} href="https://lin.ee/kBYIyk1" target="_blank" rel="noreferrer">
                     <div className="w-full aspect-square bg-[#111] relative overflow-hidden flex items-center justify-center">
                         <span className="absolute top-2 left-2 z-10 bg-purple-600 text-white text-[10px] font-bold px-2 py-0.5 rounded shadow">EZPOK</span>
-                        <img loading="lazy" src="/por_ezlt.gif" alt="โปรโมชั่น EZPOK" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onError={(e) => { e.currentTarget.style.display='none'; e.currentTarget.parentElement!.innerHTML += `<span class="text-gray-500 text-sm">รูปโปร EZPOK (500x500)</span>`; }} />
+                        <img loading="lazy" src="/por_ezlt.png" alt="โปรโมชั่น EZPOK" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onError={(e) => { e.currentTarget.style.display='none'; e.currentTarget.parentElement!.innerHTML += `<span class="text-gray-500 text-sm">รูปโปร EZPOK (500x500)</span>`; }} />
                     </div>
                     <div className="p-3 text-center bg-gradient-to-b from-gray-900 to-black">
                         <p className="text-sm font-bold text-purple-400 font-prompt truncate">เล่นป๊อกเด้ง คืนยอดเสีย 5%</p>
