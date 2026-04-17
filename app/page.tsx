@@ -3,9 +3,13 @@ import { useState, useEffect } from 'react';
 import { 
   X, CheckCircle, MessageCircle, ArrowRight, Video, ScrollText, 
   Gavel, Info, Clock, Coins, Banknote, Gamepad2, AlertTriangle, 
-  Keyboard, BarChart2, ExternalLink, ArrowUpRight, Gift, Trophy, 
-  Star, Crown, User, Users, Home, UserPlus, Play, Wallet, PlayCircle, HelpCircle, ArrowDownRight, Menu, ArrowUp, Search
+  Keyboard, BarChart2, ExternalLink, Gift, Trophy, 
+  Star, Crown, User, Users, Home, UserPlus, Play, Wallet, PlayCircle, HelpCircle, Menu, ArrowUp, Search
 } from 'lucide-react';
+
+// 🟢 ดึงระบบตรวจหวยทั้ง 2 ตัวเข้ามาใช้ในหน้าหลัก
+import LottoChecker from './seo/thai-lottery/LottoChecker'; 
+import LaoLottoChecker from './seo/lao-lottery/LaoLottoChecker'; 
 
 const Marquee = 'marquee' as any;
 
@@ -15,6 +19,9 @@ export default function HomePage() {
   const [showScrollTop, setShowScrollTop] = useState(false);
   const [userIP, setUserIP] = useState('Unknown');
   const [activePromoTab, setActivePromoTab] = useState('ALL');
+  
+  // 🟢 State สำหรับสลับ Tab ตรวจหวย
+  const [lottoTab, setLottoTab] = useState<'THAI' | 'LAO'>('THAI');
 
   useEffect(() => {
     document.documentElement.style.scrollBehavior = 'smooth';
@@ -83,7 +90,7 @@ export default function HomePage() {
     setIsSidebarOpen(false);
   };
 
-  // 🟢 1. AEO Schema สำหรับองค์กรและเว็บไซต์ (บอก Google ว่าเราคือแบรนด์หลัก)
+  // 🟢 AEO Schema
   const websiteSchema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
@@ -108,7 +115,6 @@ export default function HomePage() {
     ]
   };
 
-  // 🟢 2. AEO Schema สำหรับคำถามที่พบบ่อย (เพิ่มโอกาสติด Featured Snippet หน้าแรก)
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -151,20 +157,24 @@ export default function HomePage() {
   return (
     <div className="min-h-screen relative overflow-x-hidden text-white font-sans pb-16 md:pb-0" style={{ backgroundColor: '#0D0514' }} id="home">
       
-      {/* 🟢 ฝัง Schema SEO และ AEO ทั้งหมดลงใน HTML */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <style dangerouslySetInnerHTML={{__html: `
+        @font-face {
+          font-family: 'B2SIGN';
+          src: url('/B2-SIGN.ttf') format('truetype');
+          font-weight: normal;
+          font-style: normal;
+        }
+      `}} />
 
       <div id="bg-watermark"></div>
       <div className="fixed top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
         <div className="absolute top-[-10%] left-[-10%] w-96 h-96 rounded-full mix-blend-screen filter blur-[120px] opacity-10" style={{ backgroundColor: '#D4AF37' }}></div>
       </div>
 
-      <div 
-        className={`fixed inset-0 bg-black/60 z-[70] transition-opacity duration-300 ${isSidebarOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`} 
-        onClick={() => setIsSidebarOpen(false)}
-      ></div>
+      <div className={`fixed inset-0 bg-black/60 z-[70] transition-opacity duration-300 ${isSidebarOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`} onClick={() => setIsSidebarOpen(false)}></div>
 
       <div className={`fixed top-0 left-0 h-full w-[260px] md:w-[320px] bg-[#fdfdfd] text-[#333] z-[80] transform transition-transform duration-300 flex flex-col ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'} shadow-2xl`}>
         <div className="flex justify-between items-center p-4 bg-white shadow-sm z-10 border-b border-gray-100">
@@ -193,43 +203,28 @@ export default function HomePage() {
            <a href="#knowledge-seo" onClick={handleNavClick} className="flex items-center gap-3 p-3.5 bg-white hover:bg-gray-100 rounded-xl shadow-sm text-gray-800 font-bold transition-all no-underline">
              <HelpCircle className="w-5 h-5 text-yellow-500" /> บทความ ความรู้
            </a>
-           <a href="#" className="flex items-center justify-center gap-2 p-3.5 bg-[#0088cc] hover:bg-[#0077b3] rounded-xl shadow-md text-white font-bold transition-all no-underline transform hover:scale-[1.02] mt-4">
-             <Users className="w-5 h-5" /> เข้ากลุ่ม Telegram
-           </a>
-           <a href="https://lin.ee/8bzIg5hL" target="_blank" rel="noreferrer" onClick={handleNavClick} className="flex items-center justify-center gap-2 p-3.5 bg-[#00B900] hover:bg-[#00A000] rounded-xl shadow-md text-white font-bold transition-all no-underline transform hover:scale-[1.02]">
+           <a href="https://lin.ee/8bzIg5hL" target="_blank" rel="noreferrer" onClick={handleNavClick} className="flex items-center justify-center gap-2 p-3.5 bg-[#00B900] hover:bg-[#00A000] rounded-xl shadow-md text-white font-bold transition-all no-underline transform hover:scale-[1.02] mt-4">
              <MessageCircle className="w-5 h-5" /> ติดต่อเรา
            </a>
         </div>
       </div>
 
-      {/* ปุ่มเมนูลอยตัวด้านซ้าย */}
-      <button
-        onClick={() => setIsSidebarOpen(true)}
-        className="fixed top-[40%] left-0 z-[100] text-black py-4 px-2.5 rounded-r-xl shadow-[4px_0_20px_rgba(212,175,55,0.5)] flex flex-col items-center justify-center hover:px-4 transition-all duration-300"
-        style={{ background: 'linear-gradient(to right, #D4AF37, #F3E5AB)' }}
-      >
+      <button onClick={() => setIsSidebarOpen(true)} className="fixed top-[40%] left-0 z-[100] text-black py-4 px-2.5 rounded-r-xl shadow-[4px_0_20px_rgba(212,175,55,0.5)] flex flex-col items-center justify-center hover:px-4 transition-all duration-300" style={{ background: 'linear-gradient(to right, #D4AF37, #F3E5AB)' }}>
         <Menu className="w-5 h-5 md:w-6 md:h-6 mb-1 animate-pulse" />
         <span className="text-[12px] md:text-sm font-bold font-prompt" style={{ writingMode: 'vertical-rl', textOrientation: 'upright' }}>เมนู</span>
       </button>
 
-      {/* ย้ายปุ่มติดต่อแอดมินมาลอยตัวด้านขวา */}
       <div className="fixed top-[40%] z-[100] flex flex-col items-end hover:pr-1 transition-all duration-300" style={{ right: 0 }}>
         <div className="p-2 md:p-2.5 rounded-l-xl shadow-[-4px_0_20px_rgba(0,185,0,0.4)] text-center w-[85px] md:w-[100px] border border-r-0 border-[#00B900]/50" style={{ backgroundColor: 'rgba(13, 5, 20, 0.95)', backdropFilter: 'blur(8px)' }}>
           <p className="text-[9px] md:text-[11px] text-white font-bold mb-1.5 font-prompt tracking-wide">แอดมิน 24 ชม.</p>
-          <a href="https://lin.ee/8bzIg5hL" target="_blank" rel="noreferrer" onClick={(e) => handleLinkClick('กดเพิ่มเพื่อนไลน์ (ขวาลอย)', e.currentTarget.href)} className="block hover:opacity-90 transition-opacity rounded p-1 shadow-inner no-underline" style={{ backgroundColor: '#00B900' }}>
-            <img src="https://scdn.line-apps.com/n/line_add_friends/btn/th.png" alt="เพิ่มเพื่อนแอดมิน 24 ชม." className="w-full h-auto mx-auto" loading="lazy" />
+          <a href="https://lin.ee/8bzIg5hL" target="_blank" rel="noreferrer" className="block hover:opacity-90 transition-opacity rounded p-1 shadow-inner no-underline" style={{ backgroundColor: '#00B900' }}>
+            <img src="https://scdn.line-apps.com/n/line_add_friends/btn/th.png" alt="เพิ่มเพื่อนแอดมิน 24 ชม." className="w-full h-auto mx-auto" />
           </a>
         </div>
       </div>
 
-      {/* ปุ่มเลื่อนขึ้นบนสุด */}
       <div className="fixed bottom-24 md:bottom-10 right-4 z-40">
-        <button
-          onClick={scrollToTop}
-          className={`p-2.5 md:p-3 text-black rounded-full shadow-[0_0_15px_rgba(212,175,55,0.4)] transition-all duration-300 transform ${showScrollTop ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'}`}
-          style={{ backgroundColor: '#D4AF37' }}
-          aria-label="เลื่อนขึ้นบนสุด"
-        >
+        <button onClick={scrollToTop} className={`p-2.5 md:p-3 text-black rounded-full shadow-[0_0_15px_rgba(212,175,55,0.4)] transition-all duration-300 transform ${showScrollTop ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'}`} style={{ backgroundColor: '#D4AF37' }}>
           <ArrowUp className="w-5 h-5 md:w-6 md:h-6" />
         </button>
       </div>
@@ -269,7 +264,7 @@ export default function HomePage() {
           </button>
           <h2 className="font-prompt font-bold text-lg md:text-xl text-transparent bg-clip-text mb-3 mt-2 md:mt-0" style={{ backgroundImage: 'linear-gradient(to right, #FDF5E6, #D4AF37)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>💦 โปรใหม่ ต้อนรับสมาชิก 💦</h2>
           <div className="w-full rounded-xl overflow-hidden mb-4 shadow-lg flex justify-center bg-black/50">
-            <img src="/new-mumber.jpg" alt="โปรโมชั่นสมัครใหม่" className="w-full h-auto max-h-[40vh] object-contain" />
+            <img src="/new-mumber.jpg" alt="โปรโมชั่นสมัครใหม่" loading="lazy" className="w-full h-auto max-h-[40vh] object-contain" />
           </div>
           <button onClick={handleModalAccept} className="w-full py-2.5 md:py-3 text-black font-bold text-sm md:text-lg rounded-xl shadow-lg transition-all active:scale-95 flex items-center justify-center gap-2 pulse-gold" style={{ background: 'linear-gradient(to right, #D4AF37, #F3E5AB)' }}>
             รับโปรโมชันนี้ <CheckCircle className="w-4 h-4 md:w-5 md:h-5" />
@@ -277,21 +272,16 @@ export default function HomePage() {
         </div>
       </div>
 
-      <main className="max-w-5xl mx-auto px-4 py-6 md:py-8 relative z-10">
+      <main className="max-w-5xl mx-auto px-4 py-6 md:py-8 relative z-10 overflow-x-hidden">
 
         <section className="w-full relative z-30 flex flex-col items-center bg-transparent pt-4 pb-6 mb-4">
             <img 
                 src="/NEWLOGOBANNER.gif" 
                 alt="ป๊อกเด้งออนไลน์ บาคาร่า หวยไทย" 
                 className="w-full max-w-3xl h-auto object-contain drop-shadow-[0_0_20px_rgba(212,175,55,0.3)] mb-4" 
-                onError={(e) => {
-                e.currentTarget.style.display='none';
-                e.currentTarget.parentElement!.innerHTML = '<div class="w-full max-w-3xl h-[150px] flex items-center justify-center bg-gray-900 rounded-xl mb-4 text-sm p-4" style="color: #D4AF37;">ใส่ไฟล์ NEWLOGOBANNER.gif ในโฟลเดอร์ public</div>';
-                }}
             />
-            {/* 🟢 อัปเกรดเป็น Tag <h1> เพื่อพลัง SEO สูงสุด */}
-            <h1 className="text-gray-300 text-xs sm:text-sm md:text-base lg:text-lg font-prompt text-center max-w-2xl mx-auto px-4 md:px-2 leading-relaxed md:leading-loose">
-                ศูนย์รวม <strong>ป๊อกเด้งออนไลน์ 2 ใบเปิด</strong> <strong>บาคาร่า</strong> และ <strong>หวยออนไลน์</strong> <br className="block sm:hidden" />
+            <h1 className="text-gray-300 text-sm md:text-lg font-prompt text-center max-w-2xl px-2 leading-relaxed">
+                ศูนย์รวม <strong>ป๊อกเด้งออนไลน์ 2 ใบเปิด</strong> <strong>บาคาร่า</strong> และ <strong>หวยออนไลน์</strong> <br className="md:hidden" />
                 สับไพ่ไลฟ์สดเรียลไทม์ มั่นคง ปลอดภัย จ่ายจริง 100%
             </h1>
         </section>
@@ -299,11 +289,9 @@ export default function HomePage() {
         <section className="mb-10 max-w-4xl mx-auto w-full">
             <div className="relative rounded-full p-1.5 md:p-2 flex items-center shadow-lg overflow-hidden bg-[url('/marquee-bg.gif')] bg-cover bg-center">
                 <div className="absolute inset-0 bg-black/60"></div>
-                
                 <div className="text-black font-bold text-[10px] md:text-sm px-3 md:px-4 py-1.5 rounded-full whitespace-nowrap z-10 flex items-center gap-1.5 shadow-md relative" style={{ backgroundColor: '#D4AF37' }}>
                     <AlertTriangle className="w-3.5 h-3.5 md:w-4 md:h-4" /> ประกาศ
                 </div>
-                
                 <div className="flex-1 overflow-hidden ml-2 flex items-center relative z-10">
                     <Marquee className="text-[11px] md:text-sm font-medium tracking-wide mt-1" scrollamount="4" style={{ color: '#FDF5E6' }}>
                         <span className="mx-4">🔥 ID254_รูดเจ้า เจ้าป๊อกเก้าเด้ง ยินดีด้วยค่ะคุณชนะรอบวง</span>
@@ -331,7 +319,7 @@ export default function HomePage() {
                         </span>
                     </div>
                     <div className="w-full aspect-square max-w-[800px] mx-auto bg-black rounded-lg overflow-hidden relative flex items-center justify-center shadow-inner">
-                         <video className="w-full h-full object-cover" controls autoPlay loop muted playsInline>
+                         <video className="w-full h-full object-cover" controls preload="none" poster="/pok9-promo1.jpg" playsInline>
                              <source src="/video.mp4" type="video/mp4" />
                               เบราว์เซอร์ของคุณไม่รองรับวิดีโอ
                          </video>
@@ -340,10 +328,7 @@ export default function HomePage() {
             </div>
         </section>
 
-        <section 
-            className="mb-8 bg-cover bg-center rounded-3xl overflow-hidden shadow-[0_0_30px_rgba(212,175,55,0.3)] relative group"
-            style={{ backgroundImage: `url('/pok9-bg.gif')` }} 
-        >
+        <section className="mb-10 bg-cover bg-center rounded-3xl overflow-hidden shadow-[0_0_30px_rgba(212,175,55,0.3)] relative group" style={{ backgroundImage: `url('/pok9-bg.gif')` }}>
             <div className="absolute inset-0 bg-black/70 md:bg-black/60 z-0"></div>
             <div className="absolute top-0 left-0 w-full h-1 opacity-50 z-10" style={{ background: 'linear-gradient(to right, transparent, #D4AF37, transparent)' }}></div>
             
@@ -360,20 +345,17 @@ export default function HomePage() {
                 </p>
                 
                 <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto justify-center">
-                    <a href="https://pok9deng-pokerthai.org/" target="_blank" rel="noreferrer" onClick={(e) => handleLinkClick('Click POK9DENG เล่นเลย', e.currentTarget.href)} className="px-8 py-3.5 text-black font-bold text-lg rounded-xl shadow-[0_0_20px_rgba(212,175,55,0.5)] hover:scale-105 transition-transform flex items-center justify-center gap-2 no-underline" style={{ background: 'linear-gradient(to right, #D4AF37, #F3E5AB)' }}>
+                    <a href="https://pok9deng-pokerthai.org/" target="_blank" rel="noreferrer" className="px-8 py-3.5 text-black font-bold text-lg rounded-xl shadow-[0_0_20px_rgba(212,175,55,0.5)] hover:scale-105 transition-transform flex items-center justify-center gap-2 no-underline" style={{ background: 'linear-gradient(to right, #D4AF37, #F3E5AB)' }}>
                        สมัครสมาชิก <PlayCircle className="w-5 h-5" />
                     </a>
-                    <a href="https://lin.ee/8bzIg5hL" target="_blank" rel="noreferrer" onClick={(e) => handleLinkClick('Click POK9DENG สมัครสมาชิก', e.currentTarget.href)} className="px-8 py-3.5 bg-black/60 backdrop-blur-sm font-bold text-lg rounded-xl transition-colors flex items-center justify-center gap-2 no-underline hover:opacity-90" style={{ color: '#D4AF37' }}>
+                    <a href="https://lin.ee/8bzIg5hL" target="_blank" rel="noreferrer" className="px-8 py-3.5 bg-black/60 backdrop-blur-sm font-bold text-lg rounded-xl transition-colors flex items-center justify-center gap-2 no-underline hover:opacity-90" style={{ color: '#D4AF37' }}>
                         ติดต่อแอดมิน<UserPlus className="w-5 h-5" />
                     </a>
                 </div>
             </div>
         </section>
 
-        <section 
-            className="mb-10 bg-cover bg-center rounded-3xl overflow-hidden shadow-[0_0_30px_rgba(168,85,247,0.3)] relative group"
-            style={{ backgroundImage: `url('/ezpok-bg.gif')` }}
-        >
+        <section className="mb-10 bg-cover bg-center rounded-3xl overflow-hidden shadow-[0_0_30px_rgba(168,85,247,0.3)] relative group" style={{ backgroundImage: `url('/ezpok-bg.gif')` }}>
             <div className="absolute inset-0 bg-black/70 md:bg-black/60 z-0"></div>
             <div className="absolute top-0 left-0 w-full h-1 opacity-50 z-10" style={{ background: 'linear-gradient(to right, transparent, #A855F7, transparent)' }}></div>
             
@@ -390,11 +372,8 @@ export default function HomePage() {
                 </p>
                 
                 <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto justify-center">
-                    <a href="https://ezpok168.com/" target="_blank" rel="noreferrer" onClick={(e) => handleLinkClick('Click EZPOK เล่นเลย', e.currentTarget.href)} className="px-8 py-3.5 bg-gradient-to-r from-purple-500 to-purple-300 text-white font-bold text-lg rounded-xl shadow-[0_0_20px_rgba(168,85,247,0.5)] hover:scale-105 transition-transform flex items-center justify-center gap-2 no-underline">
+                    <a href="https://ezpok168.com/" target="_blank" rel="noreferrer" className="px-8 py-3.5 bg-gradient-to-r from-purple-500 to-purple-300 text-white font-bold text-lg rounded-xl shadow-[0_0_20px_rgba(168,85,247,0.5)] hover:scale-105 transition-transform flex items-center justify-center gap-2 no-underline">
                         เล่นเลย <PlayCircle className="w-5 h-5" />
-                    </a>
-                    <a href="https://ezpok168.com/" target="_blank" rel="noreferrer" onClick={(e) => handleLinkClick('Click EZPOK สมัครสมาชิก', e.currentTarget.href)} className="px-8 py-3.5 bg-black/60 backdrop-blur-sm text-purple-400 font-bold text-lg rounded-xl transition-colors flex items-center justify-center gap-2 no-underline hover:opacity-90">
-                        สมัครสมาชิก <UserPlus className="w-5 h-5" />
                     </a>
                 </div>
             </div>
@@ -402,28 +381,13 @@ export default function HomePage() {
 
         <section className="mb-12 w-full flex flex-col items-center justify-center gap-5">
           <a href="https://lin.ee/8bzIg5hL" target="_blank" rel="noreferrer" className="block w-full max-w-[860px] group no-underline">
-            <img 
-              src="/affiliate-banner1.gif" 
-              alt="แบนเนอร์พันธมิตร หวยออนไลน์ 1" 
-              className="w-full h-auto aspect-[860/124] object-cover rounded-xl shadow-[0_4px_15px_rgba(0,0,0,0.5)]" 
-              onError={(e) => { e.currentTarget.style.display='none'; e.currentTarget.parentElement!.innerHTML = '<div class="w-full aspect-[860/124] flex items-center justify-center bg-gray-800/80 text-gray-400 rounded-xl text-xs md:text-sm">พื้นที่แบนเนอร์พันธมิตร 1 (860 x 124 px)</div>'; }}
-            />
+            <img src="/affiliate-banner1.gif" alt="แบนเนอร์พันธมิตร 1" loading="lazy" className="w-full h-auto aspect-[860/124] object-cover rounded-xl shadow-[0_4px_15px_rgba(0,0,0,0.5)]" />
           </a>
           <a href="https://ezpok.com/" target="_blank" rel="noreferrer" className="block w-full max-w-[860px] group no-underline">
-            <img 
-              src="/affiliate-banner2.gif" 
-              alt="แบนเนอร์พันธมิตร หวยออนไลน์ 2" 
-              className="w-full h-auto aspect-[860/124] object-cover rounded-xl shadow-[0_4px_15px_rgba(0,0,0,0.5)]" 
-              onError={(e) => { e.currentTarget.style.display='none'; e.currentTarget.parentElement!.innerHTML = '<div class="w-full aspect-[860/124] flex items-center justify-center bg-gray-800/80 text-gray-400 rounded-xl text-xs md:text-sm">พื้นที่แบนเนอร์พันธมิตร 2 (860 x 124 px)</div>'; }}
-            />
+            <img src="/affiliate-banner2.gif" alt="แบนเนอร์พันธมิตร 2" loading="lazy" className="w-full h-auto aspect-[860/124] object-cover rounded-xl shadow-[0_4px_15px_rgba(0,0,0,0.5)]" />
           </a>
           <a href="https://ezpok.com/" target="_blank" rel="noreferrer" className="block w-full max-w-[860px] group no-underline">
-            <img 
-              src="/affiliate-banner3.gif" 
-              alt="แบนเนอร์พันธมิตร หวยออนไลน์ 3" 
-              className="w-full h-auto aspect-[860/124] object-cover rounded-xl shadow-[0_4px_15px_rgba(0,0,0,0.5)]" 
-              onError={(e) => { e.currentTarget.style.display='none'; e.currentTarget.parentElement!.innerHTML = '<div class="w-full aspect-[860/124] flex items-center justify-center bg-gray-800/80 text-gray-400 rounded-xl text-xs md:text-sm">พื้นที่แบนเนอร์พันธมิตร 3 (860 x 124 px)</div>'; }}
-            />
+            <img src="/affiliate-banner3.gif" alt="แบนเนอร์พันธมิตร 3" loading="lazy" className="w-full h-auto aspect-[860/124] object-cover rounded-xl shadow-[0_4px_15px_rgba(0,0,0,0.5)]" />
           </a>
         </section>
 
@@ -445,7 +409,7 @@ export default function HomePage() {
                 <a className={`snap-center shrink-0 w-[260px] md:w-[320px] bg-black rounded-xl overflow-hidden group transition-all no-underline ${activePromoTab === 'ALL' || activePromoTab === 'POK9' ? 'block' : 'hidden'}`} href="https://lin.ee/kBYIyk1" target="_blank" rel="noreferrer">
                     <div className="w-full aspect-square bg-[#111] relative overflow-hidden flex items-center justify-center">
                         <span className="absolute top-2 left-2 z-10 bg-red-600 text-white text-[10px] font-bold px-2 py-0.5 rounded shadow">POK9</span>
-                        <img loading="lazy" src="/pok9-promo1.jpg" alt="โปรโมชั่น POK9" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onError={(e) => { e.currentTarget.style.display='none'; e.currentTarget.parentElement!.innerHTML += `<span class="text-gray-500 text-sm">รูปโปร POK9 (500x500)</span>`; }} />
+                        <img loading="lazy" src="/pok9-promo1.jpg" alt="โปรโมชั่น POK9" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                     </div>
                     <div className="p-3 text-center bg-gradient-to-b from-gray-900 to-black">
                         <p className="text-sm font-bold text-red-400 font-prompt truncate">สมาชิกใหม่รับโบนัส 100%</p>
@@ -455,7 +419,7 @@ export default function HomePage() {
                 <a className={`snap-center shrink-0 w-[260px] md:w-[320px] bg-black rounded-xl overflow-hidden group transition-all no-underline ${activePromoTab === 'ALL' || activePromoTab === 'EZPOK' ? 'block' : 'hidden'}`} href="https://lin.ee/kBYIyk1" target="_blank" rel="noreferrer">
                     <div className="w-full aspect-square bg-[#111] relative overflow-hidden flex items-center justify-center">
                         <span className="absolute top-2 left-2 z-10 bg-purple-600 text-white text-[10px] font-bold px-2 py-0.5 rounded shadow">EZPOK</span>
-                        <img loading="lazy" src="/por_ezlt.png" alt="โปรโมชั่น EZPOK" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onError={(e) => { e.currentTarget.style.display='none'; e.currentTarget.parentElement!.innerHTML += `<span class="text-gray-500 text-sm">รูปโปร EZPOK (500x500)</span>`; }} />
+                        <img loading="lazy" src="/por_ezlt.png" alt="โปรโมชั่น EZPOK" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                     </div>
                     <div className="p-3 text-center bg-gradient-to-b from-gray-900 to-black">
                         <p className="text-sm font-bold text-purple-400 font-prompt truncate">เล่นป๊อกเด้ง คืนยอดเสีย 5%</p>
@@ -465,7 +429,7 @@ export default function HomePage() {
                 <a className={`snap-center shrink-0 w-[260px] md:w-[320px] bg-black rounded-xl overflow-hidden group transition-all no-underline ${activePromoTab === 'ALL' || activePromoTab === 'EZLOTTO' ? 'block' : 'hidden'}`} href="https://lin.ee/kBYIyk1" target="_blank" rel="noreferrer">
                     <div className="w-full aspect-square bg-[#111] relative overflow-hidden flex items-center justify-center">
                         <span className="absolute top-2 left-2 z-10 bg-yellow-600 text-black text-[10px] font-bold px-2 py-0.5 rounded shadow">EZLOTTO</span>
-                        <img loading="lazy" src="/ezlt_pro.jpg" alt="โปรโมชั่น EZLOTTO" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onError={(e) => { e.currentTarget.style.display='none'; e.currentTarget.parentElement!.innerHTML += `<span class="text-gray-500 text-sm">รูปโปร EZLOTTO (500x500)</span>`; }} />
+                        <img loading="lazy" src="/ezlt_pro.jpg" alt="โปรโมชั่น EZLOTTO" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                     </div>
                     <div className="p-3 text-center bg-gradient-to-b from-gray-900 to-black">
                         <p className="text-sm font-bold font-prompt truncate" style={{ color: '#D4AF37' }}>หวยบาทละ 90 จ่ายเต็ม</p>
@@ -475,7 +439,7 @@ export default function HomePage() {
                 <a className={`snap-center shrink-0 w-[260px] md:w-[320px] bg-black rounded-xl overflow-hidden group transition-all no-underline ${activePromoTab === 'ALL' ? 'block' : 'hidden'}`} href="https://lin.ee/kBYIyk1" target="_blank" rel="noreferrer">
                     <div className="w-full aspect-square bg-[#111] relative overflow-hidden flex items-center justify-center">
                         <span className="absolute top-2 left-2 z-10 bg-gray-600 text-white text-[10px] font-bold px-2 py-0.5 rounded shadow">รวมทุกเครือ</span>
-                        <img loading="lazy" src="/top-level-vip-320.png" alt="โปรโมชั่น VIP" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onError={(e) => { e.currentTarget.style.display='none'; e.currentTarget.parentElement!.innerHTML += `<span class="text-gray-500 text-sm">รูปโปร VIP (500x500)</span>`; }} />
+                        <img loading="lazy" src="/top-level-vip-320.png" alt="โปรโมชั่น VIP" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                     </div>
                     <div className="p-3 text-center bg-gradient-to-b from-gray-900 to-black">
                         <p className="text-sm font-bold text-gray-300 font-prompt truncate">สะสมแต้ม VIP แลกของรางวัล</p>
@@ -501,7 +465,7 @@ export default function HomePage() {
                         <li className="flex items-start gap-1.5"><CheckCircle className="w-3.5 h-3.5 text-green-400 shrink-0 mt-0.5" /> <span>5-5, 6-6, 10-10, A-A, K-K, Q-Q, J-J = 7.5แต้ม #เด้ง</span></li>
                         <li className="flex items-start gap-1.5"><CheckCircle className="w-3.5 h-3.5 text-green-400 shrink-0 mt-0.5" /> <span>10+ฝรั่ง 10-K,10-Q,10-J = 7.5แต้ม (ดอกเดียวกัน#เด้ง / คนละดอก#ไม่เด้ง)</span></li>
                         <li className="flex items-start gap-1.5"><CheckCircle className="w-3.5 h-3.5 text-green-400 shrink-0 mt-0.5" /> <span>A-K ดอกเดียวกัน =7.5 #เด้ง, A-K คนละดอก = 1 แต้ม</span></li>
-					</ul>
+                    </ul>
                     <div className="mt-3 p-2.5 bg-red-900/20 rounded text-[10px] md:text-xs text-red-200 flex gap-1.5">
                         <AlertTriangle className="w-3.5 h-3.5 shrink-0 text-orange-400" /> 
                         <p>แต้มพิเศษ 7.5 หรือ 7.5 เด้ง จะชนะ 7 แต้ม แต่แพ้ป๊อก8 และป๊อก9 ในกติกา วงป๊อกเด้ง</p>
@@ -571,6 +535,38 @@ export default function HomePage() {
             </div>
         </section>
 
+        {/* 🟢 ส่วนตรวจหวยหน้าหลัก (เพิ่มปุ่มกดสลับ หวยไทย-หวยลาว) */}
+        <section className="mb-12 bg-black/60 p-6 md:p-8 rounded-2xl border border-ezgold-500/50 shadow-[0_0_20px_rgba(212,175,55,0.2)] text-center relative overflow-hidden flex flex-col items-center">
+            <div className="absolute top-[-20%] left-[-10%] w-64 h-64 rounded-full mix-blend-screen filter blur-[80px] opacity-20 bg-ezgold-500 pointer-events-none"></div>
+            <h2 
+              className="text-4xl md:text-5xl font-bold tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-[#FDF5E6] via-[#FFDF00] to-[#D4AF37] relative z-10 mb-6"
+              style={{ fontFamily: "'B2SIGN', 'Charm', cursive" }}
+            >
+              ตรวจผลรางวัล
+            </h2>
+
+            {/* ปุ่มกดสลับหวย */}
+            <div className="flex justify-center gap-2 md:gap-4 mb-2 relative z-10 w-full max-w-md">
+                <button 
+                  onClick={() => setLottoTab('THAI')} 
+                  className={`flex-1 py-3 rounded-xl font-bold transition-all ${lottoTab === 'THAI' ? 'bg-gradient-to-r from-ezgold-600 to-ezgold-400 text-black shadow-[0_0_15px_rgba(212,175,55,0.5)]' : 'bg-gray-800 text-gray-400 hover:bg-gray-700'}`}
+                >
+                  หวยรัฐบาลไทย
+                </button>
+                <button 
+                  onClick={() => setLottoTab('LAO')} 
+                  className={`flex-1 py-3 rounded-xl font-bold transition-all ${lottoTab === 'LAO' ? 'bg-gradient-to-r from-purple-600 to-purple-400 text-white shadow-[0_0_15px_rgba(168,85,247,0.5)]' : 'bg-gray-800 text-gray-400 hover:bg-gray-700'}`}
+                >
+                  หวยลาวพัฒนา
+                </button>
+            </div>
+
+            {/* แสดงฟอร์มตามที่เลือก */}
+            <div className="w-full mt-4 animate-in fade-in zoom-in duration-300">
+                {lottoTab === 'THAI' ? <LottoChecker /> : <LaoLottoChecker />}
+            </div>
+        </section>
+
         <div className="mb-12">
             <div className="flex items-center justify-between gap-2 mb-4 pb-2">
                 <div className="flex items-center gap-1.5 md:gap-2">
@@ -589,27 +585,27 @@ export default function HomePage() {
                     </h3>
                     <div className="text-center mb-4">
                         <p className="text-[11px] md:text-sm text-gray-300">รางวัลที่ 1</p>
-                        <div className="text-3xl md:text-4xl font-bold text-transparent bg-clip-text tracking-[0.1em] my-1" style={{ backgroundImage: 'linear-gradient(to right, #FDF5E6, #D4AF37)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>833009</div>
+                        <div className="text-3xl md:text-4xl font-bold text-transparent bg-clip-text tracking-[0.1em] my-1" style={{ backgroundImage: 'linear-gradient(to right, #FDF5E6, #D4AF37)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>309612</div>
                     </div>
                     <div className="grid grid-cols-3 gap-1.5 md:gap-2 text-center">
                         <div className="bg-black/50 rounded-md p-2">
                             <p className="text-[9px] text-gray-400">เลขหน้า 3 ตัว</p>
-                            <div className="text-sm md:text-base font-bold text-white tracking-widest leading-tight mt-1">510 <br/> 983</div>
+                            <div className="text-sm md:text-base font-bold text-white tracking-widest leading-tight mt-1">868 <br/> 424</div>
                         </div>
                         <div className="bg-black/50 rounded-md p-2">
                             <p className="text-[9px] text-gray-400">เลขท้าย 3 ตัว</p>
-                            <div className="text-sm md:text-base font-bold text-white tracking-widest leading-tight mt-1">439 <br/> 954</div>
+                            <div className="text-sm md:text-base font-bold text-white tracking-widest leading-tight mt-1">355 <br/> 108</div>
                         </div>
                         <div className="bg-[#190028] rounded-md p-2 flex flex-col justify-center">
                             <p className="text-[9px] font-bold" style={{ color: '#D4AF37' }}>เลขท้าย 2 ตัว</p>
-                            <div className="text-xl md:text-2xl font-bold tracking-widest mt-0.5" style={{ color: '#D4AF37' }}>64</div>
+                            <div className="text-xl md:text-2xl font-bold tracking-widest mt-0.5" style={{ color: '#D4AF37' }}>77</div>
                         </div>
                     </div>
                 </div>
 
                 <div className="rounded-xl p-4 relative" style={{ backgroundColor: 'rgba(0,0,0,0.5)' }}>
                     <h3 className="font-prompt font-bold text-sm md:text-base text-white flex items-center justify-center gap-2 mb-3">
-                        <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: '#D4AF37' }}></span> ตรวจหวยลาวพัฒนา
+                        <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: '#D4AF37' }}></span> ผล หวยลาวพัฒนา
                     </h3>
                     <div className="grid grid-cols-3 gap-1.5 md:gap-2 text-center mb-3">
                         <div className="bg-black/50 rounded-md p-2">
@@ -641,7 +637,7 @@ export default function HomePage() {
             
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 items-center w-full">
                  <div className="flex justify-center items-center w-full">
-                    <img loading="lazy" src="/top100.gif" alt="ทำเนียบ TOP 100 VIP วงป๊อกเด้ง" className="w-full h-auto max-w-[280px] md:max-w-[350px] object-contain rounded-xl shadow-lg" onError={(e) => e.currentTarget.style.display='none'} />
+                    <img loading="lazy" src="/top100.gif" alt="ทำเนียบ TOP 100 VIP วงป๊อกเด้ง" className="w-full h-auto max-w-[280px] md:max-w-[350px] object-contain rounded-xl shadow-lg" />
                 </div>
 
                 <div className="text-left bg-black/60 p-4 md:p-5 rounded-xl w-full">
@@ -690,7 +686,6 @@ export default function HomePage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 relative z-10">
-              {/* การ์ด 1: ป๊อกเด้ง */}
               <div className="bg-black/50 p-6 rounded-xl transition-all group flex flex-col border border-gray-800">
                   <h3 className="font-prompt font-bold text-xl mb-3 flex items-center gap-2" style={{ color: '#D4AF37' }}>
                       <Trophy className="w-6 h-6" /> เทคนิคเซียนป๊อกเด้ง 2 ใบเปิด
@@ -701,7 +696,6 @@ export default function HomePage() {
                   </a>
               </div>
 
-              {/* การ์ด 2: คู่มือแทงหวย EZLOTTO (อัปเดตใหม่) */}
               <div className="bg-black/50 p-6 rounded-xl transition-all group flex flex-col border border-gray-800">
                   <h3 className="font-prompt font-bold text-xl text-purple-400 mb-3 flex items-center gap-2">
                       <Gamepad2 className="w-6 h-6" /> คู่มือแทงหวย EZLOTTO
@@ -720,46 +714,36 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* 🟢 3. เพิ่มส่วน FAQ โชว์บนหน้าเว็บ เพื่อให้สอดคล้องกับ AEO Schema */}
-        <section className="mb-12 mt-8 bg-black/40 p-5 md:p-8 rounded-2xl border border-gray-800 shadow-xl relative z-10">
-          <div className="flex items-center gap-3 mb-6 border-b border-gray-700 pb-3">
+        <section className="mb-12 mt-8 bg-black/40 p-5 md:p-8 rounded-2xl border border-gray-800 shadow-xl relative z-10 flex flex-col items-center md:items-start">
+          <div className="flex items-center justify-center md:justify-start gap-3 mb-6 border-b border-gray-700 pb-3 w-full">
             <HelpCircle className="w-6 h-6" style={{ color: '#D4AF37' }} />
-            <h2 className="font-prompt font-bold text-xl md:text-2xl text-white">คำถามที่พบบ่อย (FAQ) - ป๊อกเด้งออนไลน์ & บาคาร่า</h2>
+            <h2 className="font-prompt font-bold text-xl md:text-2xl text-white text-center md:text-left">คำถามที่พบบ่อย (FAQ)</h2>
           </div>
           
-          <div className="space-y-4 text-[13px] md:text-sm">
+          <div className="space-y-4 text-[13px] md:text-sm w-full max-w-3xl mx-auto">
             <details className="bg-[#111] p-4 rounded-xl border border-gray-800 cursor-pointer group" open>
-              <summary className="font-prompt font-bold text-gray-200 group-open:text-ezgold-400 flex justify-between items-center outline-none">
+              <summary className="font-prompt font-bold text-gray-200 group-open:text-ezgold-400 flex justify-center md:justify-start outline-none">
                 <span>วงป๊อกเด้งไทย คืออะไร และเล่นอย่างไร?</span>
               </summary>
-              <p className="mt-3 text-gray-400 leading-relaxed border-t border-gray-800 pt-3">
+              <p className="mt-3 text-gray-400 leading-relaxed border-t border-gray-800 pt-3 text-center md:text-left">
                 วงป๊อกเด้งไทย คือระบบการเล่น <strong>ป๊อกเด้งออนไลน์</strong> รูปแบบใหม่ ที่ให้บริการผ่านกลุ่มไลน์ และเว็บไซต์ <strong>EZPOK168</strong> โดยมีแอดมินสับไพ่และไลฟ์สดแบบเรียลไทม์ ผู้เล่นสามารถเลือกแทงฝั่ง เจ้ามือ หรือ ลูกมือ (ขา) ได้อย่างอิสระ
               </p>
             </details>
 
             <details className="bg-[#111] p-4 rounded-xl border border-gray-800 cursor-pointer group">
-              <summary className="font-prompt font-bold text-gray-200 group-open:text-ezgold-400 flex justify-between items-center outline-none">
-                <span>ป๊อกเด้งออนไลน์ 2 ใบเปิด ต่างกับ 3 ใบอย่างไร?</span>
+              <summary className="font-prompt font-bold text-gray-200 group-open:text-ezgold-400 flex justify-center md:justify-start outline-none">
+                <span>เล่น ป๊อกเด้งออนไลน์ 2 ใบเปิด ต่างกับ 3 ใบอย่างไร?</span>
               </summary>
-              <p className="mt-3 text-gray-400 leading-relaxed border-t border-gray-800 pt-3">
+              <p className="mt-3 text-gray-400 leading-relaxed border-t border-gray-800 pt-3 text-center md:text-left">
                 ระบบ <strong>2 ใบเปิด</strong> จะวัดแต้มกันที่ไพ่สองใบแรกที่แจกให้เท่านั้น โดยไม่มีการจั่วไพ่ใบที่สามเพิ่ม การเล่นแบบนี้ทำให้เกมรวดเร็ว กระชับ และเน้นลุ้น <strong>ป๊อก 8 ป๊อก 9</strong> เป็นหลัก ซึ่งสามารถทำกำไรได้ไวกว่า
               </p>
             </details>
 
             <details className="bg-[#111] p-4 rounded-xl border border-gray-800 cursor-pointer group">
-              <summary className="font-prompt font-bold text-gray-200 group-open:text-ezgold-400 flex justify-between items-center outline-none">
-                <span>เล่น บาคาร่า หรือ ป๊อกเด้ง เกมไพ่ไหนได้เงินดีกว่ากัน?</span>
-              </summary>
-              <p className="mt-3 text-gray-400 leading-relaxed border-t border-gray-800 pt-3">
-                <strong>ป๊อกเด้ง</strong> จะมีความหลากหลายในการได้รางวัลมากกว่า (เช่น 2 เด้ง, ตอง, เซียน) ทำให้มีโอกาสรับเงินคูณทวีคูณ ส่วน <strong>บาคาร่า</strong> จะเน้นแทงฝั่ง Player หรือ Banker เหมาะกับคนที่ชอบเกมเร็วและใช้สูตรอ่านเค้าไพ่
-              </p>
-            </details>
-
-            <details className="bg-[#111] p-4 rounded-xl border border-gray-800 cursor-pointer group">
-              <summary className="font-prompt font-bold text-gray-200 group-open:text-ezgold-400 flex justify-between items-center outline-none">
+              <summary className="font-prompt font-bold text-gray-200 group-open:text-ezgold-400 flex justify-center md:justify-start outline-none">
                 <span>สมัครเล่น ป๊อกเด้งออนไลน์ EZPOK168 ฝาก-ถอน ขั้นต่ำเท่าไหร่?</span>
               </summary>
-              <p className="mt-3 text-gray-400 leading-relaxed border-t border-gray-800 pt-3">
+              <p className="mt-3 text-gray-400 leading-relaxed border-t border-gray-800 pt-3 text-center md:text-left">
                 <strong>EZPOK168</strong> คือเว็บตรงอันดับ 1 ในไทย ให้บริการด้วยความโปร่งใส 100% มีระบบฝาก-ถอนออโต้ <strong>ไม่มีขั้นต่ำ 1 บาทก็ฝากได้</strong> พร้อมทีมงานบริการ 24 ชั่วโมง
               </p>
             </details>
@@ -786,7 +770,7 @@ export default function HomePage() {
         </a>
       </nav>
 
-      <footer className="bg-black py-6 text-center text-gray-500 text-[10px] md:text-xs pb-20 md:pb-6 leading-loose">
+      <footer className="bg-black py-6 text-center text-gray-500 text-[10px] md:text-xs pb-20 md:pb-6 leading-loose w-full flex flex-col items-center">
           <p className="font-prompt text-gray-400 font-bold mb-1">วงป๊อกเด้งไทย อันดับ 1</p>
           <p>&copy; 2026 วงป๊อกเด้งไทย. ศูนย์รวมเกมไพ่ ป๊อกเด้งออนไลน์ 2 ใบเปิด บาคาร่า สับไพ่สด 24 ชม. &amp; หวย EZLOTTO มั่นคง โปร่งใส 100%</p>
       </footer>
