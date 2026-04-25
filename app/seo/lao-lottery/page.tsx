@@ -1,24 +1,12 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, Trophy, Calendar, CheckCircle, HelpCircle, AlertTriangle, Banknote, ShieldCheck, Smartphone, Search, ArrowRight } from "lucide-react";
-import { jsonLd } from "../../../lib/seo";
 import LaoLottoChecker from "./LaoLottoChecker";
 
 export const metadata: Metadata = {
-  title: 'หวยลาว lotto อัปเดตผลหวยลาวพัฒนาล่าสุด | แทงหวยออนไลน์',
-  description: 'ตรวจหวยลาวพัฒนาล่าสุด พร้อมข้อมูลแทงหวยลาวออนไลน์ อัตราจ่าย วิธีพิมพ์เลข และเงื่อนไขกับ EZLOTTO',
+  title: 'หวยลาว lotto อัพเดตผลหวยลาวพัฒนาล่าสุด | แทงหวยออนไลน์ ไม่มีเลขอั้น จ่ายเต็ม 90',
+  description: 'การตรวจหวย อัพเดตผลหวยลาวพัฒนาล่าสุด แม่นยำที่สุด ศูนย์รวม แทงหวยออนไลน์ หวยลาว lotto ไม่มีเลขอั้น จ่ายเต็มบาทละ 90 มั่นคง บาคาร่าเว็บตรง EZLOTTO',
   keywords: 'หวยลาว lotto, การตรวจหวย, อัพเดตผลหวยลาวพัฒนาล่าสุด, แทงหวยออนไลน์, ไม่มีเลขอั้น, หวยจ่ายเต็ม 90, หวยลาวพัฒนา, ซื้อหวยออนไลน์เว็บไหนดี, บาคาร่าเว็บตรง, EZLOTTO, EZPOK168',
-  alternates: { canonical: '/seo/lao-lottery' },
-  openGraph: {
-    title: 'หวยลาว lotto อัปเดตผลหวยลาวพัฒนาล่าสุด | EZLOTTO',
-    description: 'ข้อมูลตรวจหวยลาวพัฒนา อัตราจ่าย วิธีแทง และเงื่อนไขหวยลาวออนไลน์',
-    url: '/seo/lao-lottery',
-    siteName: 'EZPOK168',
-    locale: 'th_TH',
-    type: 'article',
-    images: [{ url: '/lotto-banner-1.webp', width: 1200, height: 630 }],
-  },
 };
 
 const articleSchema = {
@@ -27,7 +15,7 @@ const articleSchema = {
   "headline": "การตรวจหวย หวยลาว lotto อัพเดตผลหวยลาวพัฒนาล่าสุด และแหล่งแทงหวยออนไลน์ ไม่มีเลขอั้น",
   "author": { "@type": "Organization", "name": "EZLOTTO" },
   "datePublished": "2026-04-18",
-  "description": "เจาะลึกหวยลาว lotto ตรวจผลหวยล่าสุด พร้อมคู่มือแทงหวยออนไลน์ เงื่อนไข และอัตราจ่ายสูงสุดบาทละ 90"
+  "description": "เจาะลึก หวยลาว lotto ตรวจผลหวยล่าสุดรวดเร็ว พร้อมคู่มือแทงหวยออนไลน์เว็บไหนดี แนะนำเว็บแทงหวยลาวไม่มีเลขอั้น จ่ายสูงสุดบาทละ 90"
 };
 
 const faqSchema = {
@@ -42,7 +30,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "ซื้อหวยลาวออนไลน์เว็บไหนดี จ่ายเต็ม ไม่มีเลขอั้น?",
-      "acceptedAnswer": { "@type": "Answer", "text": "EZLOTTO มีข้อมูลแทงหวยลาวพัฒนา เงื่อนไขการรับเลข และอัตราจ่ายสูงสุดบาทละ 90 กรุณาติดต่อแอดมินเพื่อตรวจสอบรายละเอียดก่อนทำรายการ" }
+      "acceptedAnswer": { "@type": "Answer", "text": "EZLOTTO เปิดรับหวยลาวพัฒนาทุกเลขดัง ไม่มีเลขอั้น จ่ายสูงสุดบาทละ 90 มีเงื่อนไข ติดต่อแอดมินเพื่อตรวจสอบ" }
     }
   ]
 };
@@ -61,9 +49,9 @@ const breadcrumbSchema = {
 export default function LaoLotterySeoPage() {
   return (
     <div className="min-h-screen w-full overflow-x-hidden bg-[#0D0514] text-gray-200 font-sans pb-20">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(articleSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(faqSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 
       {/* ── Header ── */}
       <header className="sticky top-0 z-40 shadow-md bg-[#0D0514]/95 backdrop-blur-md w-full"
@@ -74,7 +62,7 @@ export default function LaoLotterySeoPage() {
             <ArrowLeft className="w-4 h-4" />
             <span className="font-bold text-xs md:text-sm">กลับหน้าหลัก</span>
           </Link>
-          <Image src="/ezlotto-logo_poster.webp" alt="แทงหวยลาวออนไลน์ EZ LOTTO Logo" width={210} height={60} loading="eager"
+          <img src="/ezlotto-logo_poster.webp" alt="แทงหวยลาวออนไลน์ EZ LOTTO Logo" loading="eager" decoding="async"
             className="h-10 md:h-12 w-auto max-w-[150px] md:max-w-[210px] object-contain"
             style={{ filter: 'drop-shadow(0 0 10px rgba(212,175,55,0.5))' }} />
         </div>
@@ -89,7 +77,7 @@ export default function LaoLotterySeoPage() {
 
           <span className="px-5 py-2 text-white font-bold text-xs md:text-sm rounded-full mb-4 border border-purple-400"
             style={{ background: 'linear-gradient(135deg, #7c3aed, #5b21b6)', boxShadow: '0 0 15px rgba(168,85,247,0.6)' }}>
-            แทงหวยลาวออนไลน์ ตรวจเงื่อนไขก่อนทำรายการ
+            💎 แทงหวยลาวออนไลน์ ไม่มีเลขอั้น 💎
           </span>
 
           <h1 className="text-3xl md:text-5xl mb-3 font-bold drop-shadow-lg tracking-wider"
@@ -99,17 +87,17 @@ export default function LaoLotterySeoPage() {
           </h1>
 
           <p className="text-gray-300 text-sm md:text-lg mb-2 relative z-10 max-w-2xl font-medium">
-            จาก <strong>การตรวจหวย</strong> สู่ข้อมูล <strong>แทงหวยออนไลน์</strong> ที่อ่านเงื่อนไขได้ชัดเจน <br className="hidden md:block"/>
-            อัตราจ่ายสูงสุด <strong className="text-lg md:text-xl ml-1" style={{ color: '#D4AF37' }}>บาทละ 90</strong> ตามเงื่อนไขของระบบ
+            เปลี่ยนจากการแค่ <strong>การตรวจหวย</strong> มาเป็น <strong>แทงหวยออนไลน์</strong> ที่ดีที่สุด <br className="hidden md:block"/>
+            เปิดรับหวยลาวพัฒนาทุกเลข <strong className="text-lg md:text-xl ml-1" style={{ color: '#D4AF37' }}>ไม่มีเลขอั้น จ่ายเต็ม 90</strong>
           </p>
 
           <LaoLottoChecker />
 
-          <Link href="https://ezpok168.com/" target="_blank"
+          <a href="https://ezpok168.com/" target="_blank" rel="noreferrer noopener"
             className="mt-10 px-12 py-5 text-white font-extrabold text-xl md:text-2xl rounded-full hover:scale-105 transition-all border border-purple-300 no-underline w-full max-w-md flex items-center justify-center gap-3 group"
             style={{ background: 'linear-gradient(to right, #6d28d9, #7c3aed, #6d28d9)', boxShadow: '0 10px 25px rgba(168,85,247,0.5)' }}>
-            ดูเงื่อนไขซื้อหวยลาว <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
-          </Link>
+            💸 ซื้อหวยลาว คลิก! <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
+          </a>
         </section>
 
         {/* สถิติย้อนหลัง */}
@@ -170,7 +158,7 @@ export default function LaoLotterySeoPage() {
         {/* ── Banners ── */}
         <section className="w-full flex flex-col items-center justify-center gap-6 mb-12">
           {/* ✅ FIX: png → webp */}
-          <Image src="/lotto-banner-1.webp" alt="เลขเด็ด แทงหวยลาวพัฒนา EZLOTTO" width={860} height={287} loading="lazy"
+          <img src="/lotto-banner-1.webp" alt="เลขเด็ด แทงหวยลาวพัฒนา EZLOTTO" loading="lazy" decoding="async"
             className="w-full h-auto max-w-3xl mx-auto rounded-xl object-contain block hover:scale-[1.01] transition-transform"
             style={{ border: '1px solid rgba(212,175,55,0.3)', boxShadow: '0 4px 15px rgba(212,175,55,0.3)' }} />
 
@@ -181,6 +169,7 @@ export default function LaoLotterySeoPage() {
             aria-label="โปรโมชั่นแนะนำเพื่อน แทงหวยออนไลน์ รับ 10% EZLOTTO">
             <source src="/lotto-banner-2.webm" type="video/webm" />
             <source src="/lotto-banner-2.mp4"  type="video/mp4" />
+            <img src="/lotto-banner-2.webp" alt="โปรโมชั่น EZLOTTO" loading="lazy" decoding="async" className="w-full h-auto rounded-xl" />
           </video>
         </section>
 
@@ -190,13 +179,12 @@ export default function LaoLotterySeoPage() {
 
           <h2 className="text-2xl md:text-4xl font-extrabold mb-8 pb-5 w-full leading-snug"
             style={{ background: 'linear-gradient(135deg, #FDF5E6, #FFDF00, #D4AF37)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', borderBottom: '1px solid rgba(255,255,255,0.07)' }}>
-            แทงหวยลาวออนไลน์ต้องดูอะไรบ้าง? แนะนำข้อมูล EZLOTTO <br className="hidden md:block" />
-            หวยลาว lotto เงื่อนไขชัดเจน อัตราจ่ายสูงสุด 90
+            แทงหวยลาวออนไลน์เว็บไหนดี? แนะนำ EZLOTTO <br className="hidden md:block" />
+            หวยลาว lotto ไม่มีเลขอั้น จ่ายเต็ม 90
           </h2>
 
           <p className="mb-6 text-sm md:text-base text-gray-300 max-w-4xl">
-            หากคุณค้นหา <strong>อัปเดตผลหวยลาวพัฒนาล่าสุด</strong> หรือ <strong>การตรวจหวย</strong> อยู่เป็นประจำ
-            หน้านี้รวมข้อมูลของ <strong>EZLOTTO</strong> ทั้งวิธีแทง อัตราจ่าย และข้อควรตรวจสอบก่อนทำรายการหวยลาวออนไลน์
+            หากคุณเสิร์ชหาคำว่า <strong>"อัพเดตผลหวยลาวพัฒนาล่าสุด"</strong> หรือ <strong>"การตรวจหวย"</strong> อยู่เป็นประจำ และสงสัยว่า <strong>"ซื้อหวยออนไลน์เว็บไหนดี?"</strong> คำตอบคือ <strong>EZLOTTO</strong> ศูนย์รวมการ <strong>แทงหวยออนไลน์</strong> มาตรฐานเดียวกับ <strong>บาคาร่าเว็บตรง</strong>
           </p>
 
           <p className="mb-6 text-sm md:text-base text-gray-300 max-w-4xl">
@@ -211,9 +199,9 @@ export default function LaoLotterySeoPage() {
 
           <ul className="list-none space-y-4 mb-10 text-sm md:text-base text-gray-300 w-full px-4 md:px-0">
             {[
-              { title: 'ตรวจเงื่อนไขรับเลขก่อนแทง:', body: 'ระบบมีรายละเอียดการรับเลขและข้อจำกัด กรุณาสอบถามแอดมินก่อนยืนยันรายการ' },
-              { title: 'อัตราจ่ายสูงสุดบาทละ 90:', body: 'สำหรับหวยลาว lotto ตามเงื่อนไขและช่วงเวลาที่ระบบกำหนด' },
-              { title: 'มีข้อมูลสถิติย้อนหลัง:', body: 'ใช้ประกอบการตรวจหวยและศึกษารูปแบบผลรางวัล ไม่ใช่การรับประกันผลลัพธ์' },
+              { title: 'รับประกัน ไม่มีเลขอั้น:', body: 'เปิดรับแทงหวยลาวพัฒนาทุกตัวเลข มีเงื่อนไข ติดต่อแอดมินเพื่อตรวจสอบก่อนแทง' },
+              { title: 'จ่ายหนัก จ่ายเต็ม บาทละ 90:', body: 'อัตราการจ่ายสูงสำหรับ หวยลาว lotto มีเงื่อนไขตามระบบ' },
+              { title: 'สถิติหวยลาวแม่นยำ:', body: 'มีระบบ การตรวจหวย และอัปเดตผลแบบเรียลไทม์ พร้อมตารางสถิติย้อนหลัง' },
             ].map((item, i) => (
               <li key={i} className="flex items-start gap-3">
                 <CheckCircle className="w-5 h-5 shrink-0 mt-1" style={{ color: '#B8960C' }} />
@@ -254,7 +242,7 @@ export default function LaoLotterySeoPage() {
 
           <div className="flex flex-col lg:flex-row gap-10 items-center justify-center mb-10 w-full max-w-4xl">
             <div className="w-full lg:w-1/2 flex justify-center">
-              <Image src="/ezlotto-howto.webp" alt="วิธีแทงหวยลาวพัฒนาออนไลน์ EZLOTTO" width={420} height={520} loading="lazy"
+              <img src="/ezlotto-howto.webp" alt="วิธีแทงหวยลาวพัฒนาออนไลน์ EZLOTTO" loading="lazy" decoding="async"
                 className="w-full h-auto max-w-[350px] md:max-w-[420px] mx-auto rounded-2xl object-contain block"
                 style={{ border: '1px solid rgba(168,85,247,0.5)', boxShadow: '0 10px 30px rgba(168,85,247,0.3)' }} />
             </div>
@@ -332,13 +320,14 @@ export default function LaoLotterySeoPage() {
             aria-label="สมัครแทงหวยออนไลน์ หวยลาวพัฒนา EZLOTTO">
             <source src="/ezlotto-promo.webm" type="video/webm" />
             <source src="/ezlotto-promo.mp4"  type="video/mp4" />
+            <img src="/ezlotto-promo_poster.webp" alt="โปรโมชั่น EZLOTTO" loading="lazy" decoding="async" className="w-full h-auto rounded-3xl" />
           </video>
 
-          <Link href="https://ezpok168.com/" target="_blank"
+          <a href="https://ezpok168.com/" target="_blank" rel="noreferrer noopener"
             className="inline-flex justify-center px-12 py-5 text-white font-black text-xl md:text-2xl rounded-full hover:scale-105 transition-transform no-underline pulse-gold border border-purple-300"
             style={{ background: 'linear-gradient(to right, #6d28d9, #7c3aed, #6d28d9)', boxShadow: '0 10px 30px rgba(168,85,247,0.5)' }}>
-            ดูเงื่อนไขและสมัครซื้อหวยลาว
-          </Link>
+            💸 คลิกสมัคร ซื้อหวยลาว เลย!
+          </a>
         </div>
 
         {/* FAQ */}

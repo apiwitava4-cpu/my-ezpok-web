@@ -1,12 +1,10 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowLeft, CheckCircle, Trophy, HelpCircle, Star,
   PlayCircle, Gamepad2, BookOpen, AlertTriangle, Info,
-  Target, ShieldCheck, Sparkles, Users, Banknote,
+  Target, TrendingUp, LineChart, ShieldCheck, Sparkles, Users, Banknote,
 } from "lucide-react";
-import { jsonLd } from "../../../lib/seo";
 
 // ✅ FIX: ลบ "สูตรทำเงิน / ทำกำไรได้จริง" ออกจาก title/description
 export const metadata: Metadata = {
@@ -15,16 +13,6 @@ export const metadata: Metadata = {
     "คู่มือสอนเล่นป๊อกเด้งออนไลน์ 2 ใบเปิด อัปเดต 2026 อธิบายกติกา การนับแต้ม ไพ่พิเศษ ความแตกต่างระหว่างเจ้าและขา สำหรับผู้เล่นมือใหม่",
   keywords:
     "สอนเล่นป๊อกเด้ง, ป๊อกเด้งออนไลน์, กติกาป๊อกเด้ง, วิธีเล่นป๊อกเด้ง, บาคาร่าเว็บตรง, เว็บตรงไม่ผ่านเอเย่นต์, EZPOK168",
-  alternates: { canonical: "/seo/pokdeng" },
-  openGraph: {
-    title: "สอนเล่นป๊อกเด้งออนไลน์ กติกา 2 ใบเปิด",
-    description: "คู่มือกติกา การนับแต้ม ไพ่พิเศษ และแนวทางเล่นอย่างมีสติ",
-    url: "/seo/pokdeng",
-    siteName: "EZPOK168",
-    locale: "th_TH",
-    type: "article",
-    images: [{ url: "/pok9-bg_poster.webp", width: 1200, height: 630 }],
-  },
 };
 
 // ✅ FIX: ลบ claim "ถอนได้ไม่อั้น 100%" ออกจาก Schema
@@ -36,7 +24,7 @@ const articleSchema = {
   publisher: {
     "@type": "Organization",
     name: "EZPOK168",
-    logo: { "@type": "ImageObject", url: "https://www.ezpok168.net/NEWLOGOBANNER_poster.webp" },
+    logo: { "@type": "ImageObject", url: "https://www.ezpok168.net/logo.png" },
   },
   datePublished: "2026-04-18",
   description:
@@ -92,15 +80,15 @@ export default function PokdengSeoArticle() {
       style={{ backgroundColor: "#0D0514" }}
       id="top"
     >
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(articleSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(faqSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 
       {/* Background */}
       <div className="fixed top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
-        <div className="absolute top-[-10%] right-[-10%] w-96 h-96 rounded-full mix-blend-screen filter blur-[120px] opacity-8"
+        <div className="absolute top-[-10%] right-[-10%] w-96 h-96 rounded-full mix-blend-screen filter blur-[120px] opacity-[0.08]"
           style={{ backgroundColor: "#D4AF37" }} />
-        <div className="absolute bottom-[-10%] left-[-10%] w-96 h-96 rounded-full mix-blend-screen filter blur-[120px] opacity-8"
+        <div className="absolute bottom-[-10%] left-[-10%] w-96 h-96 rounded-full mix-blend-screen filter blur-[120px] opacity-[0.08]"
           style={{ backgroundColor: "#A855F7" }} />
       </div>
 
@@ -127,17 +115,17 @@ export default function PokdengSeoArticle() {
       <main className="max-w-4xl mx-auto px-4 py-8 relative z-10 flex flex-col items-center">
 
         {/* Hero Banner */}
-        <div className="w-full h-[280px] md:h-[420px] rounded-3xl overflow-hidden mb-10 relative group"
+        <div className="w-full rounded-3xl overflow-hidden mb-10 relative group"
           style={{ border: "1px solid rgba(212,175,55,0.3)", boxShadow: "0 10px 40px rgba(212,175,55,0.15)" }}>
           <div className="absolute inset-0 z-10"
             style={{ background: "linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.5) 60%, rgba(0,0,0,0.2) 100%)" }} />
-          <Image
-            src="/pok9-bg.webp"
-            alt="สอนเล่นป๊อกเด้งออนไลน์ EZPOK168"
-            fill
-            sizes="(max-width: 768px) 100vw, 896px"
-            className="object-cover group-hover:scale-105 transition-transform duration-700"
-          />
+          <video autoPlay muted loop playsInline poster="/pok11.webp"
+            className="w-full h-[280px] md:h-[420px] object-cover group-hover:scale-105 transition-transform duration-700"
+            aria-label="สอนเล่นป๊อกเด้งออนไลน์ EZPOK168">
+            <source src="/pok9-bg.webm" type="video/webm" />
+            <source src="/ezpok-bg.mp4" type="video/mp4" />
+            <img src="/pok11.webp" alt="สอนเล่นป๊อกเด้งออนไลน์ EZPOK168" loading="eager" decoding="async" className="w-full h-full object-cover" />
+          </video>
           <div className="absolute inset-0 z-20 flex flex-col items-center justify-end md:justify-center p-8 text-center">
             {/* ✅ FIX: ลบ "คลาสเรียนเซียนไพ่ VIP" → เปลี่ยนเป็น badge ที่ neutral กว่า */}
             <span className="inline-flex items-center gap-2 px-5 py-2 rounded-full mb-4 text-black font-extrabold text-xs md:text-sm"
@@ -182,7 +170,7 @@ export default function PokdengSeoArticle() {
           </div>
 
           <p className="text-base md:text-lg text-gray-300 mb-10 font-medium max-w-4xl leading-relaxed">
-            <strong>ไพ่ป๊อกเด้ง</strong> เป็นเกมไพ่ที่ใช้ทั้งดวงและการคำนวณ กติกาจบเร็วและมีลุ้นเด้งได้เงินทวีคูณ
+            <strong>"ไพ่ป๊อกเด้ง"</strong> เป็นเกมไพ่ที่ใช้ทั้งดวงและการคำนวณ กติกาจบเร็วและมีลุ้นเด้งได้เงินทวีคูณ
             ปัจจุบันถูกพัฒนาเป็น <strong style={{ color: "#D4AF37" }}>ป๊อกเด้งออนไลน์</strong>{" "}
             บน <strong className="text-red-400">บาคาร่าเว็บตรง</strong> ที่เล่นได้ตลอด 24 ชม.
           </p>
@@ -308,7 +296,7 @@ export default function PokdengSeoArticle() {
             <p className="text-sm text-gray-300">
               <strong className="text-yellow-400">คำเตือน:</strong>{" "}
               การพนันมีความเสี่ยง ควรเล่นด้วยงบประมาณที่รับได้ ไม่ใช้เงินจำเป็น
-              และไม่พยายามล้างตัวด้วยการเพิ่มเดิมพัน ไม่มีสูตรใดที่รับประกันกำไรได้ 100%
+              และไม่พยายามล้างตัวด้วยการเพิ่มเดิมพัน ไม่มี "สูตร" ใดที่รับประกันกำไรได้ 100%
             </p>
           </div>
 
@@ -359,10 +347,10 @@ export default function PokdengSeoArticle() {
                 className="btn-line px-10 py-4 text-base md:text-lg no-underline">
                 ติดต่อแอดมิน 24 ชม.
               </a>
-              <Link href="https://ezpok168.com/" target="_blank"
+              <a href="https://ezpok168.com/" target="_blank" rel="noreferrer noopener"
                 className="btn-primary px-10 py-4 text-base md:text-lg no-underline pulse-gold">
                 <PlayCircle className="w-6 h-6 fill-black" /> สมัครสมาชิก
-              </Link>
+              </a>
             </div>
 
             <p className="text-xs text-gray-600 mt-4">⚠️ เนื้อหานี้สำหรับผู้มีอายุ 20 ปีขึ้นไปเท่านั้น</p>

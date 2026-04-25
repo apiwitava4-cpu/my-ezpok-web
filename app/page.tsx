@@ -1,10 +1,9 @@
 "use client";
 import { useState, useEffect, useRef } from 'react';
-import Image from "next/image";
 import Link from "next/link";
 import {
   X, CheckCircle, MessageCircle, ArrowRight, Video, ScrollText,
-  Gift, Trophy, Home, UserPlus, HelpCircle, Menu,
+  Gift, Trophy, Home, UserPlus, PlayCircle, HelpCircle, Menu,
   ArrowUp, Search, ShieldCheck, BookOpen, Gamepad2, AlertTriangle,
   AlertCircle, Info, Gavel, Keyboard, Crown, Star, Users,
   Clock, Coins, Banknote, Zap, ExternalLink, ImageIcon,
@@ -16,22 +15,22 @@ import LaoLottoChecker from './seo/lao-lottery/LaoLottoChecker';
 // SECURITY NOTE: Tracking URL ควรย้ายไป env variable /.env.local
 // NEXT_PUBLIC_TRACKING_URL=https://script.google.com/...
 // แล้วเรียกใช้ผ่าน process.env.NEXT_PUBLIC_TRACKING_URL
-const TRACKING_URL = process.env.NEXT_PUBLIC_TRACKING_URL ?? '';
+const TRACKING_URL = process.env.NEXT_PUBLIC_TRACKING_URL || null;
 
 // ─── โปรโมชั่นฮอต 4 กล่อง — แก้ img/href/title ได้เลย ───────────────────
 const HOT_PROMOS = [
   { img: '/pok9-promo1.webp', href: 'https://lin.ee/kBYIyk1', label: 'Welcome Bonus',  title: 'โปรต้อนรับสมาชิกใหม่', color: '#FFD700' },
   { img: '/por_ezlt.webp',    href: 'https://lin.ee/kBYIyk1', label: 'Lucky Wheel',    title: 'วงล้อนำโชคฟรี',       color: '#FF6B35' },
   { img: '/ezlt_pro.webp',    href: 'https://lin.ee/kBYIyk1', label: 'Top Level VIP',  title: 'TOP VIP รายเดือน',     color: '#C084FC' },
-  { img: '/top-level-vip-320.webp', href: 'https://lin.ee/kBYIyk1', label: 'คืนยอดเสีย 2%', title: 'สิทธิ์สมาชิกตามเงื่อนไข', color: '#34D399' },
+  { img: '/new-mumber.webp', href: 'https://lin.ee/kBYIyk1', label: 'คืนยอดเสีย2%', title: 'Level Up ทุก 10 ด่าน', color: '#34D399' },
 ];
 
 // ─── แบนเนอร์โฆษณา 4 กรอบ — ใส่ img path + href + alt ─────────────────────
 const AD_BANNERS: { img: string; href: string; alt: string }[] = [
-  { img: '/affiliate-banner1_poster.webp', href: 'https://lin.ee/8bzIg5hL', alt: 'โปรโมชันแทงหวยออนไลน์ EZPOK168' },
-  { img: '/ezpok-bg_poster.webp', href: 'https://ezpok.com/', alt: 'บาคาร่าเว็บตรงและป๊อกเด้งออนไลน์ EZPOK168' },
-  { img: '/affiliate-banner3_poster.webp', href: 'https://ezpok.com/', alt: 'ป๊อกเด้งออนไลน์ 2 ใบเปิด EZPOK168' },
-  { img: '/TOP100_poster.webp', href: 'https://lin.ee/8bzIg5hL', alt: 'กิจกรรม TOP VIP EZPOK168' },
+  { img: '', href: '#', alt: 'แบนเนอร์ 1' },
+  { img: '', href: '#', alt: 'แบนเนอร์ 2' },
+  { img: '', href: '#', alt: 'แบนเนอร์ 3' },
+  { img: '', href: '#', alt: 'แบนเนอร์ 4' },
 ];
 
 // ─── TOP VIP Ranking — แก้ข้อมูล rank ได้เลย ─────────────────────────────
@@ -45,12 +44,20 @@ export default function HomePage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [showScrollTop, setShowScrollTop] = useState(false);
+  const [userIP, setUserIP] = useState('Unknown');
+  const [searchQuery, setSearchQuery] = useState('');
   const [activePromoTab, setActivePromoTab] = useState('ALL');
   const [lottoTab, setLottoTab] = useState<'THAI' | 'LAO'>('THAI');
   const modalTriggered = useRef(false); // FIX: ป้องกัน modal fire ซ้ำ
 
   useEffect(() => {
     document.documentElement.style.scrollBehavior = 'smooth';
+
+    // IP fetch — ไม่ใช้ผลลัพธ์ใน UI เพื่อ privacy
+    fetch('https://api.ipify.org?format=json')
+      .then((r) => r.ok ? r.json() : null)
+      .then((d) => { if (d?.ip) setUserIP(d.ip); })
+      .catch(() => {});
 
     // ✅ IMPROVED: Modal trigger หลัง scroll 50% + ใช้ sessionStorage ป้องกันแสดงซ้ำ
     const handleScrollModal = () => {
@@ -86,7 +93,7 @@ export default function HomePage() {
     formData.append('behavior', behavior);
     formData.append('details', details);
     fetch(TRACKING_URL, { method: 'POST', body: formData, mode: 'no-cors' })
-      .catch((err) => console.error('Tracking Error:', err));
+      .catch(() => {});
   };
 
   const handleModalAccept = () => {
@@ -97,6 +104,15 @@ export default function HomePage() {
 
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
   const handleNavClick = () => setIsSidebarOpen(false);
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!searchQuery.trim()) return;
+    window.open(
+      `https://www.google.com/search?q=${encodeURIComponent(searchQuery.trim() + ' site:ezpok168.net')}`,
+      '_blank',
+      'noopener,noreferrer'
+    );
+  };
 
   return (
     <div className="min-h-screen relative overflow-x-hidden text-white font-sans pb-20 md:pb-0" style={{ backgroundColor: '#07030F' }} id="home">
@@ -208,7 +224,7 @@ export default function HomePage() {
         >
           <p className="text-[10px] text-green-400 font-black mb-2 tracking-wide animate-pulse">แอดมิน 24 ชม.</p>
           <a href="https://lin.ee/8bzIg5hL" target="_blank" rel="noreferrer" className="block hover:scale-105 transition-transform rounded-xl overflow-hidden border border-green-500/30 bg-white/5 p-1 shadow-[0_0_12px_rgba(0,255,0,0.3)]">
-            <Image src="https://scdn.line-apps.com/n/line_add_friends/btn/th.png" alt="เพิ่มเพื่อนแอดมิน" width={104} height={32} className="w-full h-auto mx-auto rounded-lg" />
+            <img src="https://scdn.line-apps.com/n/line_add_friends/btn/th.png" alt="เพิ่มเพื่อนแอดมิน" className="w-full h-auto mx-auto rounded-lg" />
           </a>
         </div>
       </div>
@@ -247,23 +263,27 @@ export default function HomePage() {
 
       {/* ── Search Bar ── */}
       <div className="w-full py-3 md:py-4 px-4 z-30 relative border-b border-white/5" style={{ background: 'rgba(12,6,22,0.9)', backdropFilter: 'blur(12px)' }}>
-        <div className="max-w-3xl mx-auto relative">
+        <form onSubmit={handleSearch} className="max-w-3xl mx-auto relative" role="search">
           <div className="absolute inset-y-0 left-4 flex items-center pointer-events-none">
             <Search className="h-4 w-4" style={{ color: 'rgba(212,175,55,0.6)' }} />
           </div>
           <input
             type="search"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
             className="block w-full pl-11 pr-24 py-3 md:py-3.5 rounded-full text-white placeholder-gray-600 focus:outline-none focus:ring-1 transition-all text-sm"
             style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)', boxShadow: 'inset 0 2px 8px rgba(0,0,0,0.6)' }}
             placeholder="ค้นหา: กติกาป๊อกเด้ง, ตรวจหวย, วิธีเล่นบาคาร่า..."
+            aria-label="ค้นหาข้อมูล"
           />
           <button
+            type="submit"
             className="absolute inset-y-1.5 right-1.5 px-5 md:px-6 text-black font-black rounded-full text-xs md:text-sm transition-all hover:scale-105"
             style={{ background: 'linear-gradient(135deg, #FFE566, #D4AF37)', boxShadow: '0 2px 12px rgba(212,175,55,0.4)' }}
           >
             ค้นหา
           </button>
-        </div>
+        </form>
       </div>
 
       {/* ── Modal ── */}
@@ -293,7 +313,7 @@ export default function HomePage() {
             💦 โปรใหม่ ต้อนรับสมาชิก 💦
           </h2>
           <div className="w-full rounded-2xl overflow-hidden mb-4 flex justify-center" style={{ border: '1px solid rgba(212,175,55,0.2)', boxShadow: '0 12px 30px rgba(0,0,0,0.7)' }}>
-            <Image src="/new-mumber.webp" alt="โปรโมชั่นสมาชิกใหม่" width={640} height={640} loading="lazy" className="w-full h-auto max-h-[40vh] object-contain" />
+            <img src="/new-mumber.webp" alt="โปรโมชั่นสมาชิกใหม่" loading="lazy" decoding="async" className="w-full h-auto max-h-[40vh] object-contain" />
           </div>
           {/* FIX MARKETING: เพิ่ม disclaimer ก่อน CTA */}
           <p className="text-xs text-gray-500 mb-4">*โปรโมชั่นมีเงื่อนไข กรุณาอ่านก่อนสมัคร ติดต่อแอดมินเพื่อดูรายละเอียด</p>
@@ -317,6 +337,8 @@ export default function HomePage() {
           >
             <source src="/NEWLOGOBANNER.webm" type="video/webm" />
             <source src="/NEWLOGOBANNER.mp4"  type="video/mp4" />
+            {/* fallback สำหรับ browser เก่า */}
+            <img src="/NEWLOGOBANNER.webp" alt="EZPOK168 ป๊อกเด้งออนไลน์ บาคาร่าเว็บตรง" loading="eager" decoding="async" />
           </video>
 
           {/* FIX MARKETING: ลด claim แรง ใช้ข้อความที่ตรวจสอบได้ */}
@@ -401,14 +423,16 @@ export default function HomePage() {
         <section className="mb-12 rounded-[2rem] overflow-hidden relative"
           style={{ border: '1px solid rgba(212,175,55,0.25)', boxShadow: '0 24px 60px rgba(212,175,55,0.12)' }}>
           {/* BG Video แทน GIF — เบากว่า ~75% */}
-          <Image
-            src="/pok9-bg.webp"
-            alt=""
-            fill
-            sizes="(max-width: 768px) 100vw, 960px"
+          <video
+            autoPlay muted loop playsInline
             className="absolute inset-0 w-full h-full object-cover z-0"
             aria-hidden="true"
-          />
+          >
+            <source src="/pok9-bg.webm" type="video/webm" />
+            <source src="/pok9-bg.mp4"  type="video/mp4" />
+            <img src="/pok9-bg.webp" alt="" aria-hidden="true" loading="lazy" decoding="async"
+              className="absolute inset-0 w-full h-full object-cover" />
+          </video>
           <div className="absolute inset-0 z-[1]" style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.97), rgba(0,0,0,0.75) 60%, rgba(0,0,0,0.3))' }} />
           <div className="relative z-[2] p-10 md:p-16 flex flex-col items-center text-center">
             <span className="inline-flex items-center gap-2 px-5 py-2 rounded-full mb-6 text-white font-extrabold text-xs md:text-sm"
@@ -506,6 +530,7 @@ export default function HomePage() {
                 aria-label={b.alt}>
                 <source src={b.webm} type="video/webm" />
                 <source src={b.mp4}  type="video/mp4" />
+                <img src={b.poster} alt={b.alt} loading="lazy" decoding="async" className="w-full h-full object-cover" />
               </video>
             </a>
           ))}
@@ -534,8 +559,8 @@ export default function HomePage() {
                 {/* Image area */}
                 <div className="relative w-full aspect-square overflow-hidden bg-[#0e0e0e]">
                   {promo.img ? (
-                    <Image src={promo.img} alt={promo.title} fill sizes="(max-width: 768px) 50vw, 25vw"
-                      className="object-cover group-hover:scale-110 transition-transform duration-700" />
+                    <img src={promo.img} alt={promo.title} loading="lazy" decoding="async"
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
                   ) : (
                     <div className="w-full h-full flex flex-col items-center justify-center gap-2">
                       <ImageIcon className="w-8 h-8 text-gray-700" />
@@ -565,10 +590,10 @@ export default function HomePage() {
           <div className="grid grid-cols-2 gap-4">
             {AD_BANNERS.map((b, i) => (
               <a key={i} href={b.href} target="_blank" rel="noreferrer noopener"
-                className="group no-underline block w-full hover:-translate-y-1 transition-transform duration-300 overflow-hidden relative"
+                className="group no-underline block w-full hover:-translate-y-1 transition-transform duration-300 overflow-hidden"
                 style={{ borderRadius: '1rem', border: '1px dashed rgba(212,175,55,0.3)', minHeight: '100px', background: 'rgba(212,175,55,0.03)', aspectRatio: '3/1' }}>
                 {b.img ? (
-                  <Image src={b.img} alt={b.alt} fill sizes="(max-width: 768px) 50vw, 420px" className="object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <img src={b.img} alt={b.alt} loading="lazy" decoding="async" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                 ) : (
                   <div className="w-full h-full flex flex-col items-center justify-center gap-2 min-h-[100px]">
                     <ImageIcon className="w-6 h-6 text-gray-700" />
@@ -868,7 +893,7 @@ export default function HomePage() {
                     style={{ background: card.badge, border: `1px solid ${card.badgeBorder}` }}>
                     {card.label}
                   </span>
-                  <Image src={card.src} alt={`โปรโมชั่น ${card.label}`} fill sizes="330px" className="object-cover group-hover:scale-110 transition-transform duration-700" />
+                  <img src={card.src} alt={`โปรโมชั่น ${card.label}`} loading="lazy" decoding="async" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
                 </div>
               </a>
             ))}

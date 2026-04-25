@@ -1,24 +1,12 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, Trophy, Calendar, CheckCircle, HelpCircle, AlertTriangle, Banknote, ShieldCheck, Smartphone, Search, ArrowRight } from "lucide-react";
-import { jsonLd } from "../../../lib/seo";
 import LottoChecker from "./LottoChecker";
 
 export const metadata: Metadata = {
-  title: 'หวยไทย lotto อัปเดตผลหวยรัฐบาลล่าสุด | แทงหวยออนไลน์',
-  description: 'ตรวจหวยรัฐบาลไทยล่าสุด พร้อมข้อมูลการแทงหวยออนไลน์ อัตราจ่าย เงื่อนไข และตัวอย่างวิธีพิมพ์เลขกับ EZLOTTO',
+  title: 'หวยไทย lotto อัพเดตผลหวยรัฐบาลล่าสุด | แทงหวยออนไลน์ ไม่มีเลขอั้น จ่ายเต็ม 90',
+  description: 'การตรวจหวย อัพเดตผลหวยรัฐบาลล่าสุด แม่นยำที่สุด ศูนย์รวม แทงหวยออนไลน์ หวยไทย lotto ไม่มีเลขอั้น จ่ายเต็มบาทละ 90 มั่นคง บาคาร่าเว็บตรง EZLOTTO',
   keywords: 'หวยไทย lotto, การตรวจหวย, อัพเดตผลหวยรัฐบาลล่าสุด, แทงหวยออนไลน์, ไม่มีเลขอั้น, หวยจ่ายเต็ม 90, หวยรัฐบาลไทย, ซื้อหวยออนไลน์เว็บไหนดี, บาคาร่าเว็บตรง, EZLOTTO, EZPOK168',
-  alternates: { canonical: '/seo/thai-lottery' },
-  openGraph: {
-    title: 'หวยไทย lotto อัปเดตผลหวยรัฐบาลล่าสุด | EZLOTTO',
-    description: 'ข้อมูลตรวจหวยรัฐบาลไทย อัตราจ่าย และเงื่อนไขการแทงหวยออนไลน์',
-    url: '/seo/thai-lottery',
-    siteName: 'EZPOK168',
-    locale: 'th_TH',
-    type: 'article',
-    images: [{ url: '/lotto-banner-1.webp', width: 1200, height: 630 }],
-  },
 };
 
 const articleSchema = {
@@ -27,7 +15,7 @@ const articleSchema = {
   "headline": "การตรวจหวย หวยไทย lotto อัพเดตผลหวยรัฐบาลล่าสุด และแหล่งแทงหวยออนไลน์ ไม่มีเลขอั้น",
   "author": { "@type": "Organization", "name": "EZLOTTO" },
   "datePublished": "2026-04-18",
-  "description": "เจาะลึกหวยไทย lotto ตรวจผลหวยล่าสุด พร้อมคู่มือแทงหวยออนไลน์ เงื่อนไข และอัตราจ่ายสูงสุดบาทละ 90"
+  "description": "เจาะลึก หวยไทย lotto ตรวจผลหวยล่าสุดรวดเร็ว พร้อมคู่มือแทงหวยออนไลน์เว็บไหนดี แนะนำเว็บแทงหวยไม่มีเลขอั้น จ่ายสูงสุดบาทละ 90"
 };
 
 const faqSchema = {
@@ -42,7 +30,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "ซื้อหวยออนไลน์เว็บไหนดี จ่ายเต็ม ไม่มีเลขอั้น?",
-      "acceptedAnswer": { "@type": "Answer", "text": "EZLOTTO มีข้อมูลแทงหวยออนไลน์ เงื่อนไขการรับเลข และอัตราจ่ายสูงสุดบาทละ 90 กรุณาติดต่อแอดมินเพื่อตรวจสอบรายละเอียดก่อนทำรายการ" }
+      "acceptedAnswer": { "@type": "Answer", "text": "EZLOTTO คือศูนย์รวม แทงหวยออนไลน์ เปิดรับทุกเลขดัง ไม่มีเลขอั้น จ่ายสูงสุดบาทละ 90 มีเงื่อนไข ติดต่อแอดมินเพื่อตรวจสอบ" }
     }
   ]
 };
@@ -61,9 +49,9 @@ const breadcrumbSchema = {
 export default function ThaiLotterySeoPage() {
   return (
     <div className="min-h-screen w-full overflow-x-hidden bg-[#0D0514] text-gray-200 font-sans pb-20">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(articleSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(faqSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 
       {/* ── Header ── */}
       <header className="sticky top-0 z-40 shadow-md bg-[#0D0514]/95 backdrop-blur-md"
@@ -74,7 +62,7 @@ export default function ThaiLotterySeoPage() {
             <ArrowLeft className="w-4 h-4" />
             <span className="font-bold text-xs md:text-sm">กลับหน้าหลัก</span>
           </Link>
-          <Image src="/ezlotto-logo_poster.webp" alt="แทงหวยออนไลน์ EZ LOTTO Logo" width={210} height={60} loading="eager"
+          <img src="/ezlotto-logo_poster.webp" alt="แทงหวยออนไลน์ EZ LOTTO Logo" loading="eager" decoding="async"
             className="h-10 md:h-12 w-auto max-w-[150px] sm:max-w-full object-contain" />
         </div>
       </header>
@@ -88,7 +76,7 @@ export default function ThaiLotterySeoPage() {
 
           <span className="px-5 py-2 text-white font-bold text-xs md:text-sm rounded-full mb-4 border border-red-400"
             style={{ background: 'linear-gradient(135deg, #dc2626, #991b1b)', boxShadow: '0 0 15px rgba(220,38,38,0.6)' }}>
-            แทงหวยออนไลน์ ตรวจเงื่อนไขก่อนทำรายการ
+            🔥 แทงหวยออนไลน์ ไม่มีเลขอั้น 🔥
           </span>
 
           <h1 className="text-3xl md:text-5xl mb-3 font-bold drop-shadow-lg tracking-wider"
@@ -98,17 +86,17 @@ export default function ThaiLotterySeoPage() {
           </h1>
 
           <p className="text-gray-300 text-sm md:text-lg mb-2 relative z-10 max-w-2xl font-medium">
-            จาก <strong>การตรวจหวย</strong> สู่ข้อมูล <strong>แทงหวยออนไลน์</strong> ที่อ่านเงื่อนไขได้ชัดเจน <br className="hidden md:block"/>
-            อัตราจ่ายสูงสุด <strong className="text-lg md:text-xl ml-1" style={{ color: '#D4AF37' }}>บาทละ 90</strong> ตามเงื่อนไขของระบบ
+            เปลี่ยนจากการแค่ <strong>การตรวจหวย</strong> มาเป็น <strong>แทงหวยออนไลน์</strong> ที่ดีที่สุด <br className="hidden md:block"/>
+            เปิดรับทุกเลขดัง <strong className="text-lg md:text-xl ml-1" style={{ color: '#D4AF37' }}>ไม่มีเลขอั้น จ่ายเต็ม 90</strong>
           </p>
 
           <LottoChecker />
 
-          <Link href="https://ezpok168.com/" target="_blank"
+          <a href="https://ezpok168.com/" target="_blank" rel="noreferrer noopener"
             className="mt-10 px-12 py-5 text-white font-extrabold text-xl md:text-2xl rounded-full hover:scale-105 transition-all border border-red-300 no-underline w-full max-w-md flex items-center justify-center gap-3 group"
             style={{ background: 'linear-gradient(to right, #b91c1c, #ef4444, #b91c1c)', boxShadow: '0 10px 25px rgba(220,38,38,0.5)' }}>
-            ดูเงื่อนไขการซื้อหวยออนไลน์ <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
-          </Link>
+            💸 ซื้อหวยออนไลน์ คลิก! <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
+          </a>
         </section>
 
         {/* สถิติย้อนหลัง */}
@@ -166,7 +154,7 @@ export default function ThaiLotterySeoPage() {
         {/* ── Banners ── */}
         <section className="w-full flex flex-col items-center justify-center gap-6 mb-12">
           {/* ✅ FIX: png → webp */}
-          <Image src="/lotto-banner-1.webp" alt="เลขเด็ด แทงหวยออนไลน์ EZLOTTO" width={860} height={287} loading="lazy"
+          <img src="/lotto-banner-1.webp" alt="เลขเด็ด แทงหวยออนไลน์ EZLOTTO" loading="lazy" decoding="async"
             className="w-full h-auto max-w-3xl mx-auto rounded-xl object-contain block hover:scale-[1.01] transition-transform"
             style={{ border: '1px solid rgba(212,175,55,0.3)', boxShadow: '0 4px 15px rgba(212,175,55,0.3)' }} />
 
@@ -177,6 +165,7 @@ export default function ThaiLotterySeoPage() {
             aria-label="โปรโมชั่นแนะนำเพื่อน แทงหวยออนไลน์ รับ 10% EZLOTTO">
             <source src="/lotto-banner-2.webm" type="video/webm" />
             <source src="/lotto-banner-2.mp4"  type="video/mp4" />
+            <img src="/lotto-banner-2.webp" alt="โปรโมชั่น EZLOTTO" loading="lazy" decoding="async" className="w-full h-auto rounded-xl" />
           </video>
         </section>
 
@@ -186,13 +175,12 @@ export default function ThaiLotterySeoPage() {
 
           <h2 className="text-2xl md:text-4xl font-extrabold mb-8 pb-5 w-full leading-snug"
             style={{ background: 'linear-gradient(135deg, #FDF5E6, #FFDF00, #D4AF37)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', borderBottom: '1px solid rgba(255,255,255,0.07)' }}>
-            ซื้อหวยออนไลน์ต้องดูอะไรบ้าง? แนะนำข้อมูล EZLOTTO <br className="hidden md:block" />
-            หวยไทย lotto เงื่อนไขชัดเจน อัตราจ่ายสูงสุด 90
+            ซื้อหวยออนไลน์เว็บไหนดี? แนะนำ EZLOTTO <br className="hidden md:block" />
+            แหล่งรวม หวยไทย lotto ไม่มีเลขอั้น จ่ายเต็ม 90
           </h2>
 
           <p className="mb-6 text-sm md:text-base text-gray-300 max-w-4xl">
-            หากคุณชอบติดตามผลรางวัลและมักค้นหา <strong>อัปเดตผลหวยรัฐบาลล่าสุด</strong> หรือ <strong>การตรวจหวย</strong> อยู่เป็นประจำ
-            คำถามต่อไปคือควรดูเงื่อนไขอะไรบ้างก่อนซื้อหวยออนไลน์ หน้านี้รวมข้อมูลของ <strong>EZLOTTO</strong> ทั้งวิธีแทง อัตราจ่าย และข้อควรตรวจสอบก่อนทำรายการ
+            หากคุณเป็นคนที่ชื่นชอบการเสี่ยงโชคตัวเลข และมักจะเสิร์ชหา <strong>"อัพเดตผลหวยรัฐบาลล่าสุด"</strong> หรือ <strong>"การตรวจหวย"</strong> อยู่เป็นประจำ คำถามต่อไปที่คุณอาจจะสงสัยคือ <strong>"ซื้อหวยออนไลน์เว็บไหนดี?"</strong> คำตอบคือ <strong>EZLOTTO</strong> ศูนย์รวมการ <strong>แทงหวยออนไลน์</strong> ที่มีมาตรฐานเดียวกับ <strong>บาคาร่าเว็บตรง</strong>
           </p>
 
           {/* ทำไมเลือก EZLOTTO */}
@@ -203,9 +191,9 @@ export default function ThaiLotterySeoPage() {
 
           <ul className="list-none space-y-4 mb-10 text-sm md:text-base text-gray-300 w-full px-4 md:px-0">
             {[
-              { title: 'ตรวจเงื่อนไขรับเลขก่อนแทง:', body: 'ระบบมีรายละเอียดการรับเลขและข้อจำกัด กรุณาสอบถามแอดมินก่อนยืนยันรายการ' },
-              { title: 'อัตราจ่ายสูงสุดบาทละ 90:', body: 'สำหรับหวยไทยเลข 2 ตัว ตามเงื่อนไขและช่วงเวลาที่ระบบกำหนด' },
-              { title: 'มีแอดมินดูแล:', body: 'สอบถามขั้นตอนและเงื่อนไขได้ 24 ชม. ก่อนเริ่มใช้งาน' },
+              { title: 'รับประกัน ไม่มีเลขอั้น:', body: 'เปิดรับแทง หวยออนไลน์ ทุกตัวเลข ให้คุณเก็งกำไรได้เต็มที่ มีเงื่อนไข ติดต่อแอดมินเพื่อตรวจสอบ' },
+              { title: 'จ่ายเต็ม บาทละ 90:', body: 'อัตราการจ่ายสูงสำหรับ หวยไทย เลข 2 ตัว มีเงื่อนไขตามระบบ' },
+              { title: 'เว็บตรง มั่นคง ปลอดภัย:', body: 'มาตรฐานเดียวกับ บาคาร่าเว็บตรง มีแอดมินดูแลทุกรายการ 24 ชม.' },
             ].map((item, i) => (
               <li key={i} className="flex items-start gap-3">
                 <CheckCircle className="w-5 h-5 shrink-0 mt-1" style={{ color: '#B8960C' }} />
@@ -246,7 +234,7 @@ export default function ThaiLotterySeoPage() {
 
           <div className="flex flex-col lg:flex-row gap-10 items-center justify-center mb-10 w-full max-w-4xl">
             <div className="w-full lg:w-1/2 flex justify-center">
-              <Image src="/ezlotto-howto.webp" loading="lazy" width={420} height={520}
+              <img src="/ezlotto-howto.webp" loading="lazy" decoding="async"
                 alt="วิธีแทงหวยรัฐบาลไทยออนไลน์ EZLOTTO"
                 className="w-full h-auto max-w-[350px] md:max-w-[420px] mx-auto rounded-2xl object-contain block"
                 style={{ border: '1px solid rgba(220,38,38,0.5)', boxShadow: '0 10px 30px rgba(220,38,38,0.3)' }} />
@@ -276,7 +264,7 @@ export default function ThaiLotterySeoPage() {
                 style={{ background: 'linear-gradient(135deg, rgba(127,0,0,0.3), #000)', border: '1px solid rgba(220,38,38,0.4)' }}>
                 <AlertTriangle className="w-6 h-6 text-red-400 shrink-0" />
                 <p className="text-xs md:text-sm text-red-200 leading-relaxed font-medium">
-                  อัตราจ่ายและการรับเลขขึ้นอยู่กับเงื่อนไขของระบบ ทางเว็บเน้นบริการ <strong>2 ตัว</strong> เป็นหลัก กรุณาศึกษาเงื่อนไขก่อนแทง
+                  เพื่อให้รับประกัน <strong>"จ่ายเต็ม ไม่มีเลขอั้น"</strong> ได้จริง ทางเว็บเน้นบริการ <strong>2 ตัว</strong> เป็นหลัก กรุณาศึกษาเงื่อนไขก่อนแทง
                 </p>
               </div>
             </div>
@@ -324,13 +312,14 @@ export default function ThaiLotterySeoPage() {
             aria-label="สมัครแทงหวยออนไลน์ EZLOTTO ไม่มีเลขอั้น">
             <source src="/ezlotto-promo.webm" type="video/webm" />
             <source src="/ezlotto-promo.mp4"  type="video/mp4" />
+            <img src="/ezlotto-promo_poster.webp" alt="โปรโมชั่น EZLOTTO" loading="lazy" decoding="async" className="w-full h-auto rounded-3xl" />
           </video>
 
-          <Link href="https://ezpok168.com/" target="_blank"
+          <a href="https://ezpok168.com/" target="_blank" rel="noreferrer noopener"
             className="inline-flex justify-center px-12 py-5 text-white font-black text-xl md:text-2xl rounded-full hover:scale-105 transition-transform no-underline pulse-gold border border-red-300"
             style={{ background: 'linear-gradient(to right, #b91c1c, #ef4444, #b91c1c)', boxShadow: '0 10px 30px rgba(220,38,38,0.5)' }}>
-            ดูเงื่อนไขและสมัครซื้อหวยออนไลน์
-          </Link>
+            💸 คลิกสมัคร ซื้อหวยออนไลน์ เลย!
+          </a>
         </div>
 
         {/* FAQ */}
