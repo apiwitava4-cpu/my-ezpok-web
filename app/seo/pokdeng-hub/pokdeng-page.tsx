@@ -15,16 +15,6 @@ export const metadata: Metadata = {
     "คู่มือสอนเล่นป๊อกเด้งออนไลน์ 2 ใบเปิด อัปเดต 2026 อธิบายกติกา การนับแต้ม ไพ่พิเศษ ความแตกต่างระหว่างเจ้าและขา สำหรับผู้เล่นมือใหม่",
   keywords:
     "สอนเล่นป๊อกเด้ง, ป๊อกเด้งออนไลน์, กติกาป๊อกเด้ง, วิธีเล่นป๊อกเด้ง, บาคาร่าเว็บตรง, เว็บตรงไม่ผ่านเอเย่นต์, EZPOK168",
-  alternates: { canonical: "/seo/pokdeng" },
-  openGraph: {
-    title: "สอนเล่นป๊อกเด้งออนไลน์ กติกา 2 ใบเปิด",
-    description: "คู่มือกติกา การนับแต้ม ไพ่พิเศษ และแนวทางเล่นอย่างมีสติ",
-    url: "/seo/pokdeng",
-    siteName: "EZPOK168",
-    locale: "th_TH",
-    type: "article",
-    images: [{ url: "/pok9-bg_poster.webp", width: 1200, height: 630 }],
-  },
 };
 
 // ✅ FIX: ลบ claim "ถอนได้ไม่อั้น 100%" ออกจาก Schema
@@ -74,17 +64,6 @@ const faqSchema = {
   ],
 };
 
-// ✅ เพิ่ม BreadcrumbList Schema สำหรับ SEO
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "หน้าหลัก", "item": "https://www.ezpok168.net/" },
-    { "@type": "ListItem", "position": 2, "name": "ป๊อกเด้ง", "item": "https://www.ezpok168.net/seo/pokdeng" },
-    { "@type": "ListItem", "position": 3, "name": "สอนเล่น" }
-  ]
-};
-
 export default function PokdengSeoArticle() {
   return (
     <div
@@ -94,7 +73,6 @@ export default function PokdengSeoArticle() {
     >
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(articleSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(faqSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(breadcrumbSchema) }} />
 
       {/* Background */}
       <div className="fixed top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
