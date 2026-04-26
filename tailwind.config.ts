@@ -14,7 +14,7 @@ const config: Config = {
         ezdark: '#0D0514',
       },
       fontFamily: {
-        sans: ['Prompt', 'sans-serif'],
+        sans: ['ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Tahoma', 'sans-serif'],
       },
     },
   },
