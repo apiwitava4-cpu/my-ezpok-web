@@ -3,5 +3,3 @@ Allow: /
 
 User-agent: facebookexternalhit
 Allow: /
-
-Sitemap: https://www.ezpok168.net/sitemap.xml
