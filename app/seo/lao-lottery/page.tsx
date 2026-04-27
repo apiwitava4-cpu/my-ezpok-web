@@ -31,6 +31,26 @@ const faqSchema = {
       "@type": "Question",
       "name": "ซื้อหวยลาวออนไลน์เว็บไหนดี จ่ายเต็ม ไม่มีเลขอั้น?",
       "acceptedAnswer": { "@type": "Answer", "text": "EZLOTTO เปิดรับหวยลาวพัฒนาทุกเลขดัง ไม่มีเลขอั้น จ่ายสูงสุดบาทละ 90 มีเงื่อนไข ติดต่อแอดมินเพื่อตรวจสอบ" }
+    },
+    {
+      "@type": "Question",
+      "name": "หวยลาวพัฒนาออกรางวัลวันไหนบ้าง?",
+      "acceptedAnswer": { "@type": "Answer", "text": "หวยลาวพัฒนาออกรางวัลสัปดาห์ละ 3 วัน คือวันจันทร์, วันพุธ และวันศุกร์ เริ่มประกาศผลตั้งแต่ประมาณ 20:00 น. ตามเวลาประเทศไทย" }
+    },
+    {
+      "@type": "Question",
+      "name": "หวยลาวมีรางวัลอะไรบ้าง?",
+      "acceptedAnswer": { "@type": "Answer", "text": "หวยลาวพัฒนาใช้ตัวเลข 4 หลักสุดท้าย แบ่งรางวัลเป็น 4 ประเภท ได้แก่ รางวัลเลข 4 ตัวตรง, เลข 3 ตัวตรงบน, เลข 2 ตัวตรงบน และเลข 2 ตัวล่าง" }
+    },
+    {
+      "@type": "Question",
+      "name": "วิธีแทงหวยลาวออนไลน์ผ่านแชท ทำอย่างไร?",
+      "acceptedAnswer": { "@type": "Answer", "text": "พิมพ์ตามรูปแบบ [เลข][รูปแบบ]=[จำนวนเงิน] เช่น 12บ=100 (ซื้อ 12 บน 100 บาท), 12ล=100 (ซื้อ 12 ล่าง 100 บาท), 12บล=100 (ซื้อทั้งบนและล่าง) ติดต่อแอดมิน EZLOTTO เพื่อตรวจสอบเงื่อนไขก่อนแทงทุกครั้ง" }
+    },
+    {
+      "@type": "Question",
+      "name": "หวยลาวกับหวยไทยต่างกันอย่างไร?",
+      "acceptedAnswer": { "@type": "Answer", "text": "หวยไทยออกเดือนละ 2 ครั้ง มีรางวัลหลายประเภทตั้งแต่รางวัลที่ 1 ถึงรางวัลเลขท้าย ส่วนหวยลาวพัฒนาออกสัปดาห์ละ 3 ครั้ง ใช้เลข 4 หลัก โอกาสลุ้นรับรางวัลบ่อยกว่า แต่เงินรางวัลต่อครั้งแตกต่างกันตามประเภทการแทง" }
     }
   ]
 };
@@ -305,6 +325,73 @@ export default function LaoLotterySeoPage() {
             </ul>
           </div>
 
+          {/* ประวัติหวยลาวพัฒนา */}
+          <h3 className="text-xl md:text-2xl font-bold mt-12 mb-5 flex items-center justify-center md:justify-start gap-3 w-full"
+            style={{ color: '#FFE566' }}>
+            <Trophy className="w-7 h-7 shrink-0 text-yellow-400" /> ประวัติหวยลาวพัฒนา
+          </h3>
+          <p className="text-sm md:text-base text-gray-300 mb-4 max-w-4xl">
+            <strong>หวยลาวพัฒนา</strong> หรือที่รู้จักกันในชื่อ <strong>หวยลาว lotto</strong> เป็นสลากกินแบ่งที่ดำเนินการอย่างเป็นทางการโดยรัฐบาล สาธารณรัฐประชาธิปไตยประชาชนลาว เพื่อสนับสนุนรายได้ภาครัฐและการพัฒนาเศรษฐกิจ ใช้ระบบการออกรางวัลตัวเลข <strong>4 หลัก</strong> ที่สามารถตรวจสอบผลได้อย่างโปร่งใส
+          </p>
+          <p className="text-sm md:text-base text-gray-300 mb-8 max-w-4xl">
+            จุดเด่นที่ทำให้นักแทงหวยชาวไทยนิยม <strong>แทงหวยลาวออนไลน์</strong> คือความถี่ในการออกรางวัลสูงถึง <strong>3 ครั้งต่อสัปดาห์</strong> ในวันจันทร์ พุธ ศุกร์ ซึ่งบ่อยกว่าหวยรัฐบาลไทยที่ออกเพียง 2 ครั้งต่อเดือน ทำให้มีโอกาสลุ้นรับรางวัลได้ถึง <strong>12–13 ครั้งต่อเดือน</strong> นอกจากนี้ระบบการ <strong>การตรวจหวย</strong> ยังรวดเร็วและแม่นยำผ่านช่องทางออนไลน์ของ EZLOTTO
+          </p>
+
+          {/* เปรียบเทียบ หวยลาว vs หวยไทย */}
+          <h3 className="text-xl md:text-2xl font-bold mt-6 mb-5 flex items-center justify-center md:justify-start gap-3 w-full"
+            style={{ color: '#FFE566' }}>
+            <Search className="w-7 h-7 shrink-0 text-blue-400" /> หวยลาว vs หวยไทย: ต่างกันอย่างไร?
+          </h3>
+          <div className="overflow-x-auto w-full rounded-2xl mb-8" style={{ border: '1px solid rgba(255,255,255,0.08)' }}>
+            <table className="w-full text-sm md:text-base border-collapse min-w-[480px]">
+              <thead>
+                <tr style={{ background: 'linear-gradient(to right, rgba(60,0,100,0.8), #000, rgba(60,0,100,0.8))', color: '#D4AF37' }}>
+                  <th className="py-4 px-5 text-left font-bold tracking-wide">หัวข้อ</th>
+                  <th className="py-4 px-5 text-center font-bold tracking-wide">หวยลาวพัฒนา</th>
+                  <th className="py-4 px-5 text-center font-bold tracking-wide">หวยรัฐบาลไทย</th>
+                </tr>
+              </thead>
+              <tbody className="text-gray-300">
+                {[
+                  ['ความถี่ออกรางวัล', '3 ครั้ง/สัปดาห์', '2 ครั้ง/เดือน'],
+                  ['ระบบตัวเลข', 'เลข 4 หลัก (2/3/4 ตัว)', 'หลายประเภท 2–6 หลัก'],
+                  ['ราคาต่อครั้ง', 'ขึ้นอยู่กับเว็บแทง', '80 บาท/ใบ'],
+                  ['แทงออนไลน์', '✅ ผ่าน EZLOTTO', '✅ บางแพลตฟอร์ม'],
+                  ['เหมาะกับ', 'ชอบลุ้นบ่อย งบน้อย', 'ลุ้นรางวัลใหญ่ครั้งเดียว'],
+                ].map(([topic, lao, thai], i) => (
+                  <tr key={i} className="border-b border-gray-800 hover:bg-purple-900/10 transition-colors"
+                    style={i % 2 === 0 ? { backgroundColor: 'rgba(0,0,0,0.4)' } : {}}>
+                    <td className="py-4 px-5 font-bold text-white">{topic}</td>
+                    <td className="py-4 px-5 text-center text-purple-300">{lao}</td>
+                    <td className="py-4 px-5 text-center text-gray-400">{thai}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          {/* Related Articles */}
+          <h3 className="text-xl md:text-2xl font-bold mt-8 mb-6 flex items-center justify-center md:justify-start gap-3 w-full"
+            style={{ color: '#FFE566' }}>
+            <ArrowRight className="w-7 h-7 shrink-0" /> บทความที่เกี่ยวข้อง
+          </h3>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 w-full mb-8">
+            {[
+              { href: '/seo/thai-lottery', title: '🏅 ตรวจหวยไทย', desc: 'ผลสลากกินแบ่งรัฐบาลไทยล่าสุด พร้อมระบบตรวจหวยออนไลน์', color: '#D4AF37' },
+              { href: '/seo/pokdeng', title: '🃏 สอนเล่นป๊อกเด้ง', desc: 'กติกา วิธีเล่น การนับแต้ม และไพ่พิเศษ ฉบับสมบูรณ์', color: '#A855F7' },
+              { href: '/seo/pokdeng-hub', title: '📚 ป๊อกเด้ง Hub', desc: 'รวมบทความเจาะลึก ป๊อกเด้งออนไลน์ 2 ใบเปิด vs บาคาร่า', color: '#22c55e' },
+            ].map((a, i) => (
+              <Link key={i} href={a.href} className="p-5 rounded-2xl no-underline hover:-translate-y-1 transition-transform flex flex-col gap-2 text-left"
+                style={{ background: 'linear-gradient(160deg, #111, #000)', border: `1px solid ${a.color}40` }}>
+                <span className="font-bold text-white text-base">{a.title}</span>
+                <span className="text-sm text-gray-400 leading-relaxed">{a.desc}</span>
+                <span className="text-xs font-bold flex items-center gap-1 mt-1" style={{ color: a.color }}>
+                  อ่านต่อ <ArrowRight className="w-3 h-3" />
+                </span>
+              </Link>
+            ))}
+          </div>
+
           <p className="text-sm md:text-base text-gray-300 max-w-4xl text-center md:text-left mt-4 pt-6 font-medium"
             style={{ borderTop: '1px solid rgba(255,255,255,0.07)' }}>
             นอกจาก <strong>หวยลาว lotto</strong> แล้ว เรายังมีบริการระดับ VIP อย่าง <strong>บาคาร่าเว็บตรง</strong> ให้เล่นรอเวลาหวยออก สมัครสมาชิกฟรีวันนี้!
@@ -354,6 +441,18 @@ export default function LaoLotterySeoPage() {
               {
                 q: <><strong style={{ color: '#D4AF37' }}>แทงหวยลาวออนไลน์</strong> กับ EZLOTTO ได้เงินบาทละเท่าไหร่?</>,
                 a: 'รางวัลเลข 2 ตัวตรง (บน/ล่าง) จ่ายสูงสุดบาทละ 90 เลขวิ่ง 3-4 ต่อ มีเงื่อนไขตามระบบ',
+              },
+              {
+                q: <>หวยลาวพัฒนา <strong>มีรางวัลอะไรบ้าง</strong>?</>,
+                a: 'หวยลาวพัฒนาใช้ตัวเลข 4 หลักสุดท้ายในการออกรางวัล แบ่งเป็น 4 ประเภท: รางวัลเลข 4 ตัวตรง, เลข 3 ตัวตรงบน, เลข 2 ตัวตรงบน และเลข 2 ตัวล่าง (ใช้ 2 หลักแรกของ 4 หลักท้าย)',
+              },
+              {
+                q: <>วิธี <strong>แทงหวยลาว</strong> ผ่านแชท พิมพ์อย่างไร?</>,
+                a: 'พิมพ์รูปแบบ [เลข][ประเภท]=[จำนวนเงิน] เช่น "12บ=100" คือซื้อเลข 12 บน 100 บาท, "12ล=100" คือซื้อ 12 ล่าง 100 บาท, "12บล=100" คือซื้อทั้งบนและล่าง ติดต่อแอดมิน EZLOTTO เพื่อตรวจสอบเงื่อนไขก่อนแทงทุกครั้ง',
+              },
+              {
+                q: <><strong>หวยลาว</strong> กับ <strong>หวยไทย</strong> ต่างกันอย่างไร?</>,
+                a: 'หวยไทยออกเดือนละ 2 ครั้ง มีรางวัลหลายประเภทตั้งแต่รางวัลที่ 1 ถึงเลขท้าย ส่วนหวยลาวพัฒนาออกสัปดาห์ละ 3 ครั้ง ใช้เลข 4 หลัก เหมาะกับผู้ที่ชอบลุ้นบ่อย แต่เงินรางวัลต่อครั้งแตกต่างกันตามประเภทการแทง',
               },
             ].map((item, i) => (
               <details key={i} open={item.open} className="cursor-pointer group rounded-2xl overflow-hidden"

@@ -25,12 +25,32 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "การตรวจหวย และ อัพเดตผลหวยรัฐบาลล่าสุด ดูได้ที่ไหนรวดเร็วที่สุด?",
-      "acceptedAnswer": { "@type": "Answer", "text": "สามารถติดตาม หวยไทย lotto และ อัพเดตผลหวยรัฐบาลล่าสุด ได้แบบเรียลไทม์ผ่านระบบตรวจหวยของ EZLOTTO" }
+      "acceptedAnswer": { "@type": "Answer", "text": "สามารถติดตามหวยไทย lotto และอัพเดตผลหวยรัฐบาลล่าสุดได้แบบเรียลไทม์ผ่านระบบตรวจหวยของ EZLOTTO บนเว็บ ezpok168.net หรือติดต่อแอดมิน LINE 24 ชม." }
     },
     {
       "@type": "Question",
       "name": "ซื้อหวยออนไลน์เว็บไหนดี จ่ายเต็ม ไม่มีเลขอั้น?",
-      "acceptedAnswer": { "@type": "Answer", "text": "EZLOTTO คือศูนย์รวม แทงหวยออนไลน์ เปิดรับทุกเลขดัง ไม่มีเลขอั้น จ่ายสูงสุดบาทละ 90 มีเงื่อนไข ติดต่อแอดมินเพื่อตรวจสอบ" }
+      "acceptedAnswer": { "@type": "Answer", "text": "EZLOTTO คือศูนย์รวมแทงหวยออนไลน์ เปิดรับทุกเลขดัง ไม่มีเลขอั้น จ่ายสูงสุดบาทละ 90 มีเงื่อนไข ติดต่อแอดมินเพื่อตรวจสอบก่อนแทง" }
+    },
+    {
+      "@type": "Question",
+      "name": "หวยรัฐบาลไทยออกรางวัลวันไหน?",
+      "acceptedAnswer": { "@type": "Answer", "text": "หวยรัฐบาลไทยออกรางวัลทุกวันที่ 1 และ 16 ของทุกเดือน ระบบปิดรับแทงเวลา 15:20 น. ของวันออกรางวัล" }
+    },
+    {
+      "@type": "Question",
+      "name": "หวยไทยมีรางวัลอะไรบ้าง?",
+      "acceptedAnswer": { "@type": "Answer", "text": "หวยรัฐบาลมีรางวัลหลักได้แก่ รางวัลที่ 1 (6 หลักตรง) 6,000,000 บาท/ใบ, รางวัลเลขหน้า 3 ตัว 4,000 บาท/ใบ, รางวัลเลขท้าย 3 ตัว 4,000 บาท/ใบ, และรางวัลเลขท้าย 2 ตัว 2,000 บาท/ใบ" }
+    },
+    {
+      "@type": "Question",
+      "name": "แทงหวยออนไลน์กับ EZLOTTO ต้องทำอย่างไร?",
+      "acceptedAnswer": { "@type": "Answer", "text": "สมัครสมาชิกผ่าน LINE แอดมิน EZLOTTO จะแนะนำขั้นตอนการแทงและรูปแบบการพิมพ์ผ่านแชท เช่น '12บ=100' หมายถึงแทงเลข 12 บน 100 บาท" }
+    },
+    {
+      "@type": "Question",
+      "name": "หวยไทยกับหวยลาวต่างกันอย่างไร?",
+      "acceptedAnswer": { "@type": "Answer", "text": "หวยรัฐบาลไทยออกเดือนละ 2 ครั้ง (วันที่ 1 และ 16) ใช้ตัวเลข 6 หลัก ส่วนหวยลาวพัฒนาออกสัปดาห์ละ 3 ครั้ง (จันทร์, พุธ, ศุกร์) ใช้ตัวเลข 4 หลัก จึงมีโอกาสลุ้นผลบ่อยกว่า" }
     }
   ]
 };
@@ -301,6 +321,74 @@ export default function ThaiLotterySeoPage() {
             style={{ borderTop: '1px solid rgba(255,255,255,0.07)' }}>
             นอกจาก <strong>หวยไทย lotto</strong> แล้ว เรายังมีบริการ <strong>บาคาร่าเว็บตรง</strong> ให้เล่นรอเวลาหวยออก สมัครสมาชิกฟรีวันนี้!
           </p>
+
+          {/* ความรู้เพิ่มเติมเกี่ยวกับหวยไทย */}
+          <h3 className="text-xl md:text-2xl font-bold mt-12 mb-5 flex items-center justify-center md:justify-start gap-3 w-full"
+            style={{ color: '#FFE566' }}>
+            <ShieldCheck className="w-7 h-7 shrink-0 text-blue-400" /> หวยไทยคืออะไร? ประวัติและความเป็นมา
+          </h3>
+          <p className="mb-4 text-sm md:text-base text-gray-300 max-w-4xl">
+            <strong>หวยรัฐบาลไทย</strong> หรือ <strong>สลากกินแบ่งรัฐบาล</strong> เป็นการจำหน่ายสลากโดยสำนักงานสลากกินแบ่งรัฐบาล
+            ดำเนินการโดยรัฐบาลไทยมาตั้งแต่ปี พ.ศ. 2517 ปัจจุบันออกรางวัล <strong>ทุกวันที่ 1 และ 16 ของเดือน</strong>
+            ฉบับละ <strong>80 บาท</strong> มีผู้ซื้อหลายล้านคนต่องวด
+          </p>
+          <p className="mb-6 text-sm md:text-base text-gray-300 max-w-4xl">
+            ในยุคดิจิทัล <strong>แทงหวยออนไลน์</strong> ผ่าน EZLOTTO ช่วยให้เข้าถึงได้ง่ายขึ้น ไม่ต้องออกจากบ้าน
+            และ<strong>ตรวจผลหวยรัฐบาล</strong>ได้ทันทีที่ออกรางวัล
+          </p>
+
+          <h3 className="text-xl md:text-2xl font-bold mt-8 mb-5 flex items-center justify-center md:justify-start gap-3 w-full"
+            style={{ color: '#FFE566' }}>
+            <Trophy className="w-7 h-7 shrink-0 text-yellow-400" /> เปรียบเทียบ หวยไทย vs หวยลาว
+          </h3>
+          <div className="overflow-x-auto w-full mb-8 max-w-4xl">
+            <table className="w-full text-sm text-left min-w-[500px]" style={{ borderCollapse: 'separate', borderSpacing: 0 }}>
+              <thead>
+                <tr style={{ background: 'rgba(212,175,55,0.1)' }}>
+                  {['หัวข้อ', 'หวยไทย (รัฐบาล)', 'หวยลาวพัฒนา'].map((h, i) => (
+                    <th key={i} className="px-4 py-3 font-bold text-white" style={{ border: '1px solid rgba(255,255,255,0.07)' }}>{h}</th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {[
+                  ['ความถี่ออกรางวัล', 'เดือนละ 2 ครั้ง (1 และ 16)', 'สัปดาห์ละ 3 ครั้ง'],
+                  ['รูปแบบตัวเลข', '6 หลัก', '4 หลัก'],
+                  ['เวลาออกรางวัล', '15:00-16:00 น.', 'ประมาณ 20:00 น.'],
+                  ['ราคาต่อใบ', '80 บาท', 'ไม่มีสลากจริง (แทงออนไลน์)'],
+                  ['รางวัลสูงสุด', '6,000,000 บาท/ใบ', 'ตามอัตราจ่าย'],
+                ].map((row, i) => (
+                  <tr key={i} style={{ background: i % 2 === 0 ? 'rgba(0,0,0,0.3)' : 'rgba(0,0,0,0.15)' }}>
+                    {row.map((cell, j) => (
+                      <td key={j} className="px-4 py-3 text-gray-300" style={{ border: '1px solid rgba(255,255,255,0.05)' }}>
+                        {j === 0 ? <strong className="text-white">{cell}</strong> : cell}
+                      </td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          {/* Related Articles */}
+          <h3 className="text-xl font-bold mt-8 mb-4 text-white flex items-center gap-2">
+            📚 บทความที่เกี่ยวข้อง
+          </h3>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 w-full max-w-4xl">
+            {[
+              { href: '/seo/lao-lottery', title: 'หวยลาวพัฒนา ผลล่าสุด', desc: 'ตรวจผลหวยลาวออกสัปดาห์ละ 3 วัน พร้อมแทงออนไลน์', color: '#a855f7' },
+              { href: '/seo/pokdeng', title: 'ป๊อกเด้งออนไลน์', desc: 'กติกา วิธีเล่น ไพ่พิเศษ ครบจบในที่เดียว', color: '#D4AF37' },
+              { href: '/seo/pokdeng-hub', title: 'บทความป๊อกเด้ง 2 ใบเปิด', desc: 'เปรียบเทียบ ข้อดี-ข้อเสีย vs บาคาร่า', color: '#22c55e' },
+            ].map((link) => (
+              <a key={link.href} href={link.href}
+                className="p-4 rounded-2xl no-underline flex flex-col gap-2 hover:-translate-y-1 transition-transform"
+                style={{ background: 'rgba(0,0,0,0.5)', border: '1px solid rgba(255,255,255,0.07)' }}>
+                <span className="font-bold text-sm" style={{ color: link.color }}>{link.title}</span>
+                <span className="text-xs text-gray-500">{link.desc}</span>
+                <span className="text-xs flex items-center gap-1 mt-1" style={{ color: link.color }}>อ่านต่อ →</span>
+              </a>
+            ))}
+          </div>
         </article>
 
         {/* โปรโมชั่น */}
@@ -341,11 +429,23 @@ export default function ThaiLotterySeoPage() {
               },
               {
                 q: <><strong style={{ color: '#D4AF37' }}>แทงหวยออนไลน์</strong> ที่ EZLOTTO จ่ายบาทละเท่าไหร่?</>,
-                a: 'อัตราจ่ายสูงสุดที่บาทละ 90 สำหรับเลข 2 ตัวบน/ล่าง เลขวิ่ง 3-4 ต่อ มีเงื่อนไขตามระบบ',
+                a: 'อัตราจ่ายสูงสุดที่บาทละ 90 สำหรับเลข 2 ตัวบน/ล่าง เลขวิ่งบน 3 ต่อ เลขวิ่งล่าง 4 ต่อ มีเงื่อนไขตามระบบ',
               },
               {
                 q: <><strong>การตรวจหวย</strong> หวยรัฐบาลไทย ปิดรับแทงกี่โมง?</>,
                 a: 'ระบบปิดรับแทงเวลา 15:20 น. ของวันออกรางวัล (ทุกวันที่ 1 และ 16 ของเดือน)',
+              },
+              {
+                q: <>หวยรัฐบาลไทย มีรางวัลอะไรบ้าง?</>,
+                a: 'รางวัลที่ 1 (6 ตัวตรง) 6,000,000 บาท/ใบ | เลขหน้า 3 ตัว 4,000 บาท/ใบ | เลขท้าย 3 ตัว 4,000 บาท/ใบ | เลขท้าย 2 ตัว 2,000 บาท/ใบ ราคาสลากต้นทุน 80 บาท/ใบ',
+              },
+              {
+                q: <>หวยไทยกับหวยลาวต่างกันอย่างไร?</>,
+                a: 'หวยไทยออกเดือนละ 2 ครั้ง (วันที่ 1 และ 16) ใช้ตัวเลข 6 หลัก รางวัลสูงสุด 6 ล้านบาท ส่วนหวยลาวพัฒนาออกสัปดาห์ละ 3 ครั้ง (จันทร์ พุธ ศุกร์) ใช้ตัวเลข 4 หลัก มีโอกาสลุ้นผลบ่อยกว่า',
+              },
+              {
+                q: <>วิธีแทงหวยออนไลน์ผ่าน EZLOTTO ทำอย่างไร?</>,
+                a: 'สมัครสมาชิกผ่าน LINE แอดมิน จากนั้นพิมพ์คำสั่งในแชท เช่น "12บ=100" (แทงเลข 12 บน 100 บาท) หรือ "12ล=100" (เลข 12 ล่าง 100 บาท) แอดมินยืนยันและรับเดิมพันทันที',
               },
             ].map((item, i) => (
               <details key={i} open={item.open} className="cursor-pointer group rounded-2xl overflow-hidden"

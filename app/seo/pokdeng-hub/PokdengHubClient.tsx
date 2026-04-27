@@ -10,7 +10,7 @@ const articleData = [
     id: 1,
     title: "ข้อดีของการเล่น ป๊อกเด้งออนไลน์ 2 ใบเปิด ที่คุณต้องรู้",
     date: "10 เมษายน 2569",
-    image: "/pok11.png",
+    image: "/pok11.webp",
     excerpt: "ทำไมผู้เล่นหลายคนสนใจป๊อกเด้ง 2 ใบเปิด? เจาะลึกกติกา จุดเด่น ความเสี่ยง และวิธีจัดการงบประมาณ...",
     content: (
       <div className="space-y-6 text-gray-300 leading-loose font-medium pb-8">
@@ -64,10 +64,82 @@ const articleData = [
     )
   },
   {
+    id: 3,
+    title: "วิธีจัดการงบประมาณ ป๊อกเด้งออนไลน์ 2 ใบเปิด ให้อยู่หมัด",
+    date: "1 เมษายน 2569",
+    image: "/pok11.webp",
+    excerpt: "เจาะลึกหลักการจัดการเงินทุนสำหรับป๊อกเด้งออนไลน์ กำหนดวงเงิน ควบคุมอารมณ์ และหยุดตามแผน",
+    content: (
+      <div className="space-y-6 text-gray-300 leading-loose font-medium pb-8">
+        <p className="text-lg text-white">
+          หนึ่งในทักษะสำคัญที่สุดของการเล่น <strong>ป๊อกเด้งออนไลน์ 2 ใบเปิด</strong> ไม่ใช่การอ่านไพ่ แต่คือการ <strong>จัดการงบประมาณ</strong> ให้ถูกต้อง บทความนี้สรุปหลักการที่ใช้ได้จริงเพื่อให้เล่นได้อย่างมีสติและควบคุมความเสี่ยงได้
+        </p>
+
+        <h3 className="text-2xl font-bold text-purple-400 mt-10 flex items-center gap-3 border-b border-gray-700 pb-2">
+          <Banknote className="w-6 h-6" /> 1. ตั้งวงเงินก่อนเริ่มทุกครั้ง
+        </h3>
+        <p>
+          ก่อนเข้าโต๊ะ ป๊อกเด้ง ควรกำหนดตัวเลข 2 อย่างให้ชัดเจน: <strong>วงเงินสูงสุดต่อรอบ</strong> และ <strong>วงเงินสูงสุดต่อวัน</strong> เมื่อถึงขีดจำกัดใดขีดหนึ่งให้หยุดทันที ไม่ว่าจะอยู่ในช่วงชนะหรือแพ้
+        </p>
+        <p>
+          วิธีนี้ช่วยป้องกันไม่ให้อารมณ์ขณะเล่นมาบิดเบือนการตัดสินใจ เพราะในเกมที่จบรอบเร็วอย่าง <strong>ป๊อกเด้ง 2 ใบเปิด</strong> ความผันผวนสามารถสะสมได้รวดเร็วมาก
+        </p>
+
+        <h3 className="text-2xl font-bold text-purple-400 mt-10 flex items-center gap-3 border-b border-gray-700 pb-2">
+          <Target className="w-6 h-6" /> 2. ไม่แทงทบเพื่อตามคืนยอดเสีย
+        </h3>
+        <p>
+          การแทงทบ (Martingale) คือการเพิ่มเดิมพันหลังแพ้เพื่อหวังคืนทุน วิธีนี้ดูสมเหตุสมผลในทางคณิตศาสตร์ แต่ในทางปฏิบัติมีความเสี่ยงสูงมาก เพราะ:
+        </p>
+        <ul className="list-none space-y-3 my-4 bg-black/40 p-5 rounded-2xl border border-gray-800">
+          <li className="flex items-start gap-3">
+            <X className="w-5 h-5 text-red-400 shrink-0 mt-1" />
+            <span>ต้องการทุนสำรองมหาศาลเมื่อแพ้ติดต่อกันหลายรอบ</span>
+          </li>
+          <li className="flex items-start gap-3">
+            <X className="w-5 h-5 text-red-400 shrink-0 mt-1" />
+            <span>โต๊ะมีวงเงินสูงสุดต่อรอบ ทำให้วิธีนี้ไม่สามารถทำได้จริงในระยะยาว</span>
+          </li>
+          <li className="flex items-start gap-3">
+            <X className="w-5 h-5 text-red-400 shrink-0 mt-1" />
+            <span>ทำให้อารมณ์ขึ้นสูงและตัดสินใจผิดพลาดได้ง่าย</span>
+          </li>
+        </ul>
+        <p>แทนที่จะตามคืน ให้หยุดพักและกลับมาใหม่ในรอบถัดไปพร้อมวงเงินที่ตั้งใหม่</p>
+
+        <h3 className="text-2xl font-bold text-purple-400 mt-10 flex items-center gap-3 border-b border-gray-700 pb-2">
+          <ShieldCheck className="w-6 h-6" /> 3. แยกเงินเล่นออกจากเงินใช้จ่าย
+        </h3>
+        <p>
+          วิธีที่ง่ายที่สุดคือใช้ยอดที่โอนเข้าระบบเฉพาะสำหรับ <strong>บาคาร่าเว็บตรง</strong> โดยไม่ปะปนกับบัญชีส่วนตัว เมื่อหมดยอดในระบบก็หยุด ไม่โอนเพิ่ม จนกว่าจะถึงรอบถัดไปที่กำหนดไว้
+        </p>
+
+        <h3 className="text-2xl font-bold text-purple-400 mt-10 flex items-center gap-3 border-b border-gray-700 pb-2">
+          <CheckCircle className="w-6 h-6 text-green-400" /> 4. ตั้งเป้าหมายกำไรและหยุดเมื่อถึง
+        </h3>
+        <p>
+          นอกจากกำหนดวงเงินแพ้สูงสุดแล้ว ควรตั้ง <strong>เป้าหมายกำไร</strong> ด้วย เช่น ถ้าได้กำไร 30% ของทุนก็หยุด การหยุดเมื่อชนะช่วยรักษากำไรและป้องกันการเสียคืนในรอบหลังซึ่งเกิดขึ้นบ่อยมากในเกมที่จบรอบเร็ว
+        </p>
+
+        <div className="mt-10 bg-gradient-to-r from-purple-900/30 to-black p-6 rounded-2xl border border-purple-500/50">
+          <h4 className="text-xl font-bold text-white mb-3 flex items-center gap-2">
+            <CheckCircle className="text-green-400 w-5 h-5" /> สรุปหลักการจัดการงบประมาณ
+          </h4>
+          <ul className="space-y-2 text-purple-200 text-sm">
+            <li>✅ กำหนดวงเงินก่อนเริ่มและหยุดเมื่อถึงขีดจำกัด</li>
+            <li>✅ ไม่แทงทบหรือเพิ่มเดิมพันเพื่อตามคืนยอดเสีย</li>
+            <li>✅ แยกเงินเล่นออกจากค่าใช้จ่ายจำเป็น</li>
+            <li>✅ ตั้งเป้าหมายกำไรและหยุดเมื่อบรรลุเป้า</li>
+          </ul>
+        </div>
+      </div>
+    )
+  },
+  {
     id: 2,
     title: "เปรียบเทียบ บาคาร่าเว็บตรง กับ ป๊อกเด้ง เกมไหนเหมาะกับสไตล์คุณ?",
     date: "5 เมษายน 2569",
-    image: "/pok11.png",
+    image: "/pok11.webp",
     excerpt: "วิเคราะห์กติกา อัตราจ่าย ความผันผวน และความเสี่ยงระหว่างบาคาร่าและป๊อกเด้ง เพื่อเลือกเกมให้เหมาะกับงบประมาณ",
     content: (
       <div className="space-y-6 text-gray-300 leading-loose font-medium pb-8">
@@ -277,8 +349,8 @@ export default function PokdengArticleHubPage() {
                   <span className="text-purple-400 font-bold text-sm flex items-center gap-2 bg-purple-900/20 px-3 py-1.5 rounded-lg border border-purple-500/30">
                      <Clock className="w-4 h-4" /> อัปเดตล่าสุด: {activeArticle.date}
                   </span>
-                  <button onClick={() => setActiveArticle(null)} className="p-2 bg-gray-900 hover:bg-red-600 text-gray-400 hover:text-white rounded-full transition-colors shadow-lg border border-gray-700 hover:border-red-500">
-                      <X className="w-6 h-6" />
+                  <button type="button" aria-label="ปิดหน้าต่างบทความ" onClick={() => setActiveArticle(null)} className="p-2 bg-gray-900 hover:bg-red-600 text-gray-400 hover:text-white rounded-full transition-colors shadow-lg border border-gray-700 hover:border-red-500">
+                      <X className="w-6 h-6" aria-hidden="true" />
                   </button>
               </div>
 
@@ -296,7 +368,7 @@ export default function PokdengArticleHubPage() {
 
                   {/* ปุ่มปิดด้านล่าง */}
                   <div className="mt-12 pt-8 border-t border-gray-800 text-center">
-                      <button onClick={() => setActiveArticle(null)} className="px-10 py-4 bg-gradient-to-r from-purple-800 to-purple-600 hover:from-purple-700 hover:to-purple-500 text-white font-extrabold text-lg rounded-full transition-transform hover:scale-105 shadow-[0_10px_20px_rgba(168,85,247,0.4)] border border-purple-400/50">
+                      <button type="button" onClick={() => setActiveArticle(null)} className="px-10 py-4 bg-gradient-to-r from-purple-800 to-purple-600 hover:from-purple-700 hover:to-purple-500 text-white font-extrabold text-lg rounded-full transition-transform hover:scale-105 shadow-[0_10px_20px_rgba(168,85,247,0.4)] border border-purple-400/50">
                           ✖ ปิดหน้าต่างบทความ
                       </button>
                   </div>
@@ -304,6 +376,60 @@ export default function PokdengArticleHubPage() {
           </div>
         </>
       )}
+
+      {/* FAQ Section */}
+      <section className="max-w-5xl mx-auto px-4 mt-20 mb-4">
+        <div className="bg-black/50 p-6 md:p-10 rounded-3xl border border-white/[0.07]">
+          <div className="flex items-center gap-4 mb-8 pb-4 border-b border-white/[0.07]">
+            <BookOpen className="w-8 h-8 shrink-0 text-yellow-400" />
+            <h2 className="font-extrabold text-2xl md:text-3xl text-white">คำถามที่พบบ่อย (FAQ)</h2>
+          </div>
+          <div className="space-y-4 w-full">
+            {[
+              { q: 'ป๊อกเด้ง 2 ใบเปิด ข้อดีเหนือบาคาร่าคืออะไร?', a: 'ป๊อกเด้ง 2 ใบเปิดจบรอบเร็วกว่าและมีระบบจ่ายทวีคูณเมื่อได้ไพ่พิเศษ เช่น เด้ง ไพ่เรียง หรือไพ่ตอง ในขณะที่บาคาร่าอัตราจ่ายคงที่และผู้เล่นไม่ได้ถือไพ่โดยตรง', open: true },
+              { q: 'ป๊อกเด้งออนไลน์ 2 ใบเปิด เหมาะกับผู้เล่นแบบไหน?', a: 'เหมาะกับผู้ที่ชอบเกมจบรอบเร็ว อยากเข้าใจกติกาง่ายๆ และรับความผันผวนของอัตราจ่ายทวีคูณได้ ผู้เล่นควรตั้งวงเงินก่อนเริ่มทุกครั้ง' },
+              { q: 'ความแตกต่างหลักระหว่างป๊อกเด้งกับบาคาร่าคืออะไร?', a: 'ป๊อกเด้งผู้เล่นแข่งแต้มกับเจ้ามือโดยตรงและมีการจ่ายทวีคูณ บาคาร่าผู้เล่นทายผลระหว่างฝั่ง Player กับ Banker โดยไม่ถือไพ่ อัตราจ่ายในบาคาร่าคงที่กว่า' },
+              { q: 'การจัดการงบประมาณในป๊อกเด้งออนไลน์ ควรทำอย่างไร?', a: 'ควรกำหนดวงเงินต่อรอบและต่อวันล่วงหน้า หยุดเมื่อถึงขีดจำกัด ไม่ว่าจะแพ้หรือชนะ ไม่ใช้วิธีแทงทบเพื่อตามคืนยอดเสีย เพราะเพิ่มความเสี่ยงสะสม' },
+              { q: 'ป๊อกเด้งออนไลน์ที่ EZPOK168 สมัครอย่างไร?', a: 'ติดต่อแอดมินผ่าน LINE ได้ตลอด 24 ชม. แอดมินจะแนะนำขั้นตอน เงื่อนไข และโปรโมชันที่มีอยู่ก่อนเริ่มใช้งานจริง' },
+              { q: 'เล่นหลายขาในป๊อกเด้ง 2 ใบเปิด ช่วยลดความเสี่ยงได้จริงหรือไม่?', a: 'การเล่นหลายขาอาจกระจายผลลัพธ์ในบางรอบ แต่ก็เพิ่มยอดเดิมพันรวมในเวลาเดียวกัน ไม่ใช่วิธีรับประกันผลลัพธ์ ควรใช้ร่วมกับการตั้งวงเงินเท่านั้น' },
+            ].map((item, i) => (
+              <details key={i} open={item.open} className="cursor-pointer rounded-2xl overflow-hidden"
+                style={{ background: 'linear-gradient(160deg, #111, #0a0a0a)', border: '1px solid rgba(255,255,255,0.07)' }}>
+                <summary className="font-bold text-gray-200 text-base md:text-lg outline-none flex justify-between items-center px-6 py-5 hover:bg-white/[0.02] transition-colors list-none">
+                  {item.q}
+                </summary>
+                <p className="px-6 pb-5 pt-4 text-gray-400 text-sm md:text-base leading-relaxed"
+                  style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}>
+                  {item.a}
+                </p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Related Articles */}
+      <section className="max-w-5xl mx-auto px-4 mt-12 mb-4">
+        <h2 className="font-extrabold text-xl md:text-2xl text-white mb-6 flex items-center gap-3 border-l-4 border-purple-500 pl-4">
+          <ArrowRight className="w-6 h-6 text-purple-400" /> บทความที่เกี่ยวข้อง
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          {[
+            { href: '/seo/pokdeng', title: '🃏 สอนเล่นป๊อกเด้ง', desc: 'กติกา วิธีเล่น การนับแต้ม ไพ่พิเศษ ฉบับสมบูรณ์', color: '#D4AF37' },
+            { href: '/seo/thai-lottery', title: '🏅 ตรวจหวยไทย', desc: 'ผลสลากกินแบ่งรัฐบาลไทยล่าสุด พร้อมระบบตรวจหวยออนไลน์', color: '#f59e0b' },
+            { href: '/seo/lao-lottery', title: '💎 หวยลาว lotto', desc: 'อัพเดตผลหวยลาวพัฒนาล่าสุด แทงหวยออนไลน์ ไม่มีเลขอั้น', color: '#A855F7' },
+          ].map((a, i) => (
+            <Link key={i} href={a.href} className="p-5 rounded-2xl no-underline hover:-translate-y-1 transition-transform flex flex-col gap-2 text-left"
+              style={{ background: 'linear-gradient(160deg, #111, #000)', border: `1px solid ${a.color}40` }}>
+              <span className="font-bold text-white text-base">{a.title}</span>
+              <span className="text-sm text-gray-400 leading-relaxed">{a.desc}</span>
+              <span className="text-xs font-bold flex items-center gap-1 mt-1" style={{ color: a.color }}>
+                อ่านต่อ <ArrowRight className="w-3 h-3" />
+              </span>
+            </Link>
+          ))}
+        </div>
+      </section>
 
       <footer className="bg-[#05010a] py-8 border-t border-gray-800 w-full flex flex-col items-center mt-12 relative z-10">
           <div className="max-w-5xl mx-auto px-4 text-center">
