@@ -213,10 +213,8 @@ export default function PokdengSeoArticle() {
               { label: "FAQ", href: "#faq" },
             ].map((nav) => (
               <a key={nav.href} href={nav.href}
-                className="text-xs px-3 py-1.5 rounded-lg no-underline font-medium transition-colors hover:text-black"
-                style={{ background: "rgba(212,175,55,0.15)", color: "#D4AF37" }}
-                onMouseOver={(e) => { (e.currentTarget as HTMLAnchorElement).style.background = "#D4AF37"; (e.currentTarget as HTMLAnchorElement).style.color = "#000"; }}
-                onMouseOut={(e) => { (e.currentTarget as HTMLAnchorElement).style.background = "rgba(212,175,55,0.15)"; (e.currentTarget as HTMLAnchorElement).style.color = "#D4AF37"; }}>
+                className="text-xs px-3 py-1.5 rounded-lg no-underline font-medium transition-opacity hover:opacity-70"
+                style={{ background: "rgba(212,175,55,0.15)", color: "#D4AF37" }}>
                 {nav.label}
               </a>
             ))}
