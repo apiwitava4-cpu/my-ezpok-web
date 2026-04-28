@@ -146,25 +146,39 @@ export default function LaoLotterySeoPage() {
                 </tr>
               </thead>
               <tbody className="text-gray-200 text-sm md:text-base font-medium">
-                <tr className="border-b border-gray-800" style={{ backgroundColor: 'rgba(100,0,0,0.25)' }}>
-                  <td className="py-3 text-xs md:text-sm text-red-300 font-bold" colSpan={4}>
-                    * งวดวันที่ 14-16 เมษายน 2569 งดการออกรางวัลเนื่องในเทศกาลปีใหม่ลาว *
+
+                {/* งวดล่าสุด 28/04 — รอผลออก */}
+                <tr style={{ backgroundColor: 'rgba(212,175,55,0.08)', borderBottom: '1px solid rgba(212,175,55,0.25)' }}>
+                  <td className="py-5 px-4 font-bold text-left" style={{ color: '#FFE566' }}>
+                    วันอังคารที่ 28 เมษายน 2569&nbsp;
+                    <span className="inline-block text-xs px-2 py-0.5 rounded-full font-bold align-middle"
+                      style={{ background: 'rgba(212,175,55,0.2)', color: '#FFE566', border: '1px solid rgba(212,175,55,0.4)' }}>
+                      ล่าสุด
+                    </span>
+                  </td>
+                  <td colSpan={3} className="py-5 px-4 text-center font-bold text-base md:text-lg" style={{ color: '#D4AF37' }}>
+                    ⏳ ผลออกเวลา 20:30 น.
                   </td>
                 </tr>
+
+                {/* งวดย้อนหลัง */}
                 {[
-                  { date: 'วันศุกร์ที่ 17 เมษายน 2569', p4: '5079', p3: '079', p2: '79 / 50', big: true, dark: true },
-                  { date: 'วันจันทร์ที่ 13 เมษายน 2569', p4: '7568', p3: '568', p2: '68 / 75' },
-                  { date: 'วันศุกร์ที่ 10 เมษายน 2569', p4: '0389', p3: '389', p2: '89 / 03', dark: true },
+                  { date: 'วันจันทร์ที่ 27 เมษายน 2569', p4: '----', p3: '---', p2: '-- / --', dark: true },
+                  { date: 'วันศุกร์ที่ 25 เมษายน 2569',  p4: '----', p3: '---', p2: '-- / --' },
+                  { date: 'วันพฤหัสบดีที่ 24 เมษายน 2569', p4: '----', p3: '---', p2: '-- / --', dark: true },
+                  { date: 'วันศุกร์ที่ 17 เมษายน 2569',  p4: '5079', p3: '079', p2: '79 / 50' },
+                  { date: 'วันจันทร์ที่ 13 เมษายน 2569',  p4: '7568', p3: '568', p2: '68 / 75', dark: true },
+                  { date: 'วันศุกร์ที่ 10 เมษายน 2569',  p4: '0389', p3: '389', p2: '89 / 03' },
                 ].map((row, i) => (
                   <tr key={i} className="border-b border-gray-800 hover:bg-purple-900/20 transition-all duration-300 group"
                     style={row.dark ? { backgroundColor: 'rgba(0,0,0,0.4)' } : {}}>
                     <td className="py-5 px-4 font-bold text-white group-hover:text-yellow-300 transition-colors">{row.date}</td>
-                    <td className={`py-5 px-4 font-black tracking-[0.2em] ${row.big ? 'text-2xl md:text-3xl' : 'text-xl md:text-2xl'}`}
+                    <td className="py-5 px-4 font-black tracking-[0.2em] text-xl md:text-2xl"
                       style={{ background: 'linear-gradient(180deg,#fff,#9ca3af)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
                       {row.p4}
                     </td>
                     <td className="py-5 px-4 font-mono text-gray-400 group-hover:text-gray-200">{row.p3}</td>
-                    <td className={`py-5 px-4 font-black text-purple-400 ${row.big ? 'text-xl md:text-2xl' : 'text-lg md:text-xl'}`}>{row.p2}</td>
+                    <td className="py-5 px-4 font-black text-purple-400 text-lg md:text-xl">{row.p2}</td>
                   </tr>
                 ))}
               </tbody>
