@@ -379,7 +379,7 @@ export default function LaoLotterySeoPage() {
             {[
               { href: '/seo/thai-lottery', title: '🏅 ตรวจหวยไทย', desc: 'ผลสลากกินแบ่งรัฐบาลไทยล่าสุด พร้อมระบบตรวจหวยออนไลน์', color: '#D4AF37' },
               { href: '/seo/pokdeng', title: '🃏 สอนเล่นป๊อกเด้ง', desc: 'กติกา วิธีเล่น การนับแต้ม และไพ่พิเศษ ฉบับสมบูรณ์', color: '#A855F7' },
-              { href: '/seo/pokdeng-hub', title: '📚 ป๊อกเด้ง Hub', desc: 'รวมบทความเจาะลึก ป๊อกเด้งออนไลน์ 2 ใบเปิด vs บาคาร่า', color: '#22c55e' },
+              { href: '/seo/pokdeng', title: '🃏 ป๊อกเด้งออนไลน์', desc: 'กติกา วิธีเล่น ไพ่พิเศษ ข้อดี 2 ใบเปิด ครบจบในที่เดียว', color: '#22c55e' },
             ].map((a, i) => (
               <Link key={i} href={a.href} className="p-5 rounded-2xl no-underline hover:-translate-y-1 transition-transform flex flex-col gap-2 text-left"
                 style={{ background: 'linear-gradient(160deg, #111, #000)', border: `1px solid ${a.color}40` }}>

@@ -4,6 +4,7 @@ import {
   ArrowLeft, CheckCircle, Trophy, HelpCircle, Star,
   PlayCircle, Gamepad2, BookOpen, AlertTriangle, Info,
   Target, ShieldCheck, Sparkles, Users, Banknote, ArrowRight,
+  Clock, BarChart2,
 } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -171,13 +172,8 @@ export default function PokdengSeoArticle() {
           style={{ border: "1px solid rgba(212,175,55,0.3)", boxShadow: "0 10px 40px rgba(212,175,55,0.15)" }}>
           <div className="absolute inset-0 z-10"
             style={{ background: "linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.5) 60%, rgba(0,0,0,0.2) 100%)" }} />
-          <video autoPlay muted loop playsInline poster="/pok11.webp"
-            className="w-full h-[280px] md:h-[420px] object-cover group-hover:scale-105 transition-transform duration-700"
-            aria-label="ป๊อกเด้งออนไลน์ EZPOK168">
-            <source src="/pok9-bg.webm" type="video/webm" />
-            <source src="/ezpok-bg.mp4" type="video/mp4" />
-            <img src="/pok11.webp" alt="ป๊อกเด้งออนไลน์ EZPOK168" loading="eager" decoding="async" className="w-full h-full object-cover" />
-          </video>
+          <img src="/pok9-bg.webp" alt="ป๊อกเด้งออนไลน์ EZPOK168" loading="eager" decoding="async"
+            className="w-full h-[280px] md:h-[420px] object-cover group-hover:scale-105 transition-transform duration-700" />
           <div className="absolute inset-0 z-20 flex flex-col items-center justify-end md:justify-center p-8 text-center">
             <span className="inline-flex items-center gap-2 px-5 py-2 rounded-full mb-4 text-black font-extrabold text-xs md:text-sm"
               style={{ background: "linear-gradient(135deg, #FFE566, #D4AF37)", boxShadow: "0 0 20px rgba(212,175,55,0.5)" }}>
@@ -562,19 +558,105 @@ export default function PokdengSeoArticle() {
             </div>
           </section>
 
+          {/* Section 7: ข้อดีของป๊อกเด้ง 2 ใบเปิด */}
+          <section className="w-full max-w-4xl mb-10">
+            <h2 className="text-2xl md:text-3xl font-bold mt-4 mb-6 pb-3 flex items-center justify-center md:justify-start gap-3 text-white w-full"
+              style={{ borderBottom: "1px solid rgba(255,255,255,0.08)" }}>
+              <Star className="w-8 h-8 text-yellow-400 shrink-0" /> ข้อดีของป๊อกเด้ง 2 ใบเปิด ที่ต้องรู้
+            </h2>
+            <p className="mb-6 text-gray-300">
+              ทำไมผู้เล่นหลายคนสนใจ <strong className="text-white">ป๊อกเด้ง 2 ใบเปิด</strong>? มี 4 จุดเด่นหลักที่ทำให้รูปแบบนี้แตกต่าง:
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 w-full mb-6">
+              {[
+                {
+                  icon: <Clock className="w-6 h-6 text-yellow-400" />,
+                  title: "1. ความรวดเร็วในการจบรอบ",
+                  desc: "ระบบ 2 ใบเปิดทำให้รอบเล่นกระชับขึ้น ดีลเลอร์แจกไพ่และเปิดผลทันที ผู้เล่นเข้าใจจังหวะของเกมได้ง่ายขึ้น แต่จำนวนรอบที่มากขึ้นหมายถึงความเสี่ยงสะสมที่ต้องควบคุม",
+                },
+                {
+                  icon: <BarChart2 className="w-6 h-6 text-blue-400" />,
+                  title: "2. เห็นข้อมูลก่อนตัดสินใจ",
+                  desc: "เมื่อไพ่ทุกใบเปิดหน้า ผู้เล่นสามารถเห็นแต้มของเจ้ามือก่อนตัดสินใจขอไพ่ใบที่ 3 ช่วยให้ตัดสินใจได้อย่างมีข้อมูลมากกว่าการเล่นแบบปิด",
+                },
+                {
+                  icon: <Sparkles className="w-6 h-6 text-purple-400" />,
+                  title: "3. อัตราจ่ายทวีคูณตามกติกา",
+                  desc: "แม้กติกาจะเหลือ 2 ใบ จุดเด่นของป๊อกเด้งยังอยู่ที่ไพ่พิเศษ (เด้ง, ไพ่ตอง, ไพ่เรียง) ที่จ่ายทวีคูณ ต้องตรวจสอบกติกาโต๊ะก่อนเล่นทุกครั้ง",
+                },
+                {
+                  icon: <ShieldCheck className="w-6 h-6 text-green-400" />,
+                  title: "4. ความโปร่งใสของแพลตฟอร์ม",
+                  desc: "การเลือกเล่นควรดูความชัดเจนของกติกา ช่องทางติดต่อ และเงื่อนไขโปรโมชัน EZPOK168 เน้นให้ผู้เล่นอ่านรายละเอียดก่อนเริ่มใช้งาน",
+                },
+              ].map((item, i) => (
+                <div key={i} className="p-5 rounded-2xl text-left"
+                  style={{ background: "linear-gradient(160deg, rgba(40,40,40,0.6), #000)", border: "1px solid rgba(255,255,255,0.07)" }}>
+                  <div className="flex items-center gap-2 mb-3">{item.icon}<h4 className="font-bold text-white">{item.title}</h4></div>
+                  <p className="text-sm text-gray-400 leading-relaxed">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+            <div className="p-4 rounded-xl text-left" style={{ background: "rgba(212,175,55,0.06)", border: "1px solid rgba(212,175,55,0.2)" }}>
+              <p className="text-sm text-gray-300">
+                <strong style={{ color: "#D4AF37" }}>สรุป:</strong>{" "}
+                <strong>ป๊อกเด้ง 2 ใบเปิด</strong> เหมาะกับผู้ที่ชอบเกมจบรอบเร็ว อยากเห็นข้อมูลก่อนตัดสินใจ และรับความผันผวนของอัตราจ่ายทวีคูณได้ ควรตั้งวงเงินก่อนเริ่มทุกครั้ง
+              </p>
+            </div>
+          </section>
+
+          {/* Section 8: วิธีจัดการงบประมาณ */}
+          <section className="w-full max-w-4xl mb-10">
+            <h2 className="text-2xl md:text-3xl font-bold mt-4 mb-6 pb-3 flex items-center justify-center md:justify-start gap-3 text-white w-full"
+              style={{ borderBottom: "1px solid rgba(255,255,255,0.08)" }}>
+              <Banknote className="w-8 h-8 text-green-400 shrink-0" /> วิธีจัดการงบประมาณป๊อกเด้งออนไลน์ให้อยู่หมัด
+            </h2>
+            <p className="mb-5 text-gray-300">
+              ทักษะสำคัญที่สุดในการเล่น <strong className="text-white">ป๊อกเด้งออนไลน์</strong> ไม่ใช่การอ่านไพ่ แต่คือการ<strong className="text-white">จัดการงบประมาณ</strong>:
+            </p>
+            <div className="flex flex-col gap-4 w-full">
+              {[
+                {
+                  num: "1", color: "#D4AF37",
+                  title: "ตั้งวงเงินก่อนเริ่มทุกครั้ง",
+                  desc: "กำหนดทั้งวงเงินสูงสุดต่อรอบและต่อวันล่วงหน้า เมื่อถึงขีดจำกัดให้หยุดทันที ไม่ว่าจะชนะหรือแพ้ เพราะในเกมที่จบรอบเร็วความผันผวนสะสมได้รวดเร็ว",
+                },
+                {
+                  num: "2", color: "#f87171",
+                  title: "ไม่แทงทบเพื่อตามคืนยอดเสีย",
+                  desc: "การแทงทบ (Martingale) ต้องการทุนสำรองมหาศาลและโต๊ะมีวงเงินสูงสุดต่อรอบ ทำให้ใช้ได้จริงไม่ได้ในระยะยาว ควรหยุดพักและกลับมาใหม่ในรอบถัดไปแทน",
+                },
+                {
+                  num: "3", color: "#22c55e",
+                  title: "แยกเงินเล่นออกจากเงินใช้จ่าย",
+                  desc: "ใช้ยอดที่โอนเข้าระบบเฉพาะสำหรับการเล่น ไม่ปะปนกับบัญชีส่วนตัว เมื่อหมดยอดในระบบก็หยุด ไม่โอนเพิ่มจนกว่าจะถึงรอบถัดไปที่กำหนดไว้",
+                },
+                {
+                  num: "4", color: "#a855f7",
+                  title: "ตั้งเป้าหมายกำไรและหยุดเมื่อถึง",
+                  desc: "นอกจากกำหนดวงเงินแพ้สูงสุดแล้ว ควรตั้งเป้าหมายกำไรด้วย เช่น ถ้าได้กำไร 30% ของทุนก็หยุด ป้องกันการเสียคืนซึ่งเกิดขึ้นบ่อยในเกมที่จบรอบเร็ว",
+                },
+              ].map((s) => (
+                <div key={s.num} className="flex items-start gap-4 p-5 rounded-2xl text-left"
+                  style={{ background: "linear-gradient(160deg, rgba(30,30,30,0.6), #000)", border: "1px solid rgba(255,255,255,0.07)" }}>
+                  <div className="w-10 h-10 rounded-full flex items-center justify-center font-black text-lg shrink-0 text-black"
+                    style={{ background: s.color, minWidth: "2.5rem" }}>{s.num}</div>
+                  <div>
+                    <p className="font-bold text-white mb-1">{s.title}</p>
+                    <p className="text-sm text-gray-400 leading-relaxed">{s.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+
           {/* Related Articles */}
           <section className="w-full max-w-4xl mb-10">
             <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
               <BookOpen className="w-5 h-5" style={{ color: "#D4AF37" }} /> บทความที่เกี่ยวข้อง
             </h3>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {[
-                {
-                  href: "/seo/pokdeng-hub",
-                  title: "ข้อดีของป๊อกเด้ง 2 ใบเปิด",
-                  desc: "เจาะลึกรูปแบบ Open Card ทำไมถึงนิยมกว่า",
-                  color: "#D4AF37",
-                },
                 {
                   href: "/seo/thai-lottery",
                   title: "หวยไทย & ตรวจหวยออนไลน์",
@@ -589,7 +671,7 @@ export default function PokdengSeoArticle() {
                 },
               ].map((link) => (
                 <Link key={link.href} href={link.href}
-                  className="p-4 rounded-2xl no-underline flex flex-col gap-2 group transition-transform hover:-translate-y-1"
+                  className="p-4 rounded-2xl no-underline flex flex-col gap-2 transition-transform hover:-translate-y-1"
                   style={{ background: "rgba(0,0,0,0.5)", border: `1px solid rgba(255,255,255,0.07)` }}>
                   <span className="font-bold text-sm" style={{ color: link.color }}>{link.title}</span>
                   <span className="text-xs text-gray-500">{link.desc}</span>

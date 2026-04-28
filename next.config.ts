@@ -1,8 +1,10 @@
 import type { NextConfig } from "next";
 
+const isDev = process.env.NODE_ENV !== "production";
+
 const cspHeader = [
   "default-src 'self'",
-  "script-src 'self' 'unsafe-inline' https://connect.facebook.net",
+  `script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ""} https://connect.facebook.net`,
   "style-src 'self' 'unsafe-inline'",
   "img-src 'self' data: blob: https://scdn.line-apps.com https://www.facebook.com",
   "font-src 'self' data:",
@@ -25,6 +27,12 @@ const nextConfig: NextConfig = {
         search: "",
       },
     ],
+  },
+  async redirects() {
+    return [
+      { source: "/seo/pokdeng-hub", destination: "/seo/pokdeng", permanent: true },
+      { source: "/seo/pokdeng-hub/:path*", destination: "/seo/pokdeng", permanent: true },
+    ];
   },
   async headers() {
     return [

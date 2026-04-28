@@ -378,7 +378,7 @@ export default function ThaiLotterySeoPage() {
             {[
               { href: '/seo/lao-lottery', title: 'หวยลาวพัฒนา ผลล่าสุด', desc: 'ตรวจผลหวยลาวออกสัปดาห์ละ 3 วัน พร้อมแทงออนไลน์', color: '#a855f7' },
               { href: '/seo/pokdeng', title: 'ป๊อกเด้งออนไลน์', desc: 'กติกา วิธีเล่น ไพ่พิเศษ ครบจบในที่เดียว', color: '#D4AF37' },
-              { href: '/seo/pokdeng-hub', title: 'บทความป๊อกเด้ง 2 ใบเปิด', desc: 'เปรียบเทียบ ข้อดี-ข้อเสีย vs บาคาร่า', color: '#22c55e' },
+              { href: '/seo/lao-lottery', title: 'หวยลาวพัฒนา ผลล่าสุด', desc: 'ตรวจผลหวยลาว ออกสัปดาห์ละ 3 วัน ไม่มีเลขอั้น', color: '#22c55e' },
             ].map((link) => (
               <a key={link.href} href={link.href}
                 className="p-4 rounded-2xl no-underline flex flex-col gap-2 hover:-translate-y-1 transition-transform"
