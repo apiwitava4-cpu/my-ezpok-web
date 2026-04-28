@@ -28,12 +28,6 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  async redirects() {
-    return [
-      { source: "/seo/pokdeng-hub", destination: "/seo/pokdeng", permanent: true },
-      { source: "/seo/pokdeng-hub/:path*", destination: "/seo/pokdeng", permanent: true },
-    ];
-  },
   async headers() {
     return [
       {

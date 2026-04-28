@@ -166,7 +166,7 @@ export default function HomePage() {
           <Link href="#pokdeng-rules" onClick={handleNavClick} className="sidebar-item">
             <Gavel className="w-4 h-4 text-orange-400 flex-shrink-0" /><span>กติกาป๊อกเด้ง 2 ใบเปิด</span>
           </Link>
-          <Link href="/seo/pokdeng" onClick={handleNavClick} className="sidebar-item" style={{ background: 'rgba(139,92,246,0.08)', borderColor: 'rgba(139,92,246,0.3)', color: '#c4b5fd' }}>
+          <Link href="/seo/pokdeng-hub" onClick={handleNavClick} className="sidebar-item" style={{ background: 'rgba(139,92,246,0.08)', borderColor: 'rgba(139,92,246,0.3)', color: '#c4b5fd' }}>
             <BookOpen className="w-4 h-4 text-purple-400 flex-shrink-0" /><span>บทความ ป๊อกเด้งออนไลน์</span>
           </Link>
           <Link href="#knowledge-seo" onClick={handleNavClick} className="sidebar-item">
@@ -950,7 +950,7 @@ export default function HomePage() {
                 รวม <strong>กติกาป๊อกเด้ง 2 ใบเปิด</strong> วิธีเล่นเจ้า-ขา ความแตกต่างของแต่ละตำแหน่ง
                 พร้อมข้อมูล <strong>บาคาร่าเว็บตรง</strong> เงื่อนไขการใช้งาน และคำศัพท์ที่ควรรู้
               </p>
-              <Link href="/seo/pokdeng" className="btn-primary mt-auto w-full sm:w-auto self-start no-underline px-8 py-4 text-base">
+              <Link href="/seo/pokdeng-hub" className="btn-primary mt-auto w-full sm:w-auto self-start no-underline px-8 py-4 text-base">
                 อ่านกติกาและวิธีเล่น <ArrowRight className="w-5 h-5" />
               </Link>
             </div>
