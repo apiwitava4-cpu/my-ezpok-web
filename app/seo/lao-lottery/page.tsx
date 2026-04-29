@@ -7,6 +7,13 @@ export const metadata: Metadata = {
   title: 'หวยลาว lotto อัพเดตผลหวยลาวพัฒนาล่าสุด | แทงหวยออนไลน์ ไม่มีเลขอั้น จ่ายเต็ม 90',
   description: 'การตรวจหวย อัพเดตผลหวยลาวพัฒนาล่าสุด แม่นยำที่สุด ศูนย์รวม แทงหวยออนไลน์ หวยลาว lotto ไม่มีเลขอั้น จ่ายเต็มบาทละ 90 มั่นคง บาคาร่าเว็บตรง EZLOTTO',
   keywords: 'หวยลาว lotto, การตรวจหวย, อัพเดตผลหวยลาวพัฒนาล่าสุด, แทงหวยออนไลน์, ไม่มีเลขอั้น, หวยจ่ายเต็ม 90, หวยลาวพัฒนา, ซื้อหวยออนไลน์เว็บไหนดี, บาคาร่าเว็บตรง, EZLOTTO, EZPOK168',
+  alternates: { canonical: 'https://www.ezpok168.net/seo/lao-lottery' },
+  openGraph: {
+    title: 'หวยลาวพัฒนา อัพเดตผลล่าสุด | แทงหวยออนไลน์ EZLOTTO',
+    description: 'ตรวจผลหวยลาวพัฒนาล่าสุด แม่นยำ ไม่มีเลขอั้น จ่ายเต็มบาทละ 90',
+    url: 'https://www.ezpok168.net/seo/lao-lottery',
+    type: 'article',
+  },
 };
 
 const articleSchema = {
@@ -393,7 +400,7 @@ export default function LaoLotterySeoPage() {
             {[
               { href: '/seo/thai-lottery', title: '🏅 ตรวจหวยไทย', desc: 'ผลสลากกินแบ่งรัฐบาลไทยล่าสุด พร้อมระบบตรวจหวยออนไลน์', color: '#D4AF37' },
               { href: '/seo/pokdeng', title: '🃏 สอนเล่นป๊อกเด้ง', desc: 'กติกา วิธีเล่น การนับแต้ม และไพ่พิเศษ ฉบับสมบูรณ์', color: '#A855F7' },
-              { href: '/seo/pokdeng', title: '🃏 ป๊อกเด้งออนไลน์', desc: 'กติกา วิธีเล่น ไพ่พิเศษ ข้อดี 2 ใบเปิด ครบจบในที่เดียว', color: '#22c55e' },
+              { href: '/seo/pokdeng-hub', title: '🃏 บทความป๊อกเด้ง', desc: 'รวมบทความ กติกา อัตราจ่าย เปรียบเทียบ เล่นได้ทั้งเจ้าและขา', color: '#22c55e' },
             ].map((a, i) => (
               <Link key={i} href={a.href} className="p-5 rounded-2xl no-underline hover:-translate-y-1 transition-transform flex flex-col gap-2 text-left"
                 style={{ background: 'linear-gradient(160deg, #111, #000)', border: `1px solid ${a.color}40` }}>

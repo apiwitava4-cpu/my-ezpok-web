@@ -3,9 +3,9 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import {
-  ArrowLeft, X, BookOpen, Clock, Star, Target, Banknote,
+  ArrowLeft, X, BookOpen, Clock, Target,
   PlayCircle, ShieldCheck, Users, Sparkles, BarChart2,
-  CheckCircle, Trophy, ArrowRight, HelpCircle, Zap,
+  Trophy, ArrowRight, HelpCircle, Zap,
   ChevronRight,
 } from "lucide-react";
 

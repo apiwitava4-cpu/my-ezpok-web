@@ -7,6 +7,13 @@ export const metadata: Metadata = {
   title: 'หวยไทย lotto อัพเดตผลหวยรัฐบาลล่าสุด | แทงหวยออนไลน์ ไม่มีเลขอั้น จ่ายเต็ม 90',
   description: 'การตรวจหวย อัพเดตผลหวยรัฐบาลล่าสุด แม่นยำที่สุด ศูนย์รวม แทงหวยออนไลน์ หวยไทย lotto ไม่มีเลขอั้น จ่ายเต็มบาทละ 90 มั่นคง บาคาร่าเว็บตรง EZLOTTO',
   keywords: 'หวยไทย lotto, การตรวจหวย, อัพเดตผลหวยรัฐบาลล่าสุด, แทงหวยออนไลน์, ไม่มีเลขอั้น, หวยจ่ายเต็ม 90, หวยรัฐบาลไทย, ซื้อหวยออนไลน์เว็บไหนดี, บาคาร่าเว็บตรง, EZLOTTO, EZPOK168',
+  alternates: { canonical: 'https://www.ezpok168.net/seo/thai-lottery' },
+  openGraph: {
+    title: 'หวยไทย อัพเดตผลหวยรัฐบาลล่าสุด | แทงหวยออนไลน์ EZLOTTO',
+    description: 'ตรวจผลหวยรัฐบาลไทยล่าสุด แม่นยำ ไม่มีเลขอั้น จ่ายเต็มบาทละ 90',
+    url: 'https://www.ezpok168.net/seo/thai-lottery',
+    type: 'article',
+  },
 };
 
 const articleSchema = {
@@ -378,7 +385,7 @@ export default function ThaiLotterySeoPage() {
             {[
               { href: '/seo/lao-lottery', title: 'หวยลาวพัฒนา ผลล่าสุด', desc: 'ตรวจผลหวยลาวออกสัปดาห์ละ 3 วัน พร้อมแทงออนไลน์', color: '#a855f7' },
               { href: '/seo/pokdeng', title: 'ป๊อกเด้งออนไลน์', desc: 'กติกา วิธีเล่น ไพ่พิเศษ ครบจบในที่เดียว', color: '#D4AF37' },
-              { href: '/seo/lao-lottery', title: 'หวยลาวพัฒนา ผลล่าสุด', desc: 'ตรวจผลหวยลาว ออกสัปดาห์ละ 3 วัน ไม่มีเลขอั้น', color: '#22c55e' },
+              { href: '/seo/pokdeng-hub', title: 'บทความป๊อกเด้ง', desc: 'รวมบทความ กติกาไทยดั้งเดิม vs สากล อัตราจ่ายครบ', color: '#22c55e' },
             ].map((link) => (
               <a key={link.href} href={link.href}
                 className="p-4 rounded-2xl no-underline flex flex-col gap-2 hover:-translate-y-1 transition-transform"
