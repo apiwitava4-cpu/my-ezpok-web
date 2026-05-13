@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Prompt } from "next/font/google";
 import Script from "next/script";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 
 // ✅ FIX: เพิ่ม weight 800, 900 สำหรับ font-extrabold / font-black
@@ -77,6 +78,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         </Script>
 
         {children}
+        <SpeedInsights />
       </body>
     </html>
   );
